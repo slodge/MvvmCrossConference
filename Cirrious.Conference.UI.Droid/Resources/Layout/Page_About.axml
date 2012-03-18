@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.sqlbits"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'SharedTextSource','Converter':'Language','ConverterParameter':'AppTitle'}}" />
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsXApp'}}" />
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBitsXApp'}}" />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/appbar_email"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'StuartLinkText'},'Click':{'Path':'ContactSlodgeCommand'}}"
+      />
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsX'}}" />
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBitsX'}}" />
+
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/appbar_link"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsLinkText'},'Click':{'Path':'ShowSqlBitsCommand'}}"
+      />
+    
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBits'}}" />
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBits'}}" />
+
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/appbar_link"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsLinkText'},'Click':{'Path':'ShowSqlBitsCommand'}}"
+      />
+    
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'MvvmCross'}}" />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/appbar_email"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'StuartLinkText'},'Click':{'Path':'ContactSlodgeCommand'}}"
+      />
+    
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutMvvmCross'}}" />
+
+
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ForMvvmSource'}}" />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/appbar_link"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'MvvmCrossLinkText'},'Click':{'Path':'MvvmCrossOnGithubCommand'}}"
+      />
+
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ForXamarin'}}" />
+
+
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/appbar_link"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'MonoTouch'},'Click':{'Path':'MonoTouchCommand'}}"
+      />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/appbar_link"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'MonoForAndroid'},'Click':{'Path':'MonoDroidCommand'}}"
+      />
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Disclaimer'}}" />
+
+
+    <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'DisclaimerMono'}}" />
+    
+  </LinearLayout>
+</ScrollView>
