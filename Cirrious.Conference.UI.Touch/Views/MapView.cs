@@ -29,22 +29,22 @@ namespace Cirrious.Conference.UI.Touch
 			base.ViewDidLoad ();
 
             Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.link.png"), UIControlState.Normal);
-            Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.phone.png"), UIControlState.Normal);
-            Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.feature.email.rest.png"), UIControlState.Normal);
+            Button2.SetImage(UIImage.FromFile("ConfResources/Images/appbar.phone.png"), UIControlState.Normal);
+            Button3.SetImage(UIImage.FromFile("ConfResources/Images/appbar.feature.email.rest.png"), UIControlState.Normal);
 
             this.AddBindings(new Dictionary<object, string>()
 		                         {
-                                     {Label1,"{'Text':{'Path':'Name'}"}, 
-                                     {Button1,"{'Title':{'Path':'Address'}"},
-                                     {Button2,"{'Title':{'Path':'Phone'}"},
-                                     {Button3,"{'Title':{'Path':'Email'}"},
+                                     {Label1,"{'Text':{'Path':'Name'}}"}, 
+                                     {Button1,"{'Title':{'Path':'Address'}}"},
+                                     {Button2,"{'Title':{'Path':'Phone'}}"},
+                                     {Button3,"{'Title':{'Path':'Email'}}"},
 		                         });
 
             this.AddBindings(new Dictionary<object, string>()
 		                         {
-                                     {Button1,"{'TouchDown':{'Path':'WebPageCommand'}"},
-                                     {Button2,"{'TouchDown':{'Path':'PhoneCommand'}"},
-                                     {Button3,"{'TouchDown':{'Path':'EmailCommand'}"},
+                                     {Button1,"{'TouchDown':{'Path':'WebPageCommand'}}"},
+                                     {Button2,"{'TouchDown':{'Path':'PhoneCommand'}}"},
+                                     {Button3,"{'TouchDown':{'Path':'EmailCommand'}}"},
 		                         });
 
 #warning TODO - map setup!

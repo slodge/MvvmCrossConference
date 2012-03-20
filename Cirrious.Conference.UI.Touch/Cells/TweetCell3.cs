@@ -11,7 +11,7 @@ namespace Cirrious.Conference.UI.Touch
 	public partial class TweetCell3
 			: MvxBindableTableViewCell
 	{
-		public static NSString Identifier = new NSString("PullToRefreshTableCellView");
+		public static NSString Identifier = new NSString("TweetCell3");
         public const string BindingText = @"{'HttpImageUrl':{'Path':'ProfileImageUrl'},'Author':{'Path':'Author'},'Content':{'Path':'Title'},'When':{'Path':'Timestamp','Converter':'TimeAgo'}}";
 		
 		public static TweetCell3 LoadFromNib()

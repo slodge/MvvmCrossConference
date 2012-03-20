@@ -12,8 +12,6 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
         : MvxBindingTouchTableViewController<TViewModel>
         where TViewModel : BaseSessionListViewModel<TKey>
     {
-        const string CellBindingText = "{'TitleText':{'Path':'Item.Session.SpeakerKey'},'DetailText':{'Path':'Item.Session.Title'},'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails'}}";
-		
 		private UIActivityIndicatorView _activityView;
 		
         public BaseSessionListView(MvxShowViewModelRequest request)
@@ -32,15 +30,18 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
             var source = new MvxActionBasedBindableTableViewSource(
                                 TableView, 
                                 UITableViewCellStyle.Subtitle,
-                                new NSString("FlattenedList"), 
-                                CellBindingText,
+                                new NSString("SessionCell2"), 
+                                SessionCell.BindingText,
 								UITableViewCellAccessory.None);
-			
+			source.CellCreator = (arg1, arg2, arg3) => SeparatorCell.LoadFromNib();
             this.AddBindings(new Dictionary<object, string>()
 		                         {
 		                             {source, "{'ItemsSource':{'Path':'FlattenedList'}}"},
 									 {_activityView, "{'Hidden':{'Path':'IsSearching','Converter':'InvertedVisibility'}}"},
 		                         });
+			
+			TableView.BackgroundColor = UIColor.Black;
+			TableView.RowHeight = 126;
             TableView.Source = source;
 			TableView.ReloadData();
         }
