@@ -127,6 +127,26 @@
     <Compile Include="Views\WelcomeView.designer.cs">
       <DependentUpon>WelcomeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MapView.cs" />
+    <Compile Include="Views\MapView.designer.cs">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SessionView.cs" />
+    <Compile Include="Views\SessionView.designer.cs">
+      <DependentUpon>SessionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SessionCell.cs" />
+    <Compile Include="Cells\SessionCell.designer.cs">
+      <DependentUpon>SessionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\TweetCell.cs" />
+    <Compile Include="Cells\TweetCell.designer.cs">
+      <DependentUpon>TweetCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\TweetCell3.cs" />
+    <Compile Include="Cells\TweetCell3.designer.cs">
+      <DependentUpon>TweetCell3.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -274,5 +294,15 @@
   <ItemGroup>
     <InterfaceDefinition Include="Views\SessionsView.xib" />
     <InterfaceDefinition Include="Views\WelcomeView.xib" />
+    <InterfaceDefinition Include="Views\MapView.xib" />
+    <InterfaceDefinition Include="Views\SessionView.xib" />
+    <InterfaceDefinition Include="Cells\SessionCell.xib" />
+    <InterfaceDefinition Include="Cells\TweetCell.xib" />
+    <InterfaceDefinition Include="Cells\TweetCell3alive.xib" />
+    <InterfaceDefinition Include="Cells\TweetCell3dead.xib" />
+    <InterfaceDefinition Include="Cells\TweetCell3.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cells\" />
   </ItemGroup>
 </Project>
