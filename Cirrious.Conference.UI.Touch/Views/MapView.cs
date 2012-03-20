@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
-
+using Cirrious.MvvmCross.Binding.Touch.ExtensionMethods;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.Conference.Core.ViewModels;
@@ -26,9 +27,28 @@ namespace Cirrious.Conference.UI.Touch
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			
-			// Perform any additional setup after loading the view, typically from a nib.
-		}
+
+            Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.link.png"), UIControlState.Normal);
+            Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.phone.png"), UIControlState.Normal);
+            Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.feature.email.rest.png"), UIControlState.Normal);
+
+            this.AddBindings(new Dictionary<object, string>()
+		                         {
+                                     {Label1,"{'Text':{'Path':'Name'}"}, 
+                                     {Button1,"{'Title':{'Path':'Address'}"},
+                                     {Button2,"{'Title':{'Path':'Phone'}"},
+                                     {Button3,"{'Title':{'Path':'Email'}"},
+		                         });
+
+            this.AddBindings(new Dictionary<object, string>()
+		                         {
+                                     {Button1,"{'TouchDown':{'Path':'WebPageCommand'}"},
+                                     {Button2,"{'TouchDown':{'Path':'PhoneCommand'}"},
+                                     {Button3,"{'TouchDown':{'Path':'EmailCommand'}"},
+		                         });
+
+#warning TODO - map setup!
+        }
 		
 		public override void ViewDidUnload ()
 		{

@@ -5,26 +5,9 @@ using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Views;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using Cirrious.Conference.Core.ViewModels;
 
 namespace Cirrious.Conference.UI.Touch.Views
 {
-    public class SplashScreenView
-        : MvxBindingTouchTableViewController<SplashScreenViewModel>
-	{
-        public SplashScreenView(MvxShowViewModelRequest request)
-            : base(request)
-        {
-        }
-		
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
-#warning TODO!			
-			ViewModel.SplashScreenComplete = true;
-		}
-	}
-	
     public class TwitterView
         : MvxBindingTouchTableViewController<TwitterViewModel>
     {		

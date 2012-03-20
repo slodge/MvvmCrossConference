@@ -12,7 +12,7 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
         : MvxBindingTouchTableViewController<TViewModel>
         where TViewModel : BaseSessionListViewModel<TKey>
     {
-        const string CellBindingText = "{'TitleText':{'Path':'Author'},'DetailText':{'Path':'Title'},'HttpImageUrl':{'Path':'ProfileImageUrl'}}";
+        const string CellBindingText = "{'TitleText':{'Path':'Item.Session.SpeakerKey'},'DetailText':{'Path':'Item.Session.Title'},'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails'}}";
 		
 		private UIActivityIndicatorView _activityView;
 		
@@ -36,14 +36,9 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
                                 CellBindingText,
 								UITableViewCellAccessory.None);
 			
-			source.CellModifier = (cell) =>
-				{
-					cell.Image.DefaultImagePath = "Images/Icons/50_icon.png";
-				};
-			
             this.AddBindings(new Dictionary<object, string>()
 		                         {
-		                             {source, "{'ItemsSource':{'Path':'Tweets'}}"},
+		                             {source, "{'ItemsSource':{'Path':'FlattenedList'}}"},
 									 {_activityView, "{'Hidden':{'Path':'IsSearching','Converter':'InvertedVisibility'}}"},
 		                         });
             TableView.Source = source;
