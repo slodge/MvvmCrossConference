@@ -42,7 +42,8 @@ namespace Cirrious.Conference.UI.Touch
 		
 		private void Initialise()
 		{
-			this.BackgroundView = new UIView(Frame){ BackgroundColor = UIColor.LightGray };
+			ContentView.BackgroundColor = UIColor.LightGray;
+			//this.BackgroundView = new UIView(Frame){ BackgroundColor = UIColor.LightGray };
 		}	
 			
 		protected override void Dispose (bool disposing)
