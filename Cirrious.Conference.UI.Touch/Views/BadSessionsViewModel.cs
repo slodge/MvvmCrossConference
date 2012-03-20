@@ -7,7 +7,7 @@ namespace Cirrious.Conference.UI.Touch.Views
     public class BadSessionsViewModel
         : MvxBindingTouchViewController<SessionsViewModel>
     {
-        protected BadSessionsViewModel(MvxShowViewModelRequest request)
+        public BadSessionsViewModel(MvxShowViewModelRequest request)
             : base(request)
         {
         }

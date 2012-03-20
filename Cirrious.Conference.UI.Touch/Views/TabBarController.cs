@@ -19,25 +19,22 @@ namespace Cirrious.Conference.UI.Touch.Views
         , ITabBarPresenter
 		, IMvxServiceConsumer<ITabBarPresenterHost>
 	{
-        private readonly Dictionary<Type, UINavigationController> _defaultNavigationControllers = new Dictionary<Type, UINavigationController>();
-
+		private bool _needViewDidLoadCall = false;
+		
 		public TabBarController (MvxShowViewModelRequest request)
 			: base(request)
 		{
 			this.GetService<ITabBarPresenterHost>().TabBarPresenter = this;
+			if (_needViewDidLoadCall)
+				ViewDidLoad();			
 		}
 
 	    private int _createdSoFarCount = 0;
 
-        private UIViewController CreateTabFor<TPrimaryType>(string title, string imageName, object creationParameters = null, params Type[] alsoSupports)
-            where TPrimaryType : class, IMvxViewModel
+        private UIViewController CreateTabFor(string title, string imageName, IMvxViewModel viewModel)
         {
             var controller = new UINavigationController();
-
-            if (!_defaultNavigationControllers.ContainsKey(typeof(TPrimaryType)))
-                _defaultNavigationControllers[typeof(TPrimaryType)] = controller;
-
-            var screen = this.CreateViewControllerFor<TPrimaryType>(creationParameters) as UIViewController;
+            var screen = this.CreateViewControllerFor(viewModel) as UIViewController;
             SetTitleAndTabBarItem(screen, title, imageName);
             controller.PushViewController(screen, false);
             return controller;
@@ -51,42 +48,26 @@ namespace Cirrious.Conference.UI.Touch.Views
             _createdSoFarCount++;
         }
 
-	    private UIViewController CreateSplittableTabFor<TPrimaryType>(string title, string imageName, object creationParameters = null, params Type[] alsoSupports)
-            where TPrimaryType : class, IMvxViewModel
-        {
-            if (AppDelegate.IsPhone)
-                return CreateTabFor<TPrimaryType>(title, imageName, creationParameters, alsoSupports);
-
-            throw new NotImplementedException();
-            /*
-            var screen = this.CreateViewControllerFor<TPrimaryType>(creationParameters) as UIViewController;
-            GeneralSplitView splitView;
-            if (typeof(TPrimaryType) == typeof(SessionListViewModel))
-                splitView = new SessionSplitView(screen, alsoSupports);
-            else
-                splitView = new GeneralSplitView(screen, null, alsoSupports);
-
-	        SetTitleAndTabBarItem(splitView, title, imageName);
-
-            if (!_defaultSplitViews.ContainsKey(typeof(TPrimaryType)))
-                _defaultSplitViews[typeof(TPrimaryType)] = splitView;
-
-            return splitView;
-            */
-        }
-
 		public override void ViewDidLoad ()
-		{
+		{			
 			base.ViewDidLoad ();
+			
+			if (ViewModel == null)
+			{
+				_needViewDidLoadCall = true;
+				return;
+			}
 
-            ViewControllers = new UIViewController[]
+			_needViewDidLoadCall = false;
+			
+	        var viewControllers = new UIViewController[]
                                   {
-                                    CreateTabFor<WelcomeViewModel>("Welcome", "home"),
-                                    CreateTabFor<SessionsViewModel>("Sessions", "sessions"),
-                                    CreateTabFor<FavoritesViewModel>("Favorites", "favorites"),
-                                    CreateTabFor<TwitterViewModel>("Twitter", "twitter"),
+                                    CreateTabFor("Welcome", "home", ViewModel.Welcome),
+                                    CreateTabFor("Sessions", "sessions", ViewModel.Sessions),
+                                    CreateTabFor("Favorites", "favorites", ViewModel.Favorites),
+                                    CreateTabFor("Twitter", "twitter", ViewModel.Twitter),
                                   };			
-
+			ViewControllers = viewControllers;
             CustomizableViewControllers = new UIViewController[] { };
             SelectedViewController = ViewControllers[0];
 		}

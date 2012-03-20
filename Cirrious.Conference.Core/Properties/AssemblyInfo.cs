@@ -38,3 +38,5 @@ using System.Resources;
 
 
 [assembly: InternalsVisibleTo("Cirrious.MvvmCross.WindowsPhone")]
+[assembly: InternalsVisibleTo("Cirrious.MvvmCross.Touch")]
+[assembly: InternalsVisibleTo("Cirrious.MvvmCross.Android")]

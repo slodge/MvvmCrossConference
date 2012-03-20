@@ -16,7 +16,7 @@ namespace Cirrious.Conference.UI.Touch
 		protected override UINavigationController CreateNavigationController (UIViewController viewController)
 		{
 			var toReturn = base.CreateNavigationController (viewController);
-			toReturn.NavigationBarHidden = false;
+			toReturn.NavigationBarHidden = true;
 			return toReturn;
 		}
 
@@ -24,8 +24,8 @@ namespace Cirrious.Conference.UI.Touch
 
         public override bool ShowView(MvvmCross.Touch.Interfaces.IMvxTouchView view)
         {
-            if (TabBarPresenter != null)
-                return TabBarPresenter.ShowView(view);
+            if (TabBarPresenter != null && view != TabBarPresenter)
+				return TabBarPresenter.ShowView(view);
 
             return base.ShowView(view);
         }

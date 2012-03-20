@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,8 +10,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Cirrious.Conference.Core</RootNamespace>
     <AssemblyName>Cirrious.Conference.Core.Touch</AssemblyName>
-    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -92,14 +90,8 @@
     <Reference Include="Cirrious.MvvmCross.Dialog.Touch">
       <HintPath>..\Libs\Touch\Cirrious.MvvmCross.Dialog.Touch.dll</HintPath>
     </Reference>
-    <Reference Include="CirriousMvvmCrossTouch">
-      <HintPath>..\Libs\Touch\CirriousMvvmCrossTouch.dll</HintPath>
-    </Reference>
     <Reference Include="monotouch">
       <HintPath>..\..\..\Library\Hacked\monotouch.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft_Json_MonoTouch">
-      <HintPath>..\Libs\Touch\Newtonsoft_Json_MonoTouch.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -150,6 +142,7 @@
     <Compile Include="ViewModels\SessionViewModel.cs" />
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
     <Compile Include="ViewModels\SponsorsViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -164,4 +157,14 @@
       <UserProperties ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
     </VisualStudio>
   </ProjectExtensions>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MvvmCross\Library\Newtonsoft.Json\Newtonsoft.Json\Newtonsoft_Json_MonoTouch.csproj">
+      <Project>{7E04C0C7-C26E-4F5E-A634-A687757E76A1}</Project>
+      <Name>Newtonsoft_Json_MonoTouch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MvvmCross\Cirrious\Cirrious.MvvmCross\Cirrious.MvvmCross.Touch.csproj">
+      <Project>{E042EDD9-E89D-4928-BF4D-27F0FC29CEDA}</Project>
+      <Name>Cirrious.MvvmCross.Touch</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
