@@ -15,7 +15,7 @@ namespace Cirrious.Conference.UI.Touch
 {'SpeakerText':{'Path':'Item.Session.SpeakerKey'},
 'MainText':{'Path':'Item.Session.Title'},
 'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'},
-'SelectedCommand':{'Path':'Item.Command'}},
+'SelectedCommand':{'Path':'Command'}
 }";
 		
 		public static SessionCell2 LoadFromNib()

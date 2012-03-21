@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
-
+using Cirrious.MvvmCross.Binding.Touch.ExtensionMethods;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.Conference.Core.ViewModels;
@@ -15,23 +16,28 @@ namespace Cirrious.Conference.UI.Touch
 			: base (request, "SessionView", null)
 		{
 		}
-		
-		public override void DidReceiveMemoryWarning ()
-		{
-			// Releases the view if it doesn't have a superview.
-			base.DidReceiveMemoryWarning ();
-			
-			// Release any cached data, images, etc that aren't in use.
-		}
-		
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
-			
-			// Perform any additional setup after loading the view, typically from a nib.
-		}
-		
-		public override void ViewDidUnload ()
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            TextView1.Editable = false;
+            ImageView1.Image = UIImage.FromFile("ConfResources/Images/appbar.people.png");
+            ImageView2.Image = UIImage.FromFile("ConfResources/Images/appbar.city.png");
+
+            this.AddBindings(new Dictionary<object, string>()
+                                 {
+                                     {Label1, "{'Text':{'Path':'Session.Session.Title'}}"},
+                                     {TextView1, "{'Text':{'Path':'Session.Session.Description'}}"},
+                                     {SubLabel1, "{'Text':{'Path':'Session.Session.SpeakerKey'}}"},
+                                     {
+                                         SubLabel2,
+                                         "{'Text':{'Path':'Session.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'}}"
+                                         }
+                                 });
+        }
+
+	    public override void ViewDidUnload ()
 		{
 			base.ViewDidUnload ();
 			
