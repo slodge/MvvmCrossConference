@@ -28,14 +28,8 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
 			_activityView = new UIActivityIndicatorView(this.View.Frame);
 			Add(_activityView);
 			View.BringSubviewToFront(_activityView);
-			
-            var source = new MvxActionBasedBindableTableViewSource(
-                                TableView, 
-                                UITableViewCellStyle.Subtitle,
-                                new NSString("SessionCell2"), 
-                                SessionCell.BindingText,
-								UITableViewCellAccessory.None);
-			source.CellCreator = (arg1, arg2, arg3) => SeparatorCell.LoadFromNib();
+
+            var source = new TableSource(TableView);
             this.AddBindings(new Dictionary<object, string>()
 		                         {
 		                             {source, "{'ItemsSource':{'Path':'FlattenedList'}}"},
@@ -48,9 +42,9 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
 			TableView.ReloadData();
         }
 
-        public class TableSource : MvxBindableTableViewSource
+        private class TableSource : MvxBindableTableViewSource
         {
-            protected TableSource(UITableView tableView) : base(tableView)
+            public TableSource(UITableView tableView) : base(tableView)
             {
             }
 
