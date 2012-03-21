@@ -20,7 +20,7 @@ namespace Cirrious.Conference.UI.Touch
 	    }
 
         private UIScrollView _scrollview;
-        private int _currentTop = 10;
+        private int _currentTop = 0;
 
         public override void ViewDidLoad()
         {
@@ -28,9 +28,9 @@ namespace Cirrious.Conference.UI.Touch
 
             View.BackgroundColor = UIColor.Black;
 
-            _scrollview = new UIScrollView(this.View.Frame);
+            _scrollview = new UIScrollView(new RectangleF(0,0,320,365));
             View.AddSubview(_scrollview);
-
+			
             AddHeading("SQLBitsXApp");
             AddTextBlock("AboutSQLBitsXApp");
             AddCommand(ViewModel.ContactSlodgeCommand, "StuartLinkText", "appbar.feature.email.rest");
@@ -38,20 +38,20 @@ namespace Cirrious.Conference.UI.Touch
 
             AddHeading("SQLBitsX");
             AddTextBlock("AboutSQLBitsX");
-            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link.png");
+            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link");
 
             AddHeading("SQLBits");
             AddTextBlock("AboutSQLBits");
-            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link.png");
+            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link");
 
             AddHeading("MvvmCross");
             AddTextBlock("AboutMvvmCross");
             AddCommand(ViewModel.ContactSlodgeCommand, "StuartLinkText", "appbar.feature.email.rest");
             AddTextBlock("ForMvvmSource");
-            AddCommand(ViewModel.MvvmCrossOnGithubCommand, "MvvmCrossLinkText", "appbar.link.rest");
+            AddCommand(ViewModel.MvvmCrossOnGithubCommand, "MvvmCrossLinkText", "appbar.link");
             AddTextBlock("ForXamarin");
-            AddCommand(ViewModel.MonoTouchCommand, "MonoTouch", "appbar.link.rest");
-            AddCommand(ViewModel.MonoDroidCommand, "MonoForAndroid", "appbar.link.rest");
+            AddCommand(ViewModel.MonoTouchCommand, "MonoTouch", "appbar.link");
+            AddCommand(ViewModel.MonoDroidCommand, "MonoForAndroid", "appbar.link");
                             
             AddTextBlock("DisclaimerMono");
 
@@ -65,7 +65,8 @@ namespace Cirrious.Conference.UI.Touch
 
 	    private void AddHeading(string which)
 	    {
-	        var frame = new RectangleF(10, _currentTop, 300, 30);
+	        _currentTop += 10;
+            var frame = new RectangleF(10, _currentTop, 300, 30);
 	        var view = new UILabel(frame);
 	        view.BackgroundColor = UIColor.Black;
             view.TextColor = UIColor.White;
@@ -73,19 +74,25 @@ namespace Cirrious.Conference.UI.Touch
             view.Font = UIFont.FromName("Helvetica", 17);
             view.AdjustsFontSizeToFitWidth = false;
             AddView(view);
+			_currentTop += 2;
         }
 
 	    private void AddTextBlock(string which)
 	    {
-            var frame = new RectangleF(10, _currentTop, 300, 30);
+			var text = GetText(which);
+			var nsText = new NSString(text);
+			var font = UIFont.FromName("Helvetica", 13);
+			var size = nsText.StringSize(font, new SizeF(300,100000), UILineBreakMode.WordWrap);
+			var frame = new RectangleF(10, _currentTop, 300, size.Height);
             var view = new UILabel(frame);
             view.BackgroundColor = UIColor.Black;
             view.AutoresizingMask = UIViewAutoresizing.None;
 	        view.AdjustsFontSizeToFitWidth = false;
             view.TextColor = UIColor.White;
-	        view.Font = UIFont.FromName("Helvetica", 13);
+	        view.Font = font;
+			view.LineBreakMode = UILineBreakMode.WordWrap;
             view.Text = GetText(which);
-            view.SizeToFit();
+			view.Lines = 0;
             AddView(view);
         }
 
@@ -99,6 +106,8 @@ namespace Cirrious.Conference.UI.Touch
             button.SetTitle(GetText(whichText), UIControlState.Normal);
             button.SetImage(UIImage.FromFile("ConfResources/Images/" + image + ".png"), UIControlState.Normal);
             AddView(button);
+			
+			button.TouchDown += (sender, e) => command.Execute();
 	    }
 
 	    private void AddView(UIView view)
