@@ -11,7 +11,7 @@ namespace Cirrious.Conference.UI.Touch
 	public partial class SeparatorCell : MvxBindableTableViewCell
 	{
 		public static NSString Identifier = new NSString("SeparatorCell");
-        public const string BindingText = "{'SpeakerText':{'Path':'Item.Session.SpeakerKey'},'MainText':{'Path':'Item.Session.Title'},'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'}}";
+        public const string BindingText = "{'MainText':{'Converter':'SimpleDate'}}";
 		
 		public static SeparatorCell LoadFromNib()
 		{
@@ -71,7 +71,6 @@ namespace Cirrious.Conference.UI.Touch
 			get { return TitleLabel.Text; }
 			set { if (TitleLabel != null) TitleLabel.Text = value; }
 		}
-
 	}
 }
 

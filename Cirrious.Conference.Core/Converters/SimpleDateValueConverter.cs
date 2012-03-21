@@ -9,6 +9,9 @@ namespace Cirrious.Conference.Core.Converters
     {
         public override object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            if (!(value is DateTime))
+                return value;
+
             var dateValue = (DateTime) value;
             return dateValue.ToString("ddd h:mm");
         }
