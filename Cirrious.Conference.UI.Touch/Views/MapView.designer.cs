@@ -22,7 +22,7 @@ namespace Cirrious.Conference.UI.Touch
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton Button3 { get; set; }
-		
+				
 		void ReleaseDesignerOutlets ()
 		{
 			if (Label1 != null) {

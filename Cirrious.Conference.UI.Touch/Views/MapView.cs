@@ -10,6 +10,8 @@ using MonoTouch.UIKit;
 using Cirrious.Conference.Core.ViewModels;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Views;
+using MonoTouch.MapKit;
+using MonoTouch.CoreLocation;
 
 namespace Cirrious.Conference.UI.Touch
 {
@@ -118,7 +120,7 @@ namespace Cirrious.Conference.UI.Touch
 	}
 
 	public partial class MapView : MvxBindingTouchViewController<MapViewModel>
-	{
+	{		
 		public MapView (MvxShowViewModelRequest request) : base (request, "MapView", null)
 		{
 		}
@@ -134,7 +136,22 @@ namespace Cirrious.Conference.UI.Touch
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			
+			var map = new MKMapView(new RectangleF(20,166,280,192));
+			this.View.Add(map);
+			map.ShowsUserLocation = true;
+			map.MapType = MKMapType.Standard;
+			map.Delegate = new MapViewDelegate();
+			
+			var location = new CLLocationCoordinate2D(ViewModel.Latitude, ViewModel.Longitude);
+			map.SetCenterCoordinate(location, true);
+			var annotation = new MyAnnotation(
+                                  location
+                                  , ViewModel.SharedTextSource.GetText("AppTitle")
+                                  , ViewModel.Name);
+            map.AddAnnotationObject(annotation); 
+			
+			
             Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.link.png"), UIControlState.Normal);
             Button2.SetImage(UIImage.FromFile("ConfResources/Images/appbar.phone.png"), UIControlState.Normal);
             Button3.SetImage(UIImage.FromFile("ConfResources/Images/appbar.feature.email.rest.png"), UIControlState.Normal);
@@ -174,6 +191,67 @@ namespace Cirrious.Conference.UI.Touch
 			// Return true for supported orientations
 			return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
 		}
+		
+		public class MapViewDelegate : MKMapViewDelegate
+        {
+            public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
+            {
+                Console.WriteLine("attempt to get view for MKAnnotation "+annotation);
+                try
+                {
+                    var anv = mapView.DequeueReusableAnnotation("thislocation");
+                    if (anv == null)
+                    {
+                        Console.WriteLine("creating new MKAnnotationView");
+                        var pinanv = new MKPinAnnotationView(annotation, "thislocation");
+                        pinanv.AnimatesDrop = true;
+                        pinanv.PinColor = MKPinAnnotationColor.Green;
+                        pinanv.CanShowCallout = true;
+                        anv = pinanv;
+                    }
+                    else 
+                    {
+                        anv.Annotation = annotation;
+                    }
+                    return anv;
+                } catch (Exception ex)
+                {
+                    Console.WriteLine("GetViewForAnnotation Exception " + ex);
+                    return null;
+                }
+            }
+        }		
+				
+        public class MyAnnotation : MKAnnotation
+        {
+            private CLLocationCoordinate2D _coordinate;
+            private string _title, _subtitle;
+            public override CLLocationCoordinate2D Coordinate {
+                get {
+                    return _coordinate;
+                }
+				set {_coordinate = value;}
+            }
+            public override string Title {
+                get {
+                    return _title;
+                }
+            }
+            public override string Subtitle {
+                get {
+                    return _subtitle;
+                }
+            }
+            /// <summary>
+            /// custom constructor
+            /// </summary>
+            public MyAnnotation (CLLocationCoordinate2D coord, string t, string s) : base()
+            {
+                _coordinate=coord;
+                 _title=t; 
+                _subtitle=s;
+            }
+        }				
 	}
 }
 
