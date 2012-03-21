@@ -28,6 +28,9 @@ namespace Cirrious.Conference.UI.Touch
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel SubLabel2 { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton favoriteButton { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -59,6 +62,11 @@ namespace Cirrious.Conference.UI.Touch
 			if (SubLabel2 != null) {
 				SubLabel2.Dispose ();
 				SubLabel2 = null;
+			}
+
+			if (favoriteButton != null) {
+				favoriteButton.Dispose ();
+				favoriteButton = null;
 			}
 		}
 	}
