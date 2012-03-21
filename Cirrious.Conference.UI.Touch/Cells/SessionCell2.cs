@@ -90,21 +90,9 @@ namespace Cirrious.Conference.UI.Touch
 			set { if (Label2 != null) Label2.Text = value; }
 		}
 
-	    private bool _isFavorite;
-	    public bool IsFavorite
+	    public UIButton PublicFavoritesButton
 	    {
-            get { return _isFavorite; }
-            set 
-            { 
-                _isFavorite = value;
-                if (FavoritesButton == null)
-                    return;
-
-                if (_isFavorite)
-                    FavoritesButton.SetImage(FavoritesButtonBinding.YesImage, UIControlState.Normal);
-                else
-                    FavoritesButton.SetImage(FavoritesButtonBinding.NoImage, UIControlState.Normal);
-            }	        
+            get { return FavoritesButton; }
 	    }
 	}
 }

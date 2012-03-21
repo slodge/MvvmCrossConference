@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using Cirrious.MvvmCross.Binding.Bindings.Target;
 using Cirrious.MvvmCross.Binding.Interfaces;
 using MonoTouch.UIKit;
@@ -10,6 +11,18 @@ namespace Cirrious.Conference.UI.Touch.Bindings
     {
         public static readonly UIImage YesImage = UIImage.FromFile("ConfResources/star_gold45.png");
         public static readonly UIImage NoImage = UIImage.FromFile("ConfResources/star_grey45.png");
+
+        public static void SetButtonBackground(UIButton button, bool value)
+        {
+            if (value)
+            {
+                button.SetImage(YesImage, UIControlState.Normal);
+            }
+            else
+            {
+                button.SetImage(NoImage, UIControlState.Normal);
+            }
+        }
 
         private readonly UIButton _button;
         private bool _currentValue;
@@ -36,14 +49,7 @@ namespace Cirrious.Conference.UI.Touch.Bindings
 
         private void SetButtonBackground()
         {
-            if (_currentValue)
-            {
-                _button.SetImage(YesImage, UIControlState.Normal);
-            }
-            else
-            {
-                _button.SetImage(NoImage, UIControlState.Normal);
-            }
+            SetButtonBackground(_button, _currentValue);
         }
 
         protected override void Dispose(bool isDisposing)

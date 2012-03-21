@@ -111,6 +111,7 @@
     <None Include="Info.plist" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bindings\FavoritesSessionCellBinding.cs" />
     <Compile Include="ConferencePresenter.cs" />
     <Compile Include="Bindings\FavoritesButtonBinding.cs" />
     <Compile Include="Main.cs" />

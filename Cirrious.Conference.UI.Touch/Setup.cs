@@ -40,6 +40,7 @@ namespace Cirrious.Conference.UI.Touch
             base.FillTargetFactories(registry);
 
             registry.RegisterFactory(new MvxCustomBindingFactory<UIButton>("IsFavorite", (button) => new FavoritesButtonBinding(button)));
+            registry.RegisterFactory(new MvxCustomBindingFactory<SessionCell2>("IsFavorite", (cell) => new FavoritesSessionCellBinding(cell)));            
         }
 
         #endregion
