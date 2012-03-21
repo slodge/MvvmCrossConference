@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net.Mime;
 using Cirrious.MvvmCross.Binding.Touch.ExtensionMethods;
+using Cirrious.MvvmCross.Converters;
+using Cirrious.MvvmCross.Interfaces.Commands;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.Conference.Core.ViewModels;
@@ -10,6 +13,101 @@ using Cirrious.MvvmCross.Views;
 
 namespace Cirrious.Conference.UI.Touch
 {
+	public class AboutView : MvxBindingTouchViewController<AboutViewModel>
+	{
+	    public AboutView(MvxShowViewModelRequest request) : base(request)
+	    {
+	    }
+
+        private UIScrollView _scrollview;
+        private int _currentTop = 10;
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            View.BackgroundColor = UIColor.Black;
+
+            _scrollview = new UIScrollView(this.View.Frame);
+            View.AddSubview(_scrollview);
+
+            AddHeading("SQLBitsXApp");
+            AddTextBlock("AboutSQLBitsXApp");
+            AddCommand(ViewModel.ContactSlodgeCommand, "StuartLinkText", "appbar.feature.email.rest");
+            AddTextBlock("Disclaimer");
+
+            AddHeading("SQLBitsX");
+            AddTextBlock("AboutSQLBitsX");
+            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link.png");
+
+            AddHeading("SQLBits");
+            AddTextBlock("AboutSQLBits");
+            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link.png");
+
+            AddHeading("MvvmCross");
+            AddTextBlock("AboutMvvmCross");
+            AddCommand(ViewModel.ContactSlodgeCommand, "StuartLinkText", "appbar.feature.email.rest");
+            AddTextBlock("ForMvvmSource");
+            AddCommand(ViewModel.MvvmCrossOnGithubCommand, "MvvmCrossLinkText", "appbar.link.rest");
+            AddTextBlock("ForXamarin");
+            AddCommand(ViewModel.MonoTouchCommand, "MonoTouch", "appbar.link.rest");
+            AddCommand(ViewModel.MonoDroidCommand, "MonoForAndroid", "appbar.link.rest");
+                            
+            AddTextBlock("DisclaimerMono");
+
+            _scrollview.ContentSize = new SizeF(320, _currentTop);
+        }
+
+        private string GetText(string which)
+        {
+            return ViewModel.TextSource.GetText(which);
+        }
+
+	    private void AddHeading(string which)
+	    {
+	        var frame = new RectangleF(10, _currentTop, 300, 30);
+	        var view = new UILabel(frame);
+	        view.BackgroundColor = UIColor.Black;
+            view.TextColor = UIColor.White;
+	        view.Text = GetText(which);
+            view.Font = UIFont.FromName("Helvetica", 17);
+            view.AdjustsFontSizeToFitWidth = false;
+            AddView(view);
+        }
+
+	    private void AddTextBlock(string which)
+	    {
+            var frame = new RectangleF(10, _currentTop, 300, 30);
+            var view = new UILabel(frame);
+            view.BackgroundColor = UIColor.Black;
+            view.AutoresizingMask = UIViewAutoresizing.None;
+	        view.AdjustsFontSizeToFitWidth = false;
+            view.TextColor = UIColor.White;
+	        view.Font = UIFont.FromName("Helvetica", 13);
+            view.Text = GetText(which);
+            view.SizeToFit();
+            AddView(view);
+        }
+
+	    private void AddCommand(IMvxCommand command, string whichText, string image)
+	    {
+            var frame = new RectangleF(10, _currentTop, 280, 37);
+	        var button = UIButton.FromType(UIButtonType.Custom);
+	        button.Frame = frame;
+	        button.BackgroundColor = UIColor.Black;
+            button.SetTitleColor(UIColor.White, UIControlState.Normal);
+            button.SetTitle(GetText(whichText), UIControlState.Normal);
+            button.SetImage(UIImage.FromFile("ConfResources/Images/" + image + ".png"), UIControlState.Normal);
+            AddView(button);
+	    }
+
+	    private void AddView(UIView view)
+	    {
+            _scrollview.AddSubview(view);
+            _currentTop += (int)view.Frame.Height;
+	    }
+	}
+
 	public partial class MapView : MvxBindingTouchViewController<MapViewModel>
 	{
 		public MapView (MvxShowViewModelRequest request) : base (request, "MapView", null)
