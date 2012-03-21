@@ -23,11 +23,10 @@ namespace Cirrious.Conference.Core
             InitaliseServices();
             InitialiseStartNavigation();
         }
-
+		
         private void InitaliseServices()
         {
             var repository = new ConferenceService();
-            repository.BeginAsyncLoad();
             this.RegisterServiceInstance<IConferenceService>(repository);
 
             this.RegisterServiceInstance<ITwitterSearchProvider>(new TwitterSearchProvider());

@@ -50,8 +50,9 @@ namespace Cirrious.Conference.UI.Touch
 		{
 			Image1.Image = UIImage.FromFile("ConfResources/Images/appbar.people.png");
 			Image2.Image = UIImage.FromFile("ConfResources/Images/appbar.city.png");
-		}	
-			
+			FavoritesButton.TouchDown += HandleFavoritesButtonTouchDown;
+		}
+					
 		protected override void Dispose (bool disposing)
 		{
 			if (disposing)
@@ -63,7 +64,16 @@ namespace Cirrious.Conference.UI.Touch
 			
 			base.Dispose (disposing);
 		} 
-
+		
+		public event EventHandler PublicFavoritesButtonPressed;
+		
+		void HandleFavoritesButtonTouchDown (object sender, EventArgs e)
+		{
+			var handler = PublicFavoritesButtonPressed;
+			if (handler != null)
+				handler(this, EventArgs.Empty);			
+		}	
+		
 		public override string ReuseIdentifier 
 		{
 			get 

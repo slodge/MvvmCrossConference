@@ -7,7 +7,6 @@ namespace Cirrious.Conference.UI.Touch.Bindings
     public class FavoritesSessionCellBinding
         : MvxBaseTargetBinding
     {
-        private readonly bool _bound = false;
         private readonly SessionCell2 _cell;
         private bool _currentValue;
 
@@ -15,18 +14,23 @@ namespace Cirrious.Conference.UI.Touch.Bindings
         {
             _cell = cell;
 
-            var button = _cell.PublicFavoritesButton;
-            if (button == null)
-                return;
-
-            _bound = true;
-            button.TouchDown += new EventHandler(ButtonTouchDown);
+			_cell.PublicFavoritesButtonPressed += HandlePublicFavoritesButtonPressed;
         }
-
-        void ButtonTouchDown(object sender, EventArgs e)
+	
+		protected override void Dispose (bool isDisposing)
+		{
+			if (isDisposing)
+			{
+				_cell.PublicFavoritesButtonPressed -= HandlePublicFavoritesButtonPressed;
+			}
+			
+			base.Dispose (isDisposing);
+		}
+		
+        void HandlePublicFavoritesButtonPressed (object sender, EventArgs e)
         {
-            _currentValue = !_currentValue;
-            FireValueChanged(_currentValue);
+			_currentValue = !_currentValue;
+			FireValueChanged(_currentValue);        	
         }
 
         public override Type TargetType

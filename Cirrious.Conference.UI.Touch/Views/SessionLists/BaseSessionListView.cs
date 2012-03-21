@@ -25,15 +25,10 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
         {
             base.ViewDidLoad();
 			
-			_activityView = new UIActivityIndicatorView(this.View.Frame);
-			Add(_activityView);
-			View.BringSubviewToFront(_activityView);
-
             var source = new TableSource(TableView);
             this.AddBindings(new Dictionary<object, string>()
 		                         {
 		                             {source, "{'ItemsSource':{'Path':'FlattenedList'}}"},
-									 {_activityView, "{'Hidden':{'Path':'IsSearching','Converter':'InvertedVisibility'}}"},
 		                         });
 			
 			TableView.BackgroundColor = UIColor.Black;
@@ -41,7 +36,23 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
             TableView.Source = source;
 			TableView.ReloadData();
         }
+		
+		/*
+		public override void ViewWillAppear (bool animated)
+		{
+			base.ViewWillAppear (animated);
 
+			View.Superview.AddSubview(_activityView);
+			View.Superview.BringSubviewToFront(_activityView);
+		}
+		public override void ViewDidDisappear (bool animated)
+		{
+			base.ViewDidDisappear (animated);
+			
+			_activityView.RemoveFromSuperview();
+		}
+		*/
+			
         private class TableSource : MvxBindableTableViewSource
         {
             public TableSource(UITableView tableView) : base(tableView)
