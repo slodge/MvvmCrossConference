@@ -1,10 +1,13 @@
 using Cirrious.Conference.Core;
 using Cirrious.Conference.Core.Converters;
+using Cirrious.Conference.UI.Touch.Bindings;
 using Cirrious.MvvmCross.Application;
+using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
 using Cirrious.MvvmCross.Dialog.Touch;
 using Cirrious.MvvmCross.Touch.Interfaces;
 using Cirrious.MvvmCross.Touch.Platform;
 using Cirrious.MvvmCross.Binding.Binders;
+using MonoTouch.UIKit;
 
 namespace Cirrious.Conference.UI.Touch
 {
@@ -30,6 +33,13 @@ namespace Cirrious.Conference.UI.Touch
 
             var filler = new MvxInstanceBasedValueConverterRegistryFiller(registry);
             filler.AddFieldConverters(typeof(Converters));
+        }
+
+        protected override void FillTargetFactories(MvvmCross.Binding.Interfaces.Bindings.Target.Construction.IMvxTargetBindingFactoryRegistry registry)
+        {
+            base.FillTargetFactories(registry);
+
+            registry.RegisterFactory(new MvxCustomBindingFactory<UIButton>("IsFavorite", (button) => new FavoritesButtonBinding(button)));
         }
 
         #endregion

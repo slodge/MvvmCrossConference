@@ -10,7 +10,7 @@ using Cirrious.MvvmCross.Touch.Interfaces;
 
 namespace Cirrious.Conference.UI.Touch 
 {
-	[Register ("AppDelegate")]
+    [Register ("AppDelegate")]
 	public partial class AppDelegate 
 	    : MvxApplicationDelegate 
         , IMvxServiceConsumer<IMvxStartNavigation>

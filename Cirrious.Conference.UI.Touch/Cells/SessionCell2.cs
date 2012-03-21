@@ -1,6 +1,6 @@
 using System;
 using System.Drawing;
-
+using Cirrious.Conference.UI.Touch.Bindings;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.MvvmCross.Binding.Touch.Views;
@@ -15,7 +15,8 @@ namespace Cirrious.Conference.UI.Touch
 {'SpeakerText':{'Path':'Item.Session.SpeakerKey'},
 'MainText':{'Path':'Item.Session.Title'},
 'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'},
-'SelectedCommand':{'Path':'Command'}
+'SelectedCommand':{'Path':'Command'},
+'IsFavorite':{'Path':'Item.IsFavorite'}
 }";
 		
 		public static SessionCell2 LoadFromNib()
@@ -88,6 +89,23 @@ namespace Cirrious.Conference.UI.Touch
 			get { return Label2.Text; }
 			set { if (Label2 != null) Label2.Text = value; }
 		}
+
+	    private bool _isFavorite;
+	    public bool IsFavorite
+	    {
+            get { return _isFavorite; }
+            set 
+            { 
+                _isFavorite = value;
+                if (FavoritesButton == null)
+                    return;
+
+                if (_isFavorite)
+                    FavoritesButton.SetImage(FavoritesButtonBinding.YesImage, UIControlState.Normal);
+                else
+                    FavoritesButton.SetImage(FavoritesButtonBinding.NoImage, UIControlState.Normal);
+            }	        
+	    }
 	}
 }
 

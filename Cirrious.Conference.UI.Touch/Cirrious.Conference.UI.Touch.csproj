@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,6 +10,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Cirrious.Conference.UI.Touch</RootNamespace>
     <AssemblyName>CirriousConferenceUITouch</AssemblyName>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -110,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConferencePresenter.cs" />
+    <Compile Include="Bindings\FavoritesButtonBinding.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Views\EmptyViewController.cs" />
@@ -162,6 +165,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Content Include="ConfResources\star_gold45.png" />
+    <Content Include="ConfResources\star_grey45.png" />
     <Content Include="Images\Icons\29_icon.png" />
     <Content Include="Images\Icons\50_icon.png" />
     <Content Include="Images\Icons\57_icon.png" />
@@ -305,16 +310,16 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>
-    <InterfaceDefinition Include="Views\SessionsView.xib" />
-    <InterfaceDefinition Include="Views\WelcomeView.xib" />
-    <InterfaceDefinition Include="Views\MapView.xib" />
-    <InterfaceDefinition Include="Views\SessionView.xib" />
-    <InterfaceDefinition Include="Cells\SessionCell.xib" />
-    <InterfaceDefinition Include="Cells\TweetCell.xib" />
-    <InterfaceDefinition Include="Cells\TweetCell3alive.xib" />
-    <InterfaceDefinition Include="Cells\TweetCell3dead.xib" />
-    <InterfaceDefinition Include="Cells\TweetCell3.xib" />
-    <InterfaceDefinition Include="Cells\SessionCell2.xib" />
-    <InterfaceDefinition Include="Cells\SeparatorCell.xib" />
+    <Page Include="Views\SessionsView.xib" />
+    <Page Include="Views\WelcomeView.xib" />
+    <Page Include="Views\MapView.xib" />
+    <Page Include="Views\SessionView.xib" />
+    <Page Include="Cells\SessionCell.xib" />
+    <Page Include="Cells\TweetCell.xib" />
+    <Page Include="Cells\TweetCell3alive.xib" />
+    <Page Include="Cells\TweetCell3dead.xib" />
+    <Page Include="Cells\TweetCell3.xib" />
+    <Page Include="Cells\SessionCell2.xib" />
+    <Page Include="Cells\SeparatorCell.xib" />
   </ItemGroup>
 </Project>

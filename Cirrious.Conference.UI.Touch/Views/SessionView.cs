@@ -30,11 +30,11 @@ namespace Cirrious.Conference.UI.Touch
                                      {Label1, "{'Text':{'Path':'Session.Session.Title'}}"},
                                      {TextView1, "{'Text':{'Path':'Session.Session.Description'}}"},
                                      {SubLabel1, "{'Text':{'Path':'Session.Session.SpeakerKey'}}"},
-                                     {
-                                         SubLabel2,
-                                         "{'Text':{'Path':'Session.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'}}"
-                                         }
+                                     {SubLabel2, "{'Text':{'Path':'Session.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'}}"},
+                                     {favoriteButton,"{'IsFavorite':{'Path':'Session.IsFavorite'}}"}
                                  });
+
+
         }
 
 	    public override void ViewDidUnload ()
