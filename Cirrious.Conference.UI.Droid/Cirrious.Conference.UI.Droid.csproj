@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -145,7 +145,9 @@
     <AndroidResource Include="Resources\Layout\pull_down_pull_to_refresh_list.axml" />
     <AndroidResource Include="Resources\Layout\pull_up_pull_to_refresh_list.axml" />
     <AndroidResource Include="Resources\Layout\Page_SessionList.axml" />
-    <AndroidResource Include="Resources\Layout\Page_Session.axml" />
+    <AndroidResource Include="Resources\Layout\Page_Session.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Layout\Page_Sponsors.axml" />
     <AndroidResource Include="Resources\Layout\Page_Map.axml" />
     <AndroidResource Include="Resources\Layout\Page_About.axml" />

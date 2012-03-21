@@ -10,20 +10,20 @@ using Cirrious.MvvmCross.Interfaces.ViewModels;
 
 namespace Cirrious.Conference.Core
 {
-    public class ConferenceApp
+    public abstract class BaseConferenceApp 
         : MvxApplication
         , IMvxServiceProducer<IMvxStartNavigation>
         , IMvxServiceProducer<IMvxTextProvider>
         , IMvxServiceProducer<IConferenceService>
         , IMvxServiceProducer<ITwitterSearchProvider>
     {
-        public ConferenceApp()
+        protected BaseConferenceApp()
         {
             InitialiseText();
             InitaliseServices();
             InitialiseStartNavigation();
         }
-		
+
         private void InitaliseServices()
         {
             var repository = new ConferenceService();
@@ -39,9 +39,25 @@ namespace Cirrious.Conference.Core
             this.RegisterServiceInstance<IMvxTextProvider>(builder.TextProvider);
         }
 
-        private void InitialiseStartNavigation()
+        protected abstract void InitialiseStartNavigation();
+    }
+
+    public class ConferenceApp
+        : BaseConferenceApp
+    {
+        protected override void InitialiseStartNavigation()
         {
-            var startApplicationObject = new StartApplicationObject();
+            var startApplicationObject = new StartApplicationObject(true);
+            this.RegisterServiceInstance<IMvxStartNavigation>(startApplicationObject);
+        }
+    }
+
+    public class NoSplashScreenConferenceApp
+        : BaseConferenceApp
+    {
+        protected override void InitialiseStartNavigation()
+        {
+            var startApplicationObject = new StartApplicationObject(false);
             this.RegisterServiceInstance<IMvxStartNavigation>(startApplicationObject);
         }
     }
