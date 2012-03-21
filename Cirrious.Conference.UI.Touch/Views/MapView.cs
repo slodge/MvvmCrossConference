@@ -144,7 +144,9 @@ namespace Cirrious.Conference.UI.Touch
 			map.Delegate = new MapViewDelegate();
 			
 			var location = new CLLocationCoordinate2D(ViewModel.Latitude, ViewModel.Longitude);
-			map.SetCenterCoordinate(location, true);
+			//map.SetCenterCoordinate(location, true);
+			map.SetRegion(new MKCoordinateRegion(location, new MKCoordinateSpan(0.5,0.5)), true); 			
+				
 			var annotation = new MyAnnotation(
                                   location
                                   , ViewModel.SharedTextSource.GetText("AppTitle")
