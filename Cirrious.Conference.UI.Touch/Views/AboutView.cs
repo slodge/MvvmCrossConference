@@ -22,7 +22,9 @@ namespace Cirrious.Conference.UI.Touch
             base.ViewDidLoad();
 
             View.BackgroundColor = UIColor.Black;
-
+			
+			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
+			
             _scrollview = new UIScrollView(new RectangleF(0,0,320,365));
             View.AddSubview(_scrollview);
 			

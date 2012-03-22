@@ -10,8 +10,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Cirrious.Conference.Core</RootNamespace>
     <AssemblyName>Cirrious.Conference.Core.Touch</AssemblyName>
-    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,12 +84,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.MvvmCross.Binding.Touch">
-      <HintPath>..\Libs\Touch\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Dialog.Touch">
-      <HintPath>..\Libs\Touch\Cirrious.MvvmCross.Dialog.Touch.dll</HintPath>
-    </Reference>
     <Reference Include="monotouch">
       <HintPath>..\..\..\Library\Hacked\monotouch.dll</HintPath>
     </Reference>

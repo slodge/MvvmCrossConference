@@ -23,6 +23,8 @@ namespace Cirrious.Conference.UI.Touch.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
 			
 			//this.View.BackgroundColor = UIColor.Black;
 			

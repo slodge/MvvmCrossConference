@@ -24,6 +24,8 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+		
+			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
 			
             var source = new TableSource(TableView);
             this.AddBindings(new Dictionary<object, string>()
