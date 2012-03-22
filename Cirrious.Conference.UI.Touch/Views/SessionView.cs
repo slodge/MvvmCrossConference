@@ -22,6 +22,7 @@ namespace Cirrious.Conference.UI.Touch
             base.ViewDidLoad();
 
             TextView1.Editable = false;
+			TextView1.Text = "Conference";
             ImageView1.Image = UIImage.FromFile("ConfResources/Images/appbar.people.png");
             ImageView2.Image = UIImage.FromFile("ConfResources/Images/appbar.city.png");
 
