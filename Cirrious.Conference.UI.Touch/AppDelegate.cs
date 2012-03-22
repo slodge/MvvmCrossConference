@@ -1,3 +1,4 @@
+using Cirrious.Conference.UI.Touch.Interfaces;
 using Cirrious.Conference.UI.Touch.Views;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;

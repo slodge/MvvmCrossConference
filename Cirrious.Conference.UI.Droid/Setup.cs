@@ -24,7 +24,7 @@ namespace Cirrious.Conference.UI.Droid
 
         protected override MvxApplication CreateApp()
         {
-            return new ConferenceApp();
+            return new NoSplashScreenConferenceApp();
         }
 
         protected override IEnumerable<Type> ValueConverterHolders

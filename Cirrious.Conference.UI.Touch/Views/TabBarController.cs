@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cirrious.Conference.Core.ViewModels;
 using Cirrious.Conference.Core.ViewModels.HomeViewModels;
 using Cirrious.Conference.Core.ViewModels.SessionLists;
+using Cirrious.Conference.UI.Touch.Interfaces;
 using Cirrious.MvvmCross.Interfaces.ViewModels;
 using Cirrious.MvvmCross.Touch.ExtensionMethods;
 using Cirrious.MvvmCross.Touch.Interfaces;
@@ -111,14 +112,4 @@ namespace Cirrious.Conference.UI.Touch.Views
             return true;
 	    }
 	}
-
-    public interface ITabBarPresenterHost
-    {
-        ITabBarPresenter TabBarPresenter { get; set; }
-    }
-
-    public interface ITabBarPresenter
-    {
-        bool ShowView(IMvxTouchView view);
-    }
 }

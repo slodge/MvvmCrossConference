@@ -9,8 +9,9 @@ using MonoTouch.UIKit;
 
 namespace Cirrious.Conference.UI.Touch.Views
 {
-    public class BaseSponsorsView
-        : MvxBindingTouchTableViewController<BaseSponsorsViewModel>
+    public class BaseSponsorsView<TViewModel>
+        : MvxBindingTouchTableViewController<TViewModel>
+        where TViewModel : BaseSponsorsViewModel
     {		
 		private UIActivityIndicatorView _activityView;
 

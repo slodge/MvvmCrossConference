@@ -31,12 +31,4 @@ namespace Cirrious.Conference.UI.Touch.Views
             this.ViewControllers = new UIViewController[] { ViewControllers[0], controller };
         }
 	}
-
- 	public class SplitViewDelegate : UISplitViewControllerDelegate
-    {
-        public override bool ShouldHideViewController (UISplitViewController svc, UIViewController viewController, UIInterfaceOrientation inOrientation)
-        {
-            return false;
-        }
-	}
 }
