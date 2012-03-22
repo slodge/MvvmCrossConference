@@ -56,6 +56,9 @@ namespace Cirrious.Conference.Core.Models
         {
             lock (this)
             {
+				if (_favoriteSessions == null)
+					return new Dictionary<string, SessionWithFavoriteFlag>();
+				
                 var toReturn = new Dictionary<string, SessionWithFavoriteFlag>(_favoriteSessions);
                 return toReturn;
             }
