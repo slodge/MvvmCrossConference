@@ -26,15 +26,20 @@ namespace Cirrious.Conference.Core.ApplicationObjects
         public void Start()
         {
             var confService = this.GetService<IConferenceService>();
-            confService.BeginAsyncLoad();
             if (_showSplashScreen)
             {
+                confService.BeginAsyncLoad();
                 RequestNavigate<SplashScreenViewModel>();
             }
             else
             {
                 var m = new ManualResetEvent(false);
-                confService.LoadingChanged += (s, e) => m.Set();
+                confService.LoadingChanged += (s, e) => 
+					{
+						if (!confService.IsLoading)
+							m.Set();
+					};
+				confService.BeginAsyncLoad();
                 m.WaitOne();
                 RequestNavigate<HomeViewModel>();
             }
