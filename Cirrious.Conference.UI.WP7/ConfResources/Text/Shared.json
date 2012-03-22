@@ -10,7 +10,7 @@
 "TimeAgo.DaysAgo":"{0}d ago",
 "TimeAgo.Never":"never",
 "ReleaseToRefresh":"Release",
-"Error.NoNetwork":"Sorry - no network available",
+"Error.NoNetwork":"Sorry - no network for tweets right now",
 "Error.Twitter":"Sorry - whale fail",
 "HoldToRefresh":"Hold to refresh"
 }
