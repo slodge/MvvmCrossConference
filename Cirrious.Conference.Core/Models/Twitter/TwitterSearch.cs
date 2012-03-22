@@ -22,7 +22,7 @@ namespace Cirrious.Conference.Core.Models.Twitter
             search.StartSearch();
         }
 
-        private const string TwitterUrl = "http://search.twitter.com/search.atom?rpp=100&&q=";
+        private const string TwitterUrl = "http://search.twitter.com/search.atom?rpp=50&&q=";
 
         private readonly string _searchText;
         private readonly Action<IEnumerable<Tweet>> _success;

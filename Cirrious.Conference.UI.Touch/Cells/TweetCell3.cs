@@ -29,6 +29,7 @@ namespace Cirrious.Conference.UI.Touch
 			var cell = new TweetCell3("{}");
 			var views = NSBundle.MainBundle.LoadNib("TweetCell3", cell, null);
 			var cell2 = Runtime.GetNSObject( views.ValueAt(0) ) as TweetCell3;
+			cell2.Initialise();
 			return cell2;
 		}
 		
@@ -45,6 +46,12 @@ namespace Cirrious.Conference.UI.Touch
 		public TweetCell3 (string bindingText)
 			: base(bindingText, MonoTouch.UIKit.UITableViewCellStyle.Default, Identifier)
 		{
+		}
+		
+		private void Initialise()
+		{
+			AuthorLabel.Lines = 1;
+			AuthorLabel.AdjustsFontSizeToFitWidth = false;
 		}
 		
 		protected override void Dispose (bool disposing)

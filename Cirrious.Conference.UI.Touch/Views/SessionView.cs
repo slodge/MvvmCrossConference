@@ -35,6 +35,7 @@ namespace Cirrious.Conference.UI.Touch
                                      {favoriteButton,"{'IsFavorite':{'Path':'Session.IsFavorite'}}"}
                                  });
 
+			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareCommand.Execute()), false);			
 
         }
 

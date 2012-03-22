@@ -9,7 +9,7 @@ using MonoTouch.UIKit;
 namespace Cirrious.Conference.UI.Touch.Views
 {
     public class TwitterView
-        : MvxBindingTouchTableViewController<TwitterViewModel>
+        : MvxBindingTouchViewController<TwitterViewModel>
     {		
         private UIActivityIndicatorView _activityView;
         
@@ -17,8 +17,10 @@ namespace Cirrious.Conference.UI.Touch.Views
             : base(request)
         {
         }
-
-        public override void ViewDidLoad()
+		
+		FoldingTableViewController _tableView;
+		
+		public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             
@@ -28,8 +30,9 @@ namespace Cirrious.Conference.UI.Touch.Views
             //Add(_activityView);
             //View.BringSubviewToFront(_activityView);
             
+			_tableView = new FoldingTableViewController(new System.Drawing.RectangleF(0,0,320,367), UITableViewStyle.Plain);			
             var source = new MvxActionBasedBindableTableViewSource(
-                                TableView, 
+                                _tableView.TableView, 
                                 UITableViewCellStyle.Default,
                                 TweetCell.Identifier, 
                                 TweetCell.CellBindingText,
@@ -47,11 +50,17 @@ namespace Cirrious.Conference.UI.Touch.Views
                                  {
                                      {source, "{'ItemsSource':{'Path':'TweetsPlus'}}"},
                                      {_activityView, "{'Hidden':{'Path':'IsSearching','Converter':'InvertedVisibility'}}"},
-                                     //{TableView, "{'Hidden':{'Path':'IsSearching','Converter':'Visibility'}}"},
+                                     {_tableView, "{'Refreshing':{'Path':'IsSearching'},'RefreshHeadCommand':{'Path':'RefreshCommand'},'LastUpdatedText':{'Path':'WhenLastUpdatedUtc','ValueConverter':'TimeAgo'}"},
                                  });
-            TableView.RowHeight = 100;
-            TableView.Source = source;
-            TableView.ReloadData();
+			
+            _tableView.TableView.RowHeight = 100;
+            _tableView.TableView.Source = source;
+            _tableView.TableView.ReloadData();
+			this.Add(_tableView.View);
+			
+			
+			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
+
         }
     }
 }

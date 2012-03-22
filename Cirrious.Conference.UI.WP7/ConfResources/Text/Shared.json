@@ -8,6 +8,7 @@
 "TimeAgo.MinutesAgo":"{0}m ago",
 "TimeAgo.HoursAgo":"{0}h ago",
 "TimeAgo.DaysAgo":"{0}d ago",
+"TimeAgo.Never":"never",
 "ReleaseToRefresh":"Release",
 "HoldToRefresh":"Hold to refresh"
 }

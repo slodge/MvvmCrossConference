@@ -1,8 +1,10 @@
+using Cirrious.MvvmCross.Commands;
 using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Interfaces.Localization;
 using Cirrious.MvvmCross.Interfaces.Platform.Tasks;
 using Cirrious.MvvmCross.Interfaces.ServiceProvider;
 using Cirrious.MvvmCross.ViewModels;
+using Cirrious.MvvmCross.Interfaces.Commands;
 
 namespace Cirrious.Conference.Core.ViewModels
 {
@@ -11,6 +13,7 @@ namespace Cirrious.Conference.Core.ViewModels
         , IMvxServiceConsumer<IMvxPhoneCallTask>
         , IMvxServiceConsumer<IMvxWebBrowserTask>
         , IMvxServiceConsumer<IMvxComposeEmailTask>
+		, IMvxServiceConsumer<IMvxShareTask>
     {
         public BaseViewModel()
         {
@@ -55,5 +58,17 @@ namespace Cirrious.Conference.Core.ViewModels
             var task = this.GetService<IMvxComposeEmailTask>();
             task.ComposeEmail(to, null, subject, body, false);
         }
-    }
+	
+		public IMvxCommand ShareGeneralCommand
+		{
+			get { return new MvxRelayCommand(ShareGeneral); }
+		}
+		
+		private void ShareGeneral()
+		{
+            var service = this.GetService<IMvxShareTask>();
+            var toShare = string.Format("#SQLBitsX");
+            service.ShareShort(toShare);
+		}		
+	}
 }

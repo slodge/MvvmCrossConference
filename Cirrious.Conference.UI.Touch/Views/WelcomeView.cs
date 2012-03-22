@@ -45,6 +45,8 @@ namespace Cirrious.Conference.UI.Touch
 					{ Button3, "{'TouchDown':{'Path':'ShowMapCommand'}}" },				
 					{ Button4, "{'TouchDown':{'Path':'ShowAboutCommand'}}" },				
 				});
+			
+			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
 		}
 		
 		public override void ViewDidUnload ()

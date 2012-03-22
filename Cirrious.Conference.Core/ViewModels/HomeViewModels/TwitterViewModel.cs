@@ -15,7 +15,7 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
     public class TwitterViewModel
         : BaseViewModel
         , IMvxServiceConsumer<ITwitterSearchProvider>
-		, IMvxServiceConsumer<IMvxShareTask>
+		, IMvxServiceConsumer<IMvxReachability>
     {
         private const string SearchTerm = "SQLBits";
 
@@ -52,12 +52,45 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
                 return new MvxRelayCommand(StartSearch);
             }
         }
-
+		
+		public IMvxCommand RefreshCommand
+		{
+			get
+			{
+                return new MvxRelayCommand(StartSearch);
+			}
+		}
+		
+		private DateTime _whenLastUpdatedUtc = DateTime.MinValue;
+		public DateTime WhenLastUpdatedUtc
+		{
+			get
+			{
+				return _whenLastUpdatedUtc;
+			}
+			set
+			{
+				_whenLastUpdatedUtc = value;
+				FirePropertyChanged("WhenLastUpdatedUtc");
+			}
+		}
+		
         private void StartSearch()
         {
             if (IsSearching)
                 return;
-
+			
+			IMvxReachability reach;
+			if (this.TryGetService<IMvxReachability>(out reach))
+			{
+				if (!reach.IsHostReachable("www.twitter.com"))
+				{
+#warning to do				
+					//NetworkUnavailable = true; 
+					return;
+				}
+			}
+			
             IsSearching = true;
             TwitterSearchProvider.StartAsyncSearch(SearchTerm, Success, Error);
         }

@@ -51,6 +51,8 @@ namespace Cirrious.Conference.UI.Touch
 			Image1.Image = UIImage.FromFile("ConfResources/Images/appbar.people.png");
 			Image2.Image = UIImage.FromFile("ConfResources/Images/appbar.city.png");
 			FavoritesButton.TouchDown += HandleFavoritesButtonTouchDown;
+			TitleLabel.Lines = 2;
+			TitleLabel.AdjustsFontSizeToFitWidth = false;
 		}
 					
 		protected override void Dispose (bool disposing)
