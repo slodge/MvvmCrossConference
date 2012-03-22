@@ -30,21 +30,21 @@ namespace Cirrious.Conference.UI.Touch
             Button4.SetImage(UIImage.FromFile("ConfResources/Images/appbar.questionmark.rest.png"), UIControlState.Normal);
 
             this.AddBindings(new Dictionary<object, string>()
-			    {
-					{ MainLabel, "{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBits'}}" },				
-					{ Button1, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Sponsors'}}" },				
-					{ Button2, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Exhibitors'}}" },				
-					{ Button3, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Map'}}" },				
-					{ Button4, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'About'}}" },				
-				});
+                {
+                    { MainLabel, "{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBits'}}" },				
+                    { Button1, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Sponsors'}}" },				
+                    { Button2, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Exhibitors'}}" },				
+                    { Button3, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Map'}}" },				
+                    { Button4, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'About'}}" },				
+                });
 
             this.AddBindings(new Dictionary<object, string>()
-			    {
-					{ Button1, "{'TouchDown':{'Path':'ShowSponsorsCommand'}}" },				
-					{ Button2, "{'TouchDown':{'Path':'ShowExhibitorsCommand'}}" },				
-					{ Button3, "{'TouchDown':{'Path':'ShowMapCommand'}}" },				
-					{ Button4, "{'TouchDown':{'Path':'ShowAboutCommand'}}" },				
-				});
+                {
+                    { Button1, "{'TouchDown':{'Path':'ShowSponsorsCommand'}}" },				
+                    { Button2, "{'TouchDown':{'Path':'ShowExhibitorsCommand'}}" },				
+                    { Button3, "{'TouchDown':{'Path':'ShowMapCommand'}}" },				
+                    { Button4, "{'TouchDown':{'Path':'ShowAboutCommand'}}" },				
+                });
 
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);
         }
