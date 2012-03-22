@@ -1,3 +1,4 @@
+using Cirrious.Conference.Core.Interfaces;
 using Cirrious.MvvmCross.Commands;
 using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Interfaces.Localization;
@@ -14,6 +15,7 @@ namespace Cirrious.Conference.Core.ViewModels
         , IMvxServiceConsumer<IMvxWebBrowserTask>
         , IMvxServiceConsumer<IMvxComposeEmailTask>
 		, IMvxServiceConsumer<IMvxShareTask>
+        , IMvxServiceConsumer<IErrorReporter>
     {
         public BaseViewModel()
         {
@@ -39,6 +41,11 @@ namespace Cirrious.Conference.Core.ViewModels
         public IMvxLanguageBinder SharedTextSource
         {
             get { return CreateLanguageBinder(Constants.GeneralNamespace, Constants.Shared); }
+        }
+
+        protected void ReportError(string text)
+        {
+            this.GetService<IErrorReporter>().ReportError(text);
         }
 
         protected void MakePhoneCall(string name, string number)

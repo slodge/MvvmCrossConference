@@ -16,12 +16,22 @@ namespace Cirrious.Conference.Core
         , IMvxServiceProducer<IMvxTextProvider>
         , IMvxServiceProducer<IConferenceService>
         , IMvxServiceProducer<ITwitterSearchProvider>
+        , IMvxServiceProducer<IErrorReporter>
+        , IMvxServiceProducer<IErrorSource>
     {
         protected BaseConferenceApp()
         {
             InitialiseText();
             InitaliseServices();
+            InitaliseErrorSystem();
             InitialiseStartNavigation();
+        }
+
+        private void InitaliseErrorSystem()
+        {
+            var errorHub = new ErrorApplicationObject();
+            this.RegisterServiceInstance<IErrorReporter>(errorHub);
+            this.RegisterServiceInstance<IErrorSource>(errorHub);
         }
 
         private void InitaliseServices()

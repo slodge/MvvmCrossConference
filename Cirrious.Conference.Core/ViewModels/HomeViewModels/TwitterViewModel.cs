@@ -6,6 +6,7 @@ using Cirrious.Conference.Core.Models.Twitter;
 using Cirrious.MvvmCross.Commands;
 using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Interfaces.Commands;
+using Cirrious.MvvmCross.Interfaces.Platform;
 using Cirrious.MvvmCross.Interfaces.ServiceProvider;
 using Cirrious.Conference.Core.ViewModels.Helpers;
 using Cirrious.MvvmCross.Interfaces.Platform.Tasks;
@@ -85,8 +86,7 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
 			{
 				if (!reach.IsHostReachable("www.twitter.com"))
 				{
-#warning to do				
-					//NetworkUnavailable = true; 
+				    ReportError(SharedTextSource.GetText("Error.NoNetwork"));
 					return;
 				}
 			}
@@ -102,7 +102,7 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
 
         private void Error(Exception exception)
         {
-            // TODO...
+            ReportError(TextSource.GetText("Error.Twitter") + ": " + exception.Message);
             IsSearching = false;
         }
 
