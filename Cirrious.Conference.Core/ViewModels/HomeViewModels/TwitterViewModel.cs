@@ -116,6 +116,7 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
             IsSearching = false;
             Tweets = enumerable.ToList();
 			TweetsPlus = Tweets.Select(x => new WithCommand<Tweet>(x, new MvxRelayCommand(() => ShowTweet(x)))).ToList();
+			WhenLastUpdatedUtc = DateTime.UtcNow;
         }
 			                           
 		private void ShowTweet(Tweet tweet)

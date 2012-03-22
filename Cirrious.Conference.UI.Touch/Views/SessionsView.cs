@@ -31,6 +31,8 @@ namespace Cirrious.Conference.UI.Touch
 		{
 			base.ViewDidLoad ();
 			
+			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
+			
 			// Perform any additional setup after loading the view, typically from a nib.
 			Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.calendar.png"), UIControlState.Normal);
 			Button2.SetImage(UIImage.FromFile("ConfResources/Images/appbar.calendar.png"), UIControlState.Normal);
