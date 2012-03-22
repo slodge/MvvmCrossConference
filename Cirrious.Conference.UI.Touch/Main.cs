@@ -1,12 +1,12 @@
 using MonoTouch.UIKit;
 
-namespace Cirrious.Conference.UI.Touch 
+namespace Cirrious.Conference.UI.Touch
 {
-    public class Application 
+    public class Application
     {
-        static void Main (string[] args)
+        static void Main(string[] args)
         {
-            UIApplication.Main (args, null, "AppDelegate");
+            UIApplication.Main(args, null, "AppDelegate");
         }
     }
 }

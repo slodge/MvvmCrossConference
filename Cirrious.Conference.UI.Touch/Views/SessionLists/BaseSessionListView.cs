@@ -14,8 +14,8 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
         : MvxBindingTouchTableViewController<TViewModel>
         where TViewModel : BaseSessionListViewModel<TKey>
     {
-		private UIActivityIndicatorView _activityView;
-		
+        private UIActivityIndicatorView _activityView;
+
         public BaseSessionListView(MvxShowViewModelRequest request)
             : base(request)
         {
@@ -24,40 +24,25 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-		
-			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
-			
+
+            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);
+
             var source = new TableSource(TableView);
             this.AddBindings(new Dictionary<object, string>()
 		                         {
 		                             {source, "{'ItemsSource':{'Path':'FlattenedList'}}"},
 		                         });
-			
-			TableView.BackgroundColor = UIColor.Black;
-			TableView.RowHeight = 126;
-            TableView.Source = source;
-			TableView.ReloadData();
-        }
-		
-		/*
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
 
-			View.Superview.AddSubview(_activityView);
-			View.Superview.BringSubviewToFront(_activityView);
-		}
-		public override void ViewDidDisappear (bool animated)
-		{
-			base.ViewDidDisappear (animated);
-			
-			_activityView.RemoveFromSuperview();
-		}
-		*/
-			
+            TableView.BackgroundColor = UIColor.Black;
+            TableView.RowHeight = 126;
+            TableView.Source = source;
+            TableView.ReloadData();
+        }
+
         private class TableSource : MvxBindableTableViewSource
         {
-            public TableSource(UITableView tableView) : base(tableView)
+            public TableSource(UITableView tableView)
+                : base(tableView)
             {
             }
 

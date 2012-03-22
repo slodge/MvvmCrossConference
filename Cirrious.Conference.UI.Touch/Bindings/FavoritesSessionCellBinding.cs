@@ -14,28 +14,28 @@ namespace Cirrious.Conference.UI.Touch.Bindings
         {
             _cell = cell;
 
-			_cell.PublicFavoritesButtonPressed += HandlePublicFavoritesButtonPressed;
+            _cell.PublicFavoritesButtonPressed += HandlePublicFavoritesButtonPressed;
         }
-	
-		protected override void Dispose (bool isDisposing)
-		{
-			if (isDisposing)
-			{
-				_cell.PublicFavoritesButtonPressed -= HandlePublicFavoritesButtonPressed;
-			}
-			
-			base.Dispose (isDisposing);
-		}
-		
-        void HandlePublicFavoritesButtonPressed (object sender, EventArgs e)
+
+        protected override void Dispose(bool isDisposing)
         {
-			_currentValue = !_currentValue;
-			FireValueChanged(_currentValue);        	
+            if (isDisposing)
+            {
+                _cell.PublicFavoritesButtonPressed -= HandlePublicFavoritesButtonPressed;
+            }
+
+            base.Dispose(isDisposing);
+        }
+
+        void HandlePublicFavoritesButtonPressed(object sender, EventArgs e)
+        {
+            _currentValue = !_currentValue;
+            FireValueChanged(_currentValue);
         }
 
         public override Type TargetType
         {
-            get { return typeof (bool); }
+            get { return typeof(bool); }
         }
 
         public override MvxBindingMode DefaultMode

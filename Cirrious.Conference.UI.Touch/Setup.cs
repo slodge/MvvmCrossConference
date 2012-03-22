@@ -11,8 +11,8 @@ using MonoTouch.UIKit;
 
 namespace Cirrious.Conference.UI.Touch
 {
-   public class Setup
-        : MvxTouchDialogBindingSetup
+    public class Setup
+         : MvxTouchDialogBindingSetup
     {
         public Setup(MvxApplicationDelegate applicationDelegate, IMvxTouchViewPresenter presenter)
             : base(applicationDelegate, presenter)
@@ -20,7 +20,7 @@ namespace Cirrious.Conference.UI.Touch
         }
 
         #region Overrides of MvxBaseSetup
-				
+
         protected override MvxApplication CreateApp()
         {
             var app = new NoSplashScreenConferenceApp();
@@ -35,7 +35,7 @@ namespace Cirrious.Conference.UI.Touch
             base.InitializeLastChance();
         }
 
-		protected override void FillValueConverters(Cirrious.MvvmCross.Binding.Interfaces.Binders.IMvxValueConverterRegistry registry)
+        protected override void FillValueConverters(Cirrious.MvvmCross.Binding.Interfaces.Binders.IMvxValueConverterRegistry registry)
         {
             base.FillValueConverters(registry);
 
@@ -48,7 +48,7 @@ namespace Cirrious.Conference.UI.Touch
             base.FillTargetFactories(registry);
 
             registry.RegisterFactory(new MvxCustomBindingFactory<UIButton>("IsFavorite", (button) => new FavoritesButtonBinding(button)));
-            registry.RegisterFactory(new MvxCustomBindingFactory<SessionCell2>("IsFavorite", (cell) => new FavoritesSessionCellBinding(cell)));            
+            registry.RegisterFactory(new MvxCustomBindingFactory<SessionCell2>("IsFavorite", (cell) => new FavoritesSessionCellBinding(cell)));
         }
 
         #endregion

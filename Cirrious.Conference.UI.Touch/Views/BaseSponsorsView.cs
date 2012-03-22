@@ -12,8 +12,8 @@ namespace Cirrious.Conference.UI.Touch.Views
     public class BaseSponsorsView<TViewModel>
         : MvxBindingTouchTableViewController<TViewModel>
         where TViewModel : BaseSponsorsViewModel
-    {		
-		private UIActivityIndicatorView _activityView;
+    {
+        private UIActivityIndicatorView _activityView;
 
         public BaseSponsorsView(MvxShowViewModelRequest request)
             : base(request)
@@ -24,33 +24,33 @@ namespace Cirrious.Conference.UI.Touch.Views
         {
             base.ViewDidLoad();
 
-			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
-			
-			//this.View.BackgroundColor = UIColor.Black;
-			
-			//_activityView = new UIActivityIndicatorView(this.View.Frame);
-			//Add(_activityView);
-			//View.BringSubviewToFront(_activityView);
-			
+            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);
+
+            //this.View.BackgroundColor = UIColor.Black;
+
+            //_activityView = new UIActivityIndicatorView(this.View.Frame);
+            //Add(_activityView);
+            //View.BringSubviewToFront(_activityView);
+
             var source = new MvxActionBasedBindableTableViewSource(
-                                TableView, 
+                                TableView,
                                 UITableViewCellStyle.Default,
                                 SponsorCell.Identifier,
                                 SponsorCell.BindingText,
-								UITableViewCellAccessory.None);
-			
-			source.CellCreator = (tableView, indexPath, item) => 
-			    {
-					return SponsorCell.LoadFromNib();
-				};
+                                UITableViewCellAccessory.None);
+
+            source.CellCreator = (tableView, indexPath, item) =>
+                {
+                    return SponsorCell.LoadFromNib();
+                };
             this.AddBindings(new Dictionary<object, string>()
 		                         {
 		                             {source, "{'ItemsSource':{'Path':'Sponsors'}}"},
 		                         });
-			TableView.RowHeight = 90;
+            TableView.RowHeight = 90;
             TableView.Source = source;
-			TableView.BackgroundColor = UIColor.White;
-			TableView.ReloadData();
+            TableView.BackgroundColor = UIColor.White;
+            TableView.ReloadData();
         }
     }
 }

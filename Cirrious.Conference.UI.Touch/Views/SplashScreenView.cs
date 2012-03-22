@@ -11,11 +11,11 @@ namespace Cirrious.Conference.UI.Touch.Views
             : base(request)
         {
         }
-		
-        public override void ViewDidLoad ()
+
+        public override void ViewDidLoad()
         {
-            base.ViewDidLoad ();
-#warning TODO!			
+            base.ViewDidLoad();
+#warning TODO!
             ViewModel.SplashScreenComplete = true;
         }
     }
