@@ -12,7 +12,14 @@ namespace Cirrious.Conference.UI.Touch
 			: MvxBindableTableViewCell
 	{
 		public static NSString Identifier = new NSString("TweetCell3");
-        public const string BindingText = @"{'HttpImageUrl':{'Path':'ProfileImageUrl'},'Author':{'Path':'Author'},'Content':{'Path':'Title'},'When':{'Path':'Timestamp','Converter':'TimeAgo'}}";
+        public const string BindingText = @"
+{
+'SelectedCommand':{'Path':'Command'},
+'HttpImageUrl':{'Path':'Item.ProfileImageUrl'},
+'Author':{'Path':'Item.Author'},
+'Content':{'Path':'Item.Title'},
+'When':{'Path':'Item.Timestamp','Converter':'TimeAgo'}
+}";
 		
 		public static TweetCell3 LoadFromNib()
 		{

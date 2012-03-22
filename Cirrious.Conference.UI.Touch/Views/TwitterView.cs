@@ -45,7 +45,7 @@ namespace Cirrious.Conference.UI.Touch.Views
                 };
             this.AddBindings(new Dictionary<object, string>()
                                  {
-                                     {source, "{'ItemsSource':{'Path':'Tweets'}}"},
+                                     {source, "{'ItemsSource':{'Path':'TweetsPlus'}}"},
                                      {_activityView, "{'Hidden':{'Path':'IsSearching','Converter':'InvertedVisibility'}}"},
                                      //{TableView, "{'Hidden':{'Path':'IsSearching','Converter':'Visibility'}}"},
                                  });

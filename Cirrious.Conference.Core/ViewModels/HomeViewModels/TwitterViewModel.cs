@@ -7,12 +7,15 @@ using Cirrious.MvvmCross.Commands;
 using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Interfaces.Commands;
 using Cirrious.MvvmCross.Interfaces.ServiceProvider;
+using Cirrious.Conference.Core.ViewModels.Helpers;
+using Cirrious.MvvmCross.Interfaces.Platform.Tasks;
 
 namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
 {
     public class TwitterViewModel
         : BaseViewModel
         , IMvxServiceConsumer<ITwitterSearchProvider>
+		, IMvxServiceConsumer<IMvxShareTask>
     {
         private const string SearchTerm = "SQLBits";
 
@@ -28,6 +31,13 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
             set { _tweets = value; FirePropertyChanged("Tweets"); }
         }
 
+        private IEnumerable<WithCommand<Tweet>> _tweetsPlus;
+        public IEnumerable<WithCommand<Tweet>> TweetsPlus
+        {
+            get { return _tweetsPlus; }
+            set { _tweetsPlus = value; FirePropertyChanged("TweetsPlus"); }
+        }
+		
         private bool _isSearching;
         public bool IsSearching
         {
@@ -72,6 +82,22 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
         {
             IsSearching = false;
             Tweets = enumerable.ToList();
+			TweetsPlus = Tweets.Select(x => new WithCommand<Tweet>(x, new MvxRelayCommand(() => ShowTweet(x)))).ToList();
         }
+			                           
+		private void ShowTweet(Tweet tweet)
+		{
+			var share = this.GetService<IMvxShareTask>();
+			var guessTwitterNameEnds = tweet.Author.IndexOf(' ');
+			if (guessTwitterNameEnds > 0)
+			{
+				var guessTwitterName = tweet.Author.Substring(0, guessTwitterNameEnds);
+				share.ShareShort("@" + guessTwitterName + " #sqlbitsX ");				
+			}
+			else 
+			{
+				share.ShareShort("@" + tweet.Author + " #sqlbitsX ");				
+			}
+		}
     }
 }
