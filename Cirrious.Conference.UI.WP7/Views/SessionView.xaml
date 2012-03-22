@@ -14,7 +14,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
     shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
     xmlns:Controls="clr-namespace:Cirrious.Conference.UI.WP7.Controls">
 
@@ -37,7 +37,7 @@
         <ScrollViewer
             Grid.Row="1" Margin="12,0,12,0"
             >
-            <StackPanel>
+            <StackPanel Margin="0,0,0,64">
                 <TextBlock Text="{Binding Session.Session,Converter={StaticResource SessionSmallDetails},ConverterParameter=TypeAndLevelFormat, FallbackValue=Level}" TextWrapping="Wrap"  />
                 <TextBlock Margin="0,0,0,24" Text="{Binding Session.Session,Converter={StaticResource SessionSmallDetails},ConverterParameter=WhenAndWhereFormat, FallbackValue=WhenAndWhere}" TextWrapping="Wrap" />
                 <TextBlock Text="{Binding Session.Session.Title,FallbackValue=Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Margin="0" />
@@ -49,7 +49,7 @@
  
     <!-- TODO: replace this with a bindable application bar - e.g use Phone7 -->
     <Views:BaseSessionView.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.7">
             <shell:ApplicationBarIconButton IconUri="/ConfResources/Images/appbar.twitter.bird.png" Text="InCode" Click="ApplicationBarTwitterButtonClick" />
         </shell:ApplicationBar>
     </Views:BaseSessionView.ApplicationBar>

@@ -20,10 +20,12 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <controls:Panorama Title="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Title,FallbackValue=ConferenceApp}">
+        <controls:Panorama Title="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Title,FallbackValue=ConferenceApp}"
+                     SelectionChanged="PanoramaSelectionChanged"
+                           >
 
             <controls:PanoramaItem 
-                Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Welcome,FallbackValue=Welcome}"
+                Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Welcome,FallbackValue=Welcome}"               
                 >
                 <ScrollViewer 
                     DataContext="{Binding Welcome}">
@@ -136,10 +138,15 @@
             </controls:PanoramaItem>
             
             <controls:PanoramaItem 
-                Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Tweets,FallbackValue=Tweets}">
+                Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Tweets,FallbackValue=Tweets}"
+                Tag="AppBar">                
                 <Grid
                     DataContext="{Binding Twitter}"
                     >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="64"></RowDefinition>
+                    </Grid.RowDefinitions>
 
                 <toolkit:PerformanceProgressBar
                     IsIndeterminate="True"
@@ -148,9 +155,10 @@
                     Visibility="{Binding IsSearching,Converter={StaticResource Visibility}}"
                     />
                     <Controls:ExtendedListBox
-                        ItemsSource="{Binding Tweets}"
+                        ItemsSource="{Binding TweetsPlus}"
                         LoadHead="{Binding SearchCommand}" 
-                        ItemTemplate="{StaticResource TwitterItemTemplate}">
+                        ItemTemplate="{StaticResource TwitterItemTemplate}"
+                        >
                     </Controls:ExtendedListBox>
                 </Grid>
             </controls:PanoramaItem>
@@ -158,5 +166,10 @@
     </Grid>
 
     <!--Panorama-based applications should not show an ApplicationBar-->
+    <Views:BaseHomeView.ApplicationBar>
+        <shell:ApplicationBar IsVisible="False" IsMenuEnabled="True" Opacity="0.7">
+            <shell:ApplicationBarIconButton IconUri="/ConfResources/Images/appbar.twitter.bird.png" Text="InCode" Click="ApplicationBarTwitterButtonClick" />
+        </shell:ApplicationBar>
+    </Views:BaseHomeView.ApplicationBar>    
 
 </Views:BaseHomeView>

@@ -41,6 +41,7 @@ namespace Cirrious.Conference.UI.WP7.Views
 
         private void SetupMap()
         {
+            Map.CredentialsProvider = new ApplicationIdCredentialsProvider(Private.BingKey);
             Map.ZoomLevel = 14;
             var hotelLocation = new GeoCoordinate(ViewModel.Latitude, ViewModel.Longitude);
             Map.Center = hotelLocation;

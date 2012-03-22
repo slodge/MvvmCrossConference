@@ -39,12 +39,7 @@ namespace Cirrious.Conference.UI.WP7.Views
         // TODO - this is horrid - we should really use a bindable app bar here! 
         private void UpdateApplicationBar()
         {
-            var converter = new MvxLanguageBinderConverter();
-            var text = converter.Convert(ViewModel.TextSource, 
-                              typeof (string), 
-                              "Share",
-                              System.Globalization.CultureInfo.CurrentUICulture);
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = (string)text;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = ViewModel.SharedTextSource.GetText("Share");
         }
 
         private void ApplicationBarTwitterButtonClick(object sender, EventArgs e)

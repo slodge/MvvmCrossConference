@@ -14,7 +14,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
     shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
     xmlns:Controls="clr-namespace:Cirrious.Conference.UI.WP7.Controls">
 
@@ -65,6 +65,7 @@
             <my:Map 
                 Grid.Row="1"                
                 x:Name="Map"
+                
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch" />
         </Grid>

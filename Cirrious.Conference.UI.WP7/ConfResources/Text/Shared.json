@@ -12,5 +12,6 @@
 "ReleaseToRefresh":"Release",
 "Error.NoNetwork":"Sorry - no network for tweets right now",
 "Error.Twitter":"Sorry - whale fail",
-"HoldToRefresh":"Hold to refresh"
+"HoldToRefresh":"Hold to refresh",
+"Share":"Share"
 }

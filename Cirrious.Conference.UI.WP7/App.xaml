@@ -136,13 +136,11 @@
                 toolkit:TiltEffect.IsTiltEnabled="True"
                 Width="400"
                 >
-                <!--
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Tap">
-                        <commandbinding:MvxEventToCommand Command="{Binding Path=ShowDetailCommand}" />
+                        <Commands:MvxEventToCommand Command="{Binding Path=Command}" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
-                -->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -155,33 +153,31 @@
                 <Image
                                         Grid.Row="0"
                                         Grid.Column="0"
-                                        Source="{Binding ProfileImageUrl}"
-                                        Margin="0,12,0,0"
+                                        Grid.RowSpan="3"
+                                        Source="{Binding Item.ProfileImageUrl}"
                                         Width="55"
                                         Height="55"
+                                        VerticalAlignment="Top"
                                         HorizontalAlignment="Left"/>
                 <TextBlock
-                                        Grid.Row="2"
+                                        Grid.Row="1"
                                         Grid.Column="1"
                                         Foreground="{StaticResource PhoneSubtleBrush}"
-                                        Margin="0,12,0,0"
                                         TextAlignment="Right"
                                         Style="{StaticResource PhoneTextSmallStyle}"
-                                        Text="{Binding Timestamp,Converter={StaticResource TimeAgo}}" />
+                                        Text="{Binding Item.Timestamp,Converter={StaticResource TimeAgo}}" />
                 <TextBlock
                                         Grid.Row="0"
                                         Grid.Column="1"
                                         Foreground="White"
                                         Style="{StaticResource PhoneTextLargeStyle}"
-                                        Margin="0,0,0,0"
-                                        Text="{Binding Author}" />
+                                        Text="{Binding Item.Author}" />
                 <TextBlock
-                                        Grid.Row="1"
+                                        Grid.Row="2"
                                         Grid.Column="1"
                                         Foreground="LightGray"
                                         TextWrapping="Wrap"
-                                        Margin="0,-24,0,0"
-                                        Text="{Binding Title}" />
+                                        Text="{Binding Item.Title}" />
             </Grid>
         </DataTemplate>
         
