@@ -42,7 +42,7 @@ namespace Cirrious.Conference.UI.Touch
 		
 		private void Initialise()
 		{
-			ContentView.BackgroundColor = UIColor.LightGray;
+			ContentView.BackgroundColor = UIColor.White;
 			//this.BackgroundView = new UIView(Frame){ BackgroundColor = UIColor.LightGray };
 		}	
 			
@@ -75,7 +75,7 @@ namespace Cirrious.Conference.UI.Touch
                 if (_imagePath == value)
                     return;
 			    _imagePath = value;
-                if (TitleLabel != null) TitleLabel.Text = value;
+                if (TheImage != null) TheImage.Image = UIImage.FromFile("ConfResources/SponsorImages/" + _imagePath);
 			}
 		}
 	}

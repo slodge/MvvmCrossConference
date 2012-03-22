@@ -35,6 +35,7 @@ namespace Cirrious.Conference.UI.Touch.Views
         private UIViewController CreateTabFor(string title, string imageName, IMvxViewModel viewModel)
         {
             var controller = new UINavigationController();
+			controller.NavigationBar.BackgroundColor = UIColor.Black;
             var screen = this.CreateViewControllerFor(viewModel) as UIViewController;
             SetTitleAndTabBarItem(screen, title, imageName);
             controller.PushViewController(screen, false);

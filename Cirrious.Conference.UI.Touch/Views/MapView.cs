@@ -40,7 +40,7 @@ namespace Cirrious.Conference.UI.Touch
 			
 			var location = new CLLocationCoordinate2D(ViewModel.Latitude, ViewModel.Longitude);
 			//map.SetCenterCoordinate(location, true);
-			map.SetRegion(new MKCoordinateRegion(location, new MKCoordinateSpan(0.5,0.5)), true); 			
+			map.SetRegion(new MKCoordinateRegion(location, new MKCoordinateSpan(0.1,0.1)), true); 			
 				
 			var annotation = new MyAnnotation(
                                   location

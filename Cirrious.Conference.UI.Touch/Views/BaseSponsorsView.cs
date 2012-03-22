@@ -37,10 +37,6 @@ namespace Cirrious.Conference.UI.Touch.Views
                                 SponsorCell.BindingText,
 								UITableViewCellAccessory.None);
 			
-			source.CellModifier = (cell) =>
-				{
-					cell.Image.DefaultImagePath = "Images/Icons/50_icon.png";
-				};
 			source.CellCreator = (tableView, indexPath, item) => 
 			    {
 					return SponsorCell.LoadFromNib();
@@ -51,6 +47,7 @@ namespace Cirrious.Conference.UI.Touch.Views
 		                         });
 			TableView.RowHeight = 90;
             TableView.Source = source;
+			TableView.BackgroundColor = UIColor.White;
 			TableView.ReloadData();
         }
     }

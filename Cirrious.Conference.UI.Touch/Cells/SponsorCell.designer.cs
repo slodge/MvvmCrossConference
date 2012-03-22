@@ -12,13 +12,13 @@ namespace Cirrious.Conference.UI.Touch
 	partial class SponsorCell
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel TitleLabel { get; set; }
+		MonoTouch.UIKit.UIImageView TheImage { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (TitleLabel != null) {
-				TitleLabel.Dispose ();
-				TitleLabel = null;
+			if (TheImage != null) {
+				TheImage.Dispose ();
+				TheImage = null;
 			}
 		}
 	}
