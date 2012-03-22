@@ -101,6 +101,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ErrorEventArgs.cs" />
+    <Compile Include="ApplicationObjects\ErrorApplicationObject.cs" />
+    <Compile Include="Interfaces\IErrorReporter.cs" />
+    <Compile Include="Interfaces\IErrorSource.cs" />
     <Compile Include="ApplicationObjects\StartApplicationObject.cs" />
     <Compile Include="ApplicationObjects\TextProviderBuilder.cs" />
     <Compile Include="ConferenceApp.cs" />
@@ -156,7 +160,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" />
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>

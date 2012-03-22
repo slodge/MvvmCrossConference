@@ -27,6 +27,14 @@ namespace Cirrious.Conference.UI.Touch
             return app;
         }
 
+        protected override void InitializeLastChance()
+        {
+            // create an error displayer - it will sort its own event subscriptions out
+            var errorDisplayer = new ErrorDisplayer();
+
+            base.InitializeLastChance();
+        }
+
 		protected override void FillValueConverters(Cirrious.MvvmCross.Binding.Interfaces.Binders.IMvxValueConverterRegistry registry)
         {
             base.FillValueConverters(registry);

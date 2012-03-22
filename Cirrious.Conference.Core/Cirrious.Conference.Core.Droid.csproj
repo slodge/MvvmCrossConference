@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationObjects\ErrorApplicationObject.cs" />
     <Compile Include="ApplicationObjects\StartApplicationObject.cs" />
     <Compile Include="ApplicationObjects\TextProviderBuilder.cs" />
     <Compile Include="ConferenceApp.cs" />
@@ -61,7 +62,10 @@
     <Compile Include="Converters\SimpleDateValueConverter.cs" />
     <Compile Include="Converters\SponsorImageValueConverter.cs" />
     <Compile Include="Converters\TimeAgoConverter.cs" />
+    <Compile Include="Interfaces\ErrorEventArgs.cs" />
     <Compile Include="Interfaces\IConferenceService.cs" />
+    <Compile Include="Interfaces\IErrorReporter.cs" />
+    <Compile Include="Interfaces\IErrorSource.cs" />
     <Compile Include="Interfaces\IObservableCollection.cs" />
     <Compile Include="Interfaces\ITwitterSearchProvider.cs" />
     <Compile Include="Models\ConferenceService.cs" />
