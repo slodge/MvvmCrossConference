@@ -33,14 +33,7 @@ namespace Cirrious.Conference.Core.ApplicationObjects
             }
             else
             {
-                var m = new ManualResetEvent(false);
-                confService.LoadingChanged += (s, e) => 
-					{
-						if (!confService.IsLoading)
-							m.Set();
-					};
-				confService.BeginAsyncLoad();
-                m.WaitOne();
+                confService.DoSyncLoad();
                 RequestNavigate<HomeViewModel>();
             }
         }

@@ -9,6 +9,7 @@ namespace Cirrious.Conference.Core.Interfaces
     public interface IConferenceService
     {
 		void BeginAsyncLoad();
+		void DoSyncLoad();
 		
         bool IsLoading { get; }
         event EventHandler LoadingChanged;

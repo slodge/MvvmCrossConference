@@ -78,6 +78,12 @@ namespace Cirrious.Conference.Core.Models
             IsLoading = true;
             MvxAsyncDispatcher.BeginAsync(Load);
         }
+		
+		public void DoSyncLoad()
+        {
+            IsLoading = true;
+            Load();
+        }
 
         private void Load()
         {
@@ -86,8 +92,8 @@ namespace Cirrious.Conference.Core.Models
             LoadSponsors();
 
             IsLoading = false;
-        }
-
+        }		
+		
         private void LoadSponsors()
         {
             var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Sponsors.txt");
