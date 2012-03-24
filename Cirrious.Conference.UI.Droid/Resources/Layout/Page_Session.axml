@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.sqlbits"
   android:layout_width="fill_parent"
-  android:layout_height="wrap_content"
+  android:layout_height="fill_parent"
   android:background="@color/transparent">
     <TextView
       android:id="@+id/TitleTextView"
@@ -11,8 +11,7 @@
       android:layout_height="wrap_content"
       android:textColor="@color/white"
       android:textSize="20dip"
-      android:paddingTop="4dip"
-      android:paddingLeft="10dip"
+      android:padding="12dp"
       android:gravity="left"
       android:layout_alignParentLeft="true"
       android:layout_toLeftOf="@+id/FavoriteButton"
@@ -24,6 +23,7 @@
       android:id="@+id/FavoriteButton"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:padding="12dp"
       android:gravity="right"
       android:layout_alignParentRight="true"
       android:minWidth="40dip"
@@ -37,19 +37,19 @@
     android:layout_height="wrap_content"
     android:background="@color/transparent"
     android:layout_below="@id/TitleTextView"
-    android:paddingTop="3dip"
-    android:paddingLeft="10dip">
+    android:padding="12dp"
+    >
     <ImageView
           android:id="@+id/PersonImage"
           android:src="@drawable/appbar_people"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:minWidth="15dip"
+          android:layout_width="15dp"
+          android:layout_height="15dp"
         />
     <TextView
           android:id="@+id/PeopleTextView"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:paddingLeft="10dp"
           android:textSize="14dip"
           android:textColor="@color/icongrey"
           local:MvxBind="{'Text':{'Path':'Session.Session.SpeakerKey'}}"
@@ -62,19 +62,19 @@
     android:layout_height="wrap_content"
     android:background="@color/transparent"
     android:layout_below="@id/PeoplePanel"
-    android:paddingTop="3dip"
-    android:paddingLeft="10dip">
+    android:padding="12dp"
+    >
     <ImageView
           android:id="@+id/PersonImage"
           android:src="@drawable/appbar_city"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:minWidth="15dip"
+          android:layout_width="15dp"
+          android:layout_height="15dp"
         />
     <TextView
           android:id="@+id/RoomTextView"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:paddingLeft="10dp"
           android:textSize="14dip"
           android:textColor="@color/icongrey"
           local:MvxBind="{'Text':{'Path':'Session.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'}}"
@@ -85,8 +85,8 @@
     android:layout_height="wrap_content"
     android:background="@color/transparent"
     android:layout_below="@id/RoomPanel"
-    android:paddingTop="3dip"
-    android:paddingLeft="10dip">
+    android:padding="12dp"
+    >
 
     <TextView
           android:layout_width="fill_parent"
@@ -97,6 +97,15 @@
         />
 
   </ScrollView>
-</RelativeLayout>
 
+  <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/tweetShare"
+    local:MvxBind="{'Click':{'Path':'ShareCommand'}}"
+    />
+
+</RelativeLayout>
   

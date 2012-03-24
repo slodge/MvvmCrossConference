@@ -38,23 +38,26 @@ namespace Cirrious.Conference.UI.Droid
 			// aapt resource value: 0x7f040001
 			public const int black = 2130968577;
 			
-			// aapt resource value: 0x7f040003
-			public const int grey = 2130968579;
-			
-			// aapt resource value: 0x7f040005
-			public const int icongrey = 2130968581;
-			
-			// aapt resource value: 0x7f040002
-			public const int lightgrey = 2130968578;
+			// aapt resource value: 0x7f040004
+			public const int grey = 2130968580;
 			
 			// aapt resource value: 0x7f040006
-			public const int listseparator = 2130968582;
+			public const int icongrey = 2130968582;
+			
+			// aapt resource value: 0x7f040003
+			public const int lightgrey = 2130968579;
+			
+			// aapt resource value: 0x7f040007
+			public const int listseparator = 2130968583;
+			
+			// aapt resource value: 0x7f040002
+			public const int mainText = 2130968578;
 			
 			// aapt resource value: 0x7f040000
 			public const int transparent = 2130968576;
 			
-			// aapt resource value: 0x7f040004
-			public const int white = 2130968580;
+			// aapt resource value: 0x7f040005
+			public const int white = 2130968581;
 			
 			private Color()
 			{
@@ -116,31 +119,40 @@ namespace Cirrious.Conference.UI.Droid
 			public const int Icon = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int pull_to_refresh_header_background = 2130837521;
+			public const int list_selector = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int star_gold45 = 2130837522;
+			public const int pull_to_refresh_header_background = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int star_gold_selector = 2130837523;
+			public const int SQLBitsLogo = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int star_grey45 = 2130837524;
+			public const int star_gold45 = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int star_grey_selector = 2130837525;
+			public const int star_gold_selector = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int Tab_Favorites = 2130837526;
+			public const int star_grey45 = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int Tab_Sessions = 2130837527;
+			public const int star_grey_selector = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int Tab_Tweets = 2130837528;
+			public const int Tab_Favorites = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int Tab_Welcome = 2130837529;
+			public const int Tab_Sessions = 2130837529;
+			
+			// aapt resource value: 0x7f02001a
+			public const int Tab_Tweets = 2130837530;
+			
+			// aapt resource value: 0x7f02001b
+			public const int Tab_Welcome = 2130837531;
+			
+			// aapt resource value: 0x7f02001c
+			public const int tweetShare = 2130837532;
 			
 			private Drawable()
 			{
@@ -243,55 +255,52 @@ namespace Cirrious.Conference.UI.Droid
 			public const int ChildPage_Welcome = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ListItem_SeparatorSessionDateTime = 2130903043;
+			public const int ListItem_SeparatorToString = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int ListItem_SeparatorToString = 2130903044;
+			public const int ListItem_Session = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int ListItem_Session = 2130903045;
+			public const int ListItem_SessionTimeSlot = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int ListItem_SessionTimeSlot = 2130903046;
+			public const int ListItem_Sponsor = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int ListItem_Sponsor = 2130903047;
+			public const int ListItem_Tweet = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int ListItem_Tweet = 2130903048;
+			public const int Page_About = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int Page_About = 2130903049;
+			public const int Page_Home = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int Page_Home = 2130903050;
+			public const int Page_Map = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int Page_Map = 2130903051;
+			public const int Page_Session = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int Page_Session = 2130903052;
+			public const int Page_SessionList = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int Page_SessionList = 2130903053;
+			public const int Page_SplashScreen = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int Page_SplashScreen = 2130903054;
+			public const int Page_Sponsors = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int Page_Sponsors = 2130903055;
+			public const int pull_down_pull_to_refresh_list = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int pull_down_pull_to_refresh_list = 2130903056;
+			public const int pull_to_refresh_bindable_list = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int pull_to_refresh_bindable_list = 2130903057;
+			public const int pull_up_pull_to_refresh_list = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int pull_up_pull_to_refresh_list = 2130903058;
-			
-			// aapt resource value: 0x7f030013
-			public const int SplashScreen = 2130903059;
+			public const int SplashScreen = 2130903058;
 			
 			private Layout()
 			{
@@ -308,6 +317,23 @@ namespace Cirrious.Conference.UI.Droid
 			public const int Hello = 2131099648;
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f070002
+			public const int AboutPageBodyText = 2131165186;
+			
+			// aapt resource value: 0x7f070001
+			public const int AboutPageTitle = 2131165185;
+			
+			// aapt resource value: 0x7f070000
+			public const int IconButton = 2131165184;
+			
+			private Style()
 			{
 			}
 		}

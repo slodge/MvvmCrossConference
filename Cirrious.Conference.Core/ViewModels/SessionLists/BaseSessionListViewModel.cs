@@ -26,32 +26,7 @@ namespace Cirrious.Conference.Core.ViewModels.SessionLists
         public List<SessionGroup> GroupedList
         {
             get { return _groupedList; }
-            protected set { _groupedList = value; FirePropertyChanged("GroupedList"); RecreateFlattenedList(); }
-        }
-
-        private void RecreateFlattenedList()
-        {
-            if (_groupedList == null)
-            {
-                FlattenedList = null;
-                return;
-            }
-
-            var flattened = new List<object>();
-            foreach (var group in _groupedList)
-            {
-                flattened.Add(group.Key);
-                flattened.AddRange(group.Select(x => (object)x));
-            }
-
-            FlattenedList = flattened;
-        }
-
-        private List<object> _flattenedList;
-        public List<object> FlattenedList
-        {
-            get { return _flattenedList; }
-            private set { _flattenedList = value; FirePropertyChanged("FlattenedList"); }
+            protected set { _groupedList = value; FirePropertyChanged("GroupedList"); }
         }
 
         protected void NavigateToSession(Session session)

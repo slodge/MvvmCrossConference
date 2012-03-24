@@ -4,6 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    local:MvxBind="{'Click':{'Path':'Command'}}"
     android:background="@color/transparent">
 
   <cirrious.mvvmcross.binding.android.views.MvxHttpImageView
@@ -12,7 +13,7 @@
     android:layout_height="48dp"
     android:padding="4dp"
     android:src="@drawable/icon"
-    local:MvxBind="{'HttpImageUrl':{'Path':'ProfileImageUrl'}}"
+    local:MvxBind="{'HttpImageUrl':{'Path':'Item.ProfileImageUrl'}}"
     />
 
   <LinearLayout
@@ -26,7 +27,7 @@
       android:layout_height="wrap_content"
       android:textSize="24dip"
       android:textColor="@color/white"
-      local:MvxBind="{'Text':{'Path':'Author'}}"
+      local:MvxBind="{'Text':{'Path':'Item.Author'}}"
         />
     <TextView
      android:id="@+id/TimeTextView"
@@ -34,25 +35,15 @@
      android:layout_height="wrap_content"
      android:textSize="10dip"
      android:textColor="@color/icongrey"
-      local:MvxBind="{'Text':{'Path':'Timestamp','Converter':'TimeAgo'}}"
+      local:MvxBind="{'Text':{'Path':'Item.Timestamp','Converter':'TimeAgo'}}"
        />
-    <!--
-    <TextView
-       android:id="@+id/HandleTextView"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:textSize="10dip"
-       android:textColor="@color/icongrey"
-       local:MvxBind="{'Text':{'Path':'Username'}}"
-        />
-    -->
     <TextView
       android:id="@+id/ContentTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:textSize="14dip"
       android:textColor="@color/white"
-      local:MvxBind="{'Text':{'Path':'Title'}}"
+      local:MvxBind="{'Text':{'Path':'Item.Title'}}"
         />
   </LinearLayout>
 </LinearLayout>

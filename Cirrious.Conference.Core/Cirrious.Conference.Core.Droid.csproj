@@ -38,7 +38,7 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.MvvmCross.Android">
+    <Reference Include="Cirrious.MvvmCross.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Libs\Droid\Cirrious.MvvmCross.Android.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />

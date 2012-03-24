@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView 
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.sqlbits"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+  <ScrollView 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
@@ -9,36 +14,31 @@
   <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:padding="12dp"
     android:orientation="vertical">
 
     <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:gravity="left"
-      android:text="todo..."
+      android:text="hello"
+      style="@style/AboutPageBodyText"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBits'}}"
       />
     <Button
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_people"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Sponsors'},'Click':{'Path':'ShowSponsorsCommand'}}"
       />
     <Button
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_city"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Exhibitors'},'Click':{'Path':'ShowExhibitorsCommand'}}"
       />
     <Button
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_bus"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Map'},'Click':{'Path':'ShowMapCommand'}}"
       />
     <Button
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_questionmark"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'About'},'Click':{'Path':'ShowAboutCommand'}}"
       />
@@ -46,4 +46,13 @@
 
 </ScrollView>
 
+  <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/tweetShare" 
+    local:MvxBind="{'Click':{'Path':'ShareGeneralCommand'}}"
+    />
 
+</RelativeLayout>

@@ -17,6 +17,7 @@ namespace Cirrious.Conference.UI.Droid
         protected override void OnCreate(Android.OS.Bundle bundle)
         {
             base.OnCreate(bundle);
+            this.SetBackground();
         }
 
         protected override MvxBaseAndroidSetup CreateSetup()

@@ -12,8 +12,10 @@ namespace Cirrious.Conference.Core.Converters
             if (!(value is DateTime))
                 return value;
 
+            var format = parameter ?? "ddd h:mm";
+
             var dateValue = (DateTime) value;
-            return dateValue.ToString("ddd h:mm");
+            return dateValue.ToString((string)format);
         }
     }
 }

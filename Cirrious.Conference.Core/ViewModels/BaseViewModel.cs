@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using Cirrious.Conference.Core.Interfaces;
 using Cirrious.MvvmCross.Commands;
 using Cirrious.MvvmCross.ExtensionMethods;
@@ -73,9 +75,25 @@ namespace Cirrious.Conference.Core.ViewModels
 		
 		private void ShareGeneral()
 		{
-            var service = this.GetService<IMvxShareTask>();
             var toShare = string.Format("#SQLBitsX");
-            service.ShareShort(toShare);
-		}		
-	}
+		    ExceptionSafeShare(toShare);
+		}
+
+        protected void ExceptionSafeShare(string toShare)
+        {
+            try
+            {
+                var service = this.GetService<IMvxShareTask>();
+                service.ShareShort(toShare);
+            }
+            catch (ThreadAbortException)
+            {
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Trace.Error("Exception masked in tweet " + exception.ToLongString());
+            }
+        }
+    }
 }

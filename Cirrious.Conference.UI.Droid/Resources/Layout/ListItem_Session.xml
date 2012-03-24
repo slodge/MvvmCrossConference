@@ -4,6 +4,7 @@
   xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.sqlbits"
   android:layout_width="fill_parent"
   android:layout_height="wrap_content"
+  android:padding="6dp"
   android:background="@color/transparent">
     <TextView
       android:id="@+id/TitleTextView"
@@ -42,14 +43,14 @@
     <ImageView
           android:id="@+id/PersonImage"
           android:src="@drawable/appbar_people"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:minWidth="15dip"
+          android:layout_width="15dp"
+          android:layout_height="15dp"
         />
     <TextView
           android:id="@+id/PeopleTextView"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:paddingLeft="10dp"
           android:textSize="14dip"
           android:textColor="@color/icongrey"
           local:MvxBind="{'Text':{'Path':'Item.Session.SpeakerKey'}}"
@@ -67,12 +68,12 @@
     <ImageView
           android:id="@+id/PersonImage"
           android:src="@drawable/appbar_city"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:minWidth="15dip"
+          android:layout_width="15dp"
+          android:layout_height="15dp"
         />
     <TextView
           android:id="@+id/RoomTextView"
+          android:paddingLeft="10dp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:textSize="14dip"

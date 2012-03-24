@@ -15,9 +15,7 @@ namespace Cirrious.Conference.UI.Droid.Views
 
             base.OnCreate(bundle);
 
-            var drawable = Resources.GetDrawable(Resource.Drawable.background);
-            drawable.SetDither(true);
-            Window.SetBackgroundDrawable(drawable);
+            this.SetBackground();
         }
     }
 }

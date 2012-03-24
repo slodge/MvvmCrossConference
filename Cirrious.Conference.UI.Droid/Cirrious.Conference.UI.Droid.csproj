@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <DeployExternal>false</DeployExternal>
+    <DeployExternal>False</DeployExternal>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,9 +35,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
+ 
   <ItemGroup>
     <Reference Include="Cirrious.MvvmCross.Android">
       <HintPath>..\Libs\Droid\Cirrious.MvvmCross.Android.dll</HintPath>
@@ -59,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Bindings\FavoritesButtonBinding.cs" />
     <Compile Include="Controls\BindingPullToRefreshListView.cs" />
+    <Compile Include="Controls\GroupedList.cs" />
     <Compile Include="Controls\PullToRefresh\ActionBasedRefreshListener.cs" />
     <Compile Include="Controls\PullToRefresh\IOnPullingAction.cs" />
     <Compile Include="Controls\PullToRefresh\IOnReleaseReady.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashScreenActivity.cs" />
+    <Compile Include="Views\AboutView.cs" />
     <Compile Include="Views\BaseMapView.cs" />
     <Compile Include="Views\BaseTabbedView.cs" />
     <Compile Include="Views\BaseView.cs" />
@@ -96,6 +100,7 @@
     <Compile Include="Views\Sponsors\BaseSponsorsView.cs" />
     <Compile Include="Views\Sponsors\ExhibitionView.cs" />
     <Compile Include="Views\Sponsors\SponsorsView.cs" />
+    <Compile Include="ViewHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\AboutViewModel.json">
@@ -278,6 +283,9 @@
     <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\XIOsm.png">
       <Link>Assets\ConfResources\SponsorImages\XIOsm.png</Link>
     </AndroidAsset>
+    <AndroidResource Include="..\Cirrious.Conference.UI.WP7\ConfResources\SQLBitsLogo.png">
+      <Link>Resources\Drawable\SQLBitsLogo.png</Link>
+    </AndroidResource>
     <Content Include="Controls\PullToRefresh\License.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Drawable\pull_to_refresh_header_background.xml" />
@@ -287,12 +295,15 @@
     <AndroidResource Include="Resources\Layout\ListItem_Session.xml" />
     <AndroidResource Include="Resources\Layout\ListItem_SessionTimeSlot.xml" />
     <AndroidResource Include="Resources\Layout\ListItem_SeparatorToString.xml" />
-    <AndroidResource Include="Resources\Layout\ListItem_SeparatorSessionDateTime.xml" />
     <AndroidResource Include="Resources\Drawable\star_gold_selector.xml" />
     <AndroidResource Include="Resources\Drawable\star_grey_selector.xml" />
     <AndroidResource Include="Resources\Drawable\star_gold45.png" />
     <AndroidResource Include="Resources\Drawable\star_grey45.png" />
     <AndroidResource Include="Resources\Layout\ListItem_Sponsor.xml" />
+    <AndroidResource Include="Resources\Values\Styles.xml" />
+    <AndroidResource Include="Resources\Drawable\tweetShare.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\background.png" />
+    <AndroidResource Include="Resources\Drawable\list_selector.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

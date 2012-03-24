@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using Cirrious.Conference.Core.Interfaces;
 using Cirrious.Conference.Core.Models.Twitter;
 using Cirrious.MvvmCross.Commands;
@@ -121,17 +122,16 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
 			                           
 		private void ShowTweet(Tweet tweet)
 		{
-			var share = this.GetService<IMvxShareTask>();
-			var guessTwitterNameEnds = tweet.Author.IndexOf(' ');
-			if (guessTwitterNameEnds > 0)
-			{
-				var guessTwitterName = tweet.Author.Substring(0, guessTwitterNameEnds);
-				share.ShareShort("@" + guessTwitterName + " #sqlbitsX ");				
-			}
-			else 
-			{
-				share.ShareShort("@" + tweet.Author + " #sqlbitsX ");				
-			}
+            var guessTwitterNameEnds = tweet.Author.IndexOf(' ');
+            if (guessTwitterNameEnds > 0)
+            {
+                var guessTwitterName = tweet.Author.Substring(0, guessTwitterNameEnds);
+                ExceptionSafeShare("@" + guessTwitterName + " #sqlbitsX ");
+            }
+            else
+            {
+                ExceptionSafeShare("@" + tweet.Author + " #sqlbitsX ");
+            }
 		}
     }
 }
