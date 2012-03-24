@@ -41,10 +41,10 @@
 					<object class="IBUILabel" id="1057468948">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 20}, {250, 57}}</string>
+						<string key="NSFrame">{{63, 20}, {250, 57}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="127179077"/>
+						<reference key="NSNextKeyView" ref="819523127"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -185,10 +185,10 @@
 					<object class="IBUIButton" id="127179077">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{270, 30}, {35, 35}}</string>
+						<string key="NSFrame">{{20, 30}, {35, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="819523127"/>
+						<reference key="NSNextKeyView" ref="1057468948"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -216,7 +216,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="1057468948"/>
+				<reference key="NSNextKeyView" ref="127179077"/>
 				<reference key="IBUIBackgroundColor" ref="817922680"/>
 				<int key="IBUIContentMode">5</int>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>

@@ -115,10 +115,20 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
                 if (_sessionGroups == null)
                     return base.SectionIndexTitles(tableView);
 
-                return _sessionGroups.Select(x => KeyToString(x.Key)).ToArray();
+                return _sessionGroups.Select(x => KeyToString(x.Key, 8)).ToArray();
             }
 
-            private string KeyToString(TKey key)
+            private string KeyToString(TKey key, int maxLength)
+            {
+				var candidate = KeyToString(key);
+				if (candidate.Length > maxLength)
+				{
+					candidate = candidate.Substring(0,maxLength);
+				}
+				return candidate;
+            }
+			
+			private string KeyToString(TKey key)
             {
                 if (_keyConverter == null)
                     return key.ToString();
