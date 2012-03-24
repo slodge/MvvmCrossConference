@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using Cirrious.Conference.Core.Converters;
 using Cirrious.Conference.Core.Models;
 using Cirrious.Conference.Core.ViewModels.Helpers;
 using Cirrious.Conference.Core.ViewModels.SessionLists;
 using Cirrious.MvvmCross.Binding.Touch.ExtensionMethods;
 using Cirrious.MvvmCross.Binding.Touch.Views;
+using Cirrious.MvvmCross.Interfaces.Converters;
 using Cirrious.MvvmCross.Views;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
@@ -29,7 +33,10 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
 
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);
 
-            var source = new TableSource(TableView);
+            var converter = typeof (TKey) == typeof (DateTime)
+                                ? new SimpleDateValueConverter()
+                                : null;
+            var source = new TableSource(converter, TableView);
             this.AddBindings(new Dictionary<object, string>()
 		                         {
 		                             {source, "{'ItemsSource':{'Path':'GroupedList'}}"},
@@ -43,9 +50,11 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
 
         private class TableSource : MvxBaseBindableTableViewSource
         {
-            public TableSource(UITableView tableView)
+            private readonly IMvxValueConverter _keyConverter;
+            public TableSource(IMvxValueConverter keyConverter, UITableView tableView)
                 : base(tableView)
             {
+                _keyConverter = keyConverter;
             }
 
             private IList<BaseSessionListViewModel<TKey>.SessionGroup> _sessionGroups;
@@ -67,7 +76,7 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
 		       if (_sessionGroups == null)
                     return string.Empty;
 
-                return _sessionGroups[section].Key.ToString();
+               return KeyToString(_sessionGroups[section].Key);
          	}
 
             public override float GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
@@ -99,6 +108,22 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
 
                 var cell = SessionCell2.LoadFromNib();
                 return cell;
+            }
+
+            public override string[] SectionIndexTitles(UITableView tableView)
+            {
+                if (_sessionGroups == null)
+                    return base.SectionIndexTitles(tableView);
+
+                return _sessionGroups.Select(x => KeyToString(x.Key)).ToArray();
+            }
+
+            private string KeyToString(TKey key)
+            {
+                if (_keyConverter == null)
+                    return key.ToString();
+
+                return (string) _keyConverter.Convert(key, typeof (string), null, CultureInfo.CurrentUICulture);
             }
 
             protected override object GetItemAt(NSIndexPath indexPath)
