@@ -49,7 +49,7 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
             }
 
             private IList<BaseSessionListViewModel<TKey>.SessionGroup> _sessionGroups;
-            public IList<BaseSessionListViewModel<TKey>.SessionGroup> SessionGroups
+            public IList<BaseSessionListViewModel<TKey>.SessionGroup> ItemsSource
             {
                 get
                 {
@@ -61,6 +61,14 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
                     ReloadTableData();
                 }
             }
+			
+			public override string TitleForHeader(UITableView tableView, int section)
+			{
+		       if (_sessionGroups == null)
+                    return string.Empty;
+
+                return _sessionGroups[section].Key.ToString();
+         	}
 
             public override float GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
             {
