@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Cirrious.Conference.Core.Models;
 using Cirrious.Conference.Core.ViewModels.Helpers;
@@ -30,7 +32,7 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
             var source = new TableSource(TableView);
             this.AddBindings(new Dictionary<object, string>()
 		                         {
-		                             {source, "{'ItemsSource':{'Path':'FlattenedList'}}"},
+		                             {source, "{'ItemsSource':{'Path':'GroupedList'}}"},
 		                         });
 
             TableView.BackgroundColor = UIColor.Black;
@@ -39,50 +41,49 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
             TableView.ReloadData();
         }
 
-        private class TableSource : MvxBindableTableViewSource
+        private class TableSource : MvxBaseBindableTableViewSource
         {
             public TableSource(UITableView tableView)
                 : base(tableView)
             {
             }
 
-            public override float GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+            private IList<BaseSessionListViewModel<TKey>.SessionGroup> _sessionGroups;
+            public IList<BaseSessionListViewModel<TKey>.SessionGroup> SessionGroups
             {
-                var item = ItemsSource[indexPath.Row];
-                if (IsKey(item))
+                get
                 {
-                    return 33;
+                    return _sessionGroups;
                 }
-                else
-                {
-                    return 126;
+                set 
+                { 
+                    _sessionGroups = value;
+                    ReloadTableData();
                 }
             }
 
-            private static bool IsKey(object item)
+            public override float GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
             {
-                return item is TKey;
+                return 126;
+            }
+
+            public override int NumberOfSections(UITableView tableView)
+            {
+                if (_sessionGroups == null)
+                    return 0;
+
+                return _sessionGroups.Count;
+            }
+
+            public override int RowsInSection(UITableView tableview, int section)
+            {
+                if (_sessionGroups == null)
+                    return 0;
+
+                return _sessionGroups[section].Count;
             }
 
             protected override UITableViewCell GetOrCreateCellFor(UITableView tableView, NSIndexPath indexPath, object item)
-            {
-                if (IsKey(item))
-                    return GetOrCreateCellForKey(tableView, (TKey)item);
-                else
-                    return GetOrCreateCellForSession(tableView, (WithCommand<SessionWithFavoriteFlag>)item);
-            }
-
-            private UITableViewCell GetOrCreateCellForKey(UITableView tableView, TKey item)
-            {
-                var reuse = tableView.DequeueReusableCell(SeparatorCell.Identifier);
-                if (reuse != null)
-                    return reuse;
-
-                var cell = SeparatorCell.LoadFromNib();
-                return cell;
-            }
-
-            private UITableViewCell GetOrCreateCellForSession(UITableView tableView, WithCommand<SessionWithFavoriteFlag> session)
             {
                 var reuse = tableView.DequeueReusableCell(SessionCell2.Identifier);
                 if (reuse != null)
@@ -90,6 +91,14 @@ namespace Cirrious.Conference.UI.Touch.Views.SessionLists
 
                 var cell = SessionCell2.LoadFromNib();
                 return cell;
+            }
+
+            protected override object GetItemAt(NSIndexPath indexPath)
+            {
+                if (_sessionGroups == null)
+                    return null;
+
+                return _sessionGroups[indexPath.Section][indexPath.Row];
             }
         }
     }
