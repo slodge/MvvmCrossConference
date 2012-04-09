@@ -72,26 +72,11 @@
                     >
                     <StackPanel Margin="12,0,0,0">
                         <TextBlock 
-                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=ByDay,FallbackValue=By day}"
+                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=ByTime,FallbackValue=By time}"
                             ></TextBlock>
                         <Controls:IconWithTextMenuItem
                             Margin="0,24,0,0"
-                            Command="{Binding ShowDayCommand}"
-                            CommandParameter="Thursday"
-                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Thursday,FallbackValue=Thursday}"
-                            Source="/ConfResources/Images/appbar.calendar.png"
-                        />
-                        <Controls:IconWithTextMenuItem
-                            Margin="0,0,0,0"
-                            Command="{Binding ShowDayCommand}"
-                            CommandParameter="Friday"
-                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Friday,FallbackValue=Friday}"
-                            Source="/ConfResources/Images/appbar.calendar.png"
-                        />
-                        <Controls:IconWithTextMenuItem
-                            Margin="0,0,0,0"
-                            Command="{Binding ShowDayCommand}"
-                            CommandParameter="Saturday"
+                            Command="{Binding ShowSessionsCommand}"
                             Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Saturday,FallbackValue=Saturday}"
                             Source="/ConfResources/Images/appbar.calendar.png"
                         />

@@ -74,12 +74,16 @@
     <Compile Include="Interfaces\IErrorSource.cs" />
     <Compile Include="Interfaces\IObservableCollection.cs" />
     <Compile Include="Models\FavoritesSaver.cs" />
+    <Compile Include="Models\HackyConstants.cs" />
     <Compile Include="Models\Helpers\OurObservableCollection.cs" />
     <Compile Include="Models\ConferenceService.cs" />
     <Compile Include="Interfaces\IConferenceService.cs" />
+    <Compile Include="Models\Raw\PocketConferenceModel.cs" />
+    <Compile Include="Models\Raw\ConferenceDetails.cs" />
     <Compile Include="Models\Raw\Session.cs" />
+    <Compile Include="Models\Raw\Slot.cs" />
+    <Compile Include="Models\Raw\Track.cs" />
     <Compile Include="Models\SessionWithFavoriteFlag.cs" />
-    <Compile Include="Models\Raw\Speaker.cs" />
     <Compile Include="Models\Raw\Sponsor.cs" />
     <Compile Include="Models\Twitter\AtomConst.cs" />
     <Compile Include="Interfaces\ITwitterSearchProvider.cs" />

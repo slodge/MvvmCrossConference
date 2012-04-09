@@ -28,7 +28,7 @@ namespace Cirrious.Conference.Core.Converters
         {
             var session = (Session) value;
             var format = TextProvider.GetText(Constants.GeneralNamespace, Constants.Shared, (string)parameter);
-            return string.Format(format, session.Type, session.Level, session.Where, session.When);
+            return string.Format(format, session.TrackName, session.RoomName, session.When);
         }
     }
 }

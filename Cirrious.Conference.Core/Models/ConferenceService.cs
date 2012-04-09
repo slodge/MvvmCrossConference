@@ -130,14 +130,23 @@ namespace Cirrious.Conference.Core.Models
         private void LoadSessions()
         {
             var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Sessions.txt");
-            var items = JsonConvert.DeserializeObject<List<Session>>(file);
-            items.ForEach(i => i.Key = i.Title);
-            Sessions = items.Select(x => new SessionWithFavoriteFlag()
+            var conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(file);           
+            // patch up the sessions with slots
+            foreach (var session in conferenceModel.Sessions.Values)
+            {
+                Slot slot;
+                if (conferenceModel.Slots.TryGetValue(session.SlotId, out slot))
+                {
+                    session.Slot = slot;
+                }
+            }
+
+            Sessions = conferenceModel.Sessions.Select(x => new SessionWithFavoriteFlag()
                                                   {
-                                                      Session = x,
+                                                      Session = x.Value,
                                                       IsFavorite = false
                                                   })
-                .ToDictionary(x => x.Session.Key, x => x);
+                .ToDictionary(x => x.Session.Id, x => x);
 
             foreach (var sessionWithFavoriteFlag in Sessions.Values)
             {
@@ -158,12 +167,12 @@ namespace Cirrious.Conference.Core.Models
 
                 if (session.IsFavorite)
                 {
-                    _favoriteSessions[session.Session.Key] = session;
+                    _favoriteSessions[session.Session.Id] = session;
                 }
                 else
                 {
-                    if (_favoriteSessions.ContainsKey(session.Session.Key))
-                        _favoriteSessions.Remove(session.Session.Key);
+                    if (_favoriteSessions.ContainsKey(session.Session.Id))
+                        _favoriteSessions.Remove(session.Session.Id);
                 }
 
                 _favoritesSaver.RequestAsyncSave(_favoriteSessions.Keys.ToList());

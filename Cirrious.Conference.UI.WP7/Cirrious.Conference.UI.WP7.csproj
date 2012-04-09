@@ -213,6 +213,7 @@
     <Content Include="ConfResources\Text\ExhibitionViewModel.json" />
     <Content Include="ConfResources\Text\SponsorsViewModel.json" />
     <Content Include="ConfResources\Text\SplashScreenViewModel.json" />
+    <Content Include="ConfResources\Text\SessionListViewModel.json" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />

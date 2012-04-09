@@ -19,29 +19,9 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
         {
             get { return new MvxRelayCommand(() => RequestNavigate<SpeakersViewModel>()); }
         }
-        public IMvxCommand ShowDayCommand
+        public IMvxCommand ShowSessionsCommand
         {
-            get { return new MvxRelayCommand<string>((day) => RequestNavigate<SessionListViewModel>(new {day = day})); }
-        }
-
-        public IMvxCommand ShowThursdayCommand
-        {
-            get { return MakeDayCommand("Thursday"); }
-        }
-
-        public IMvxCommand ShowFridayCommand
-        {
-            get { return MakeDayCommand("Friday"); }
-        }
-
-        public IMvxCommand ShowSaturdayCommand
-        {
-            get { return MakeDayCommand("Saturday"); }
-        }
-
-        private IMvxCommand MakeDayCommand(string whichDay)
-        {
-            return new MvxRelayCommand(() => RequestNavigate<SessionListViewModel>(new {day = whichDay}));
+            get { return new MvxRelayCommand(() => RequestNavigate<SessionListViewModel>()); }
         }
     }
 }
