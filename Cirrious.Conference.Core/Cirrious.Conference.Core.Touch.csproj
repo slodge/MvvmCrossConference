@@ -10,6 +10,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Cirrious.Conference.Core</RootNamespace>
     <AssemblyName>Cirrious.Conference.Core.Touch</AssemblyName>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,8 +86,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CirriousMvvmCrossTouch, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Libs\Touch\CirriousMvvmCrossTouch.dll</HintPath>
+    </Reference>
     <Reference Include="monotouch">
       <HintPath>..\..\..\Library\Hacked\monotouch.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft_Json_MonoTouch, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Libs\Touch\Newtonsoft_Json_MonoTouch.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -155,14 +163,4 @@
       <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" />
     </VisualStudio>
   </ProjectExtensions>
-  <ItemGroup>
-    <ProjectReference Include="..\..\MvvmCross\Library\Newtonsoft.Json\Newtonsoft.Json\Newtonsoft_Json_MonoTouch.csproj">
-      <Project>{7E04C0C7-C26E-4F5E-A634-A687757E76A1}</Project>
-      <Name>Newtonsoft_Json_MonoTouch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MvvmCross\Cirrious\Cirrious.MvvmCross\Cirrious.MvvmCross.Touch.csproj">
-      <Project>{E042EDD9-E89D-4928-BF4D-27F0FC29CEDA}</Project>
-      <Name>Cirrious.MvvmCross.Touch</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
