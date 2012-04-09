@@ -75,7 +75,7 @@ namespace Cirrious.Conference.Core.ViewModels
 		
 		private void ShareGeneral()
 		{
-            var toShare = string.Format("#SQLBitsX");
+            var toShare = string.Format("#dddsw");
 		    ExceptionSafeShare(toShare);
 		}
 

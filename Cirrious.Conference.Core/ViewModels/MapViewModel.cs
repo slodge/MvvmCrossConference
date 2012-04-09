@@ -30,7 +30,7 @@ namespace Cirrious.Conference.Core.ViewModels
         {
             get
             {
-                return new MvxRelayCommand(() => ComposeEmail(Email, "About SQLBits X", "About SQLBits X"));
+                return new MvxRelayCommand(() => ComposeEmail(Email, "About DDDSW", "About DDDSW"));
             }
         }
 

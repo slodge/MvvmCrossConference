@@ -35,7 +35,7 @@ namespace Cirrious.Conference.Core.ViewModels
                 return
                     new MvxRelayCommand(
                         () =>
-                        ShowWebPage("http://sqlbits.com"));
+                        ShowWebPage("http://dddsouthwest.com"));
             }
         }
         

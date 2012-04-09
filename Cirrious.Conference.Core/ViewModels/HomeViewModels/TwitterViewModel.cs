@@ -19,7 +19,7 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
         , IMvxServiceConsumer<ITwitterSearchProvider>
 		, IMvxServiceConsumer<IMvxReachability>
     {
-        private const string SearchTerm = "SQLBits";
+        private const string SearchTerm = "DDDSW";
 
         private ITwitterSearchProvider TwitterSearchProvider
         {
@@ -126,11 +126,11 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
             if (guessTwitterNameEnds > 0)
             {
                 var guessTwitterName = tweet.Author.Substring(0, guessTwitterNameEnds);
-                ExceptionSafeShare("@" + guessTwitterName + " #sqlbitsX ");
+                ExceptionSafeShare("@" + guessTwitterName + " #dddsw");
             }
             else
             {
-                ExceptionSafeShare("@" + tweet.Author + " #sqlbitsX ");
+                ExceptionSafeShare("@" + tweet.Author + " #dddsw");
             }
 		}
     }

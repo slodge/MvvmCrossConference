@@ -34,7 +34,7 @@ namespace Cirrious.Conference.Core.ViewModels
         private void Share()
         {
             var service = this.GetService<IMvxShareTask>();
-            var toShare = string.Format("#SQLBitsX: {0} - {1}", Session.Session.Speaker, Session.Session.Title);
+            var toShare = string.Format("#dddsw: {0} - {1}", Session.Session.Speaker, Session.Session.Title);
             if (toShare.Length > 140)
                 toShare = toShare.Substring(0, 135).Trim() + "...";
             service.ShareShort(toShare);
