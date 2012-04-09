@@ -18,22 +18,12 @@
     <TextView
       android:text="hello"
       style="@style/AboutPageBodyText"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ByDay'}}"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ByTime'}}"
       />
     <Button
       style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_calendar"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Thursday'},'Click':{'Path':'ShowThursdayCommand'}}"
-      />
-    <Button
-      style="@style/IconButton"
-      android:drawableLeft="@drawable/appbar_calendar"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Friday'},'Click':{'Path':'ShowFridayCommand'}}"
-      />
-    <Button
-      style="@style/IconButton"
-      android:drawableLeft="@drawable/appbar_calendar"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Saturday'},'Click':{'Path':'ShowSaturdayCommand'}}"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Saturday'},'Click':{'Path':'ShowSessionsCommand'}}"
       />
     
     <TextView

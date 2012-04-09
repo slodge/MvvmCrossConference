@@ -125,6 +125,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\SessionListViewModel.json">
+      <Link>ConfResources\Text\SessionListViewModel.json</Link>
+    </Content>
     <None Include="app.config" />
     <None Include="Info.plist" />
   </ItemGroup>

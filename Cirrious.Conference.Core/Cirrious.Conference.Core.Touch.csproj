@@ -119,10 +119,22 @@
     <Compile Include="Interfaces\ITwitterSearchProvider.cs" />
     <Compile Include="Models\ConferenceService.cs" />
     <Compile Include="Models\FavoritesSaver.cs" />
+    <Compile Include="Models\HackyConstants.cs" />
     <Compile Include="Models\Helpers\OurObservableCollection.cs" />
-    <Compile Include="Models\Raw\Session.cs" />
-    <Compile Include="Models\Raw\Speaker.cs" />
+    <Compile Include="Models\Raw\ConferenceDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Raw\PocketConferenceModel.cs" />
+    <Compile Include="Models\Raw\Session.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Raw\Slot.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\Raw\Sponsor.cs" />
+    <Compile Include="Models\Raw\Track.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\SessionWithFavoriteFlag.cs" />
     <Compile Include="Models\Twitter\AtomConst.cs" />
     <Compile Include="Models\Twitter\Tweet.cs" />
@@ -160,7 +172,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" />
+      <UserProperties ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

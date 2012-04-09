@@ -5,7 +5,7 @@ namespace Cirrious.Conference.UI.Droid.Views.SessionsLists
 {
     [Activity]
     public class TopicsView
-        : BaseSessionListView<TopicsViewModel, TopicsViewModel.TopicAndLevel>
+        : BaseSessionListView<TopicsViewModel, string>
     {
     }
 }
