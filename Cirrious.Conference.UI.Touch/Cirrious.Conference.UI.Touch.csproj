@@ -130,6 +130,60 @@
     </Content>
     <None Include="app.config" />
     <None Include="Info.plist" />
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\MartynFewtrell.png">
+      <Link>ConfResources\TeamImages\MartynFewtrell.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\RossScott.png">
+      <Link>ConfResources\TeamImages\RossScott.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Team.txt">
+      <Link>ConfResources\Team.txt</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\ChrisMyhill.jpg">
+      <Link>ConfResources\TeamImages\ChrisMyhill.jpg</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\GuySmithFerrier.jpg">
+      <Link>ConfResources\TeamImages\GuySmithFerrier.jpg</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\RachelClements.jpg">
+      <Link>ConfResources\TeamImages\RachelClements.jpg</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\RobBracken.jpg">
+      <Link>ConfResources\TeamImages\RobBracken.jpg</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\Landmark1160.png">
+      <Link>ConfResources\SponsorImages\Landmark1160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\jetbrains160.png">
+      <Link>ConfResources\SponsorImages\jetbrains160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\UWELogoLarge160.png">
+      <Link>ConfResources\SponsorImages\UWELogoLarge160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\TypeMock160.png">
+      <Link>ConfResources\SponsorImages\TypeMock160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\telerik_logo_RGB_photoshop160.png">
+      <Link>ConfResources\SponsorImages\telerik_logo_RGB_photoshop160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\TechSmith-Logo-Primary160.png">
+      <Link>ConfResources\SponsorImages\TechSmith-Logo-Primary160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\ms-logo-YPOP-BR160.png">
+      <Link>ConfResources\SponsorImages\ms-logo-YPOP-BR160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\LogicNP160.png">
+      <Link>ConfResources\SponsorImages\LogicNP160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\eDevelopment160.png">
+      <Link>ConfResources\SponsorImages\eDevelopment160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\ComponentOne160.png">
+      <Link>ConfResources\SponsorImages\ComponentOne160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\CODEMagazine160.png">
+      <Link>ConfResources\SponsorImages\CODEMagazine160.png</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings\FavoritesSessionCellBinding.cs" />
@@ -197,6 +251,12 @@
       <DependentUpon>SeparatorCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\FoldingTableViewController.cs" />
+    <Compile Include="Views\TeamView.cs" />
+    <Compile Include="Views\BaseTeamView.cs" />
+    <Compile Include="Cells\TeamCell.cs" />
+    <Compile Include="Cells\TeamCell.designer.cs">
+      <DependentUpon>TeamCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -241,51 +301,6 @@
     <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Sponsors.txt">
       <Link>ConfResources\Sponsors.txt</Link>
     </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\Fusion160.png">
-      <Link>ConfResources\SponsorImages\Fusion160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\LSI160.png">
-      <Link>ConfResources\SponsorImages\LSI160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\Microsoft160.png">
-      <Link>ConfResources\SponsorImages\Microsoft160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\XIOsm.png">
-      <Link>ConfResources\SponsorImages\XIOsm.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\attunity160.png">
-      <Link>ConfResources\SponsorImages\attunity160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\bing160.png">
-      <Link>ConfResources\SponsorImages\bing160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\coeo160.png">
-      <Link>ConfResources\SponsorImages\coeo160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\pyramid160.png">
-      <Link>ConfResources\SponsorImages\pyramid160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\quest160.png">
-      <Link>ConfResources\SponsorImages\quest160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\varigence160.png">
-      <Link>ConfResources\SponsorImages\varigence160.png</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\HPFLP.jpg">
-      <Link>ConfResources\SponsorImages\HPFLP.jpg</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\SQLSentry160.jpg">
-      <Link>ConfResources\SponsorImages\SQLSentry160.jpg</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\embarcadero160.jpg">
-      <Link>ConfResources\SponsorImages\embarcadero160.jpg</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\idera160.jpg">
-      <Link>ConfResources\SponsorImages\idera160.jpg</Link>
-    </Content>
-    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\redgate160.jpg">
-      <Link>ConfResources\SponsorImages\redgate160.jpg</Link>
-    </Content>
     <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\AboutViewModel.json">
       <Link>ConfResources\Text\AboutViewModel.json</Link>
     </Content>
@@ -320,14 +335,15 @@
       <Link>ConfResources\Text\WelcomeViewModel.json</Link>
     </Content>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Cirrious.Conference.Core\Cirrious.Conference.Core.Touch.csproj">
       <Project>{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}</Project>
       <Name>Cirrious.Conference.Core.Touch</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <Page Include="Cells\SponsorCell.xib" />
@@ -342,5 +358,7 @@
     <Page Include="Cells\TweetCell3.xib" />
     <Page Include="Cells\SessionCell2.xib" />
     <Page Include="Cells\SeparatorCell.xib" />
+    <Page Include="Cells\TeamCell.xib" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

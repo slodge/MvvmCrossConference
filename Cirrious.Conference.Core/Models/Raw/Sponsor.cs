@@ -10,5 +10,6 @@ namespace Cirrious.Conference.Core.Models.Raw
         public string Image { get; set; }
         public string Description { get; set; }
         public string Level { get; set; }
+        public int DisplayOrder { get; set; }
     }
 }

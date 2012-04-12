@@ -11,5 +11,6 @@ namespace Cirrious.Conference.Core.Converters
         public readonly SponsorImageValueConverter SponsorImage = new SponsorImageValueConverter();
         public readonly MvxVisibilityConverter Visibility = new MvxVisibilityConverter();
         public readonly MvxLanguageBinderConverter Language = new MvxLanguageBinderConverter();
+        public readonly TeamImageValueConverter TeamImage = new TeamImageValueConverter();
     }
 }

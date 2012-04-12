@@ -81,6 +81,7 @@
     <Compile Include="Controls\ExtendedListBox.xaml.cs">
       <DependentUpon>ExtendedListBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\HtmlTextBox.cs" />
     <Compile Include="Controls\IconWithTextMenuItem.xaml.cs">
       <DependentUpon>IconWithTextMenuItem.xaml</DependentUpon>
     </Compile>
@@ -102,6 +103,9 @@
     </Compile>
     <Compile Include="Views\MapView.xaml.cs">
       <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeamView.xaml.cs">
+      <DependentUpon>TeamView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TopicsView.xaml.cs">
       <DependentUpon>TopicsView.xaml</DependentUpon>
@@ -136,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Resource Include="Themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
     <Page Include="Views\AboutView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -155,6 +163,10 @@
     <Page Include="Views\MapView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TeamView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TopicsView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -181,21 +193,17 @@
     <Content Include="ConfResources\fav.on.png" />
     <Content Include="ConfResources\background.png" />
     <Content Include="ConfResources\fav.off.png" />
-    <Content Include="ConfResources\SponsorImages\attunity160.png" />
-    <Content Include="ConfResources\SponsorImages\bing160.png" />
-    <Content Include="ConfResources\SponsorImages\coeo160.png" />
-    <Content Include="ConfResources\SponsorImages\embarcadero160.jpg" />
-    <Content Include="ConfResources\SponsorImages\Fusion160.png" />
-    <Content Include="ConfResources\SponsorImages\HPFLP.jpg" />
-    <Content Include="ConfResources\SponsorImages\idera160.jpg" />
-    <Content Include="ConfResources\SponsorImages\LSI160.png" />
-    <Content Include="ConfResources\SponsorImages\Microsoft160.png" />
-    <Content Include="ConfResources\SponsorImages\pyramid160.png" />
-    <Content Include="ConfResources\SponsorImages\quest160.png" />
-    <Content Include="ConfResources\SponsorImages\redgate160.jpg" />
-    <Content Include="ConfResources\SponsorImages\SQLSentry160.jpg" />
-    <Content Include="ConfResources\SponsorImages\varigence160.png" />
-    <Content Include="ConfResources\SponsorImages\XIOsm.png" />
+    <Content Include="ConfResources\SponsorImages\CODEMagazine160.png" />
+    <Content Include="ConfResources\SponsorImages\ComponentOne160.png" />
+    <Content Include="ConfResources\SponsorImages\eDevelopment160.png" />
+    <Content Include="ConfResources\SponsorImages\jetbrains160.png" />
+    <Content Include="ConfResources\SponsorImages\Landmark1160.png" />
+    <Content Include="ConfResources\SponsorImages\LogicNP160.png" />
+    <Content Include="ConfResources\SponsorImages\ms-logo-YPOP-BR160.png" />
+    <Content Include="ConfResources\SponsorImages\TechSmith-Logo-Primary160.png" />
+    <Content Include="ConfResources\SponsorImages\telerik_logo_RGB_photoshop160.png" />
+    <Content Include="ConfResources\SponsorImages\TypeMock160.png" />
+    <Content Include="ConfResources\SponsorImages\UWELogoLarge160.png" />
     <Content Include="ConfResources\Sponsors.txt" />
     <Content Include="ConfResources\Images\appbar.database.png" />
     <Content Include="ConfResources\Images\appbar.feature.email.rest.png" />
@@ -204,6 +212,13 @@
     <Content Include="ConfResources\Images\appbar.twitter.bird.png" />
     <Content Include="ConfResources\Sessions.txt" />
     <Content Include="ConfResources\SQLBitsLogo.png" />
+    <Content Include="ConfResources\TeamImages\ChrisMyhill.jpg" />
+    <Content Include="ConfResources\TeamImages\GuySmithFerrier.jpg" />
+    <Content Include="ConfResources\TeamImages\MartynFewtrell.png" />
+    <Content Include="ConfResources\TeamImages\RachelClements.jpg" />
+    <Content Include="ConfResources\TeamImages\RobBracken.jpg" />
+    <Content Include="ConfResources\TeamImages\RossScott.png" />
+    <Content Include="ConfResources\Team.txt" />
     <Content Include="ConfResources\Text\SessionsViewModel.json" />
     <Content Include="ConfResources\Text\WelcomeViewModel.json" />
     <Content Include="ConfResources\Text\SpeakersViewModel.json" />
@@ -214,6 +229,7 @@
     <Content Include="ConfResources\Text\SponsorsViewModel.json" />
     <Content Include="ConfResources\Text\SplashScreenViewModel.json" />
     <Content Include="ConfResources\Text\SessionListViewModel.json" />
+    <Content Include="ConfResources\Text\TeamViewModel.json" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />

@@ -43,8 +43,8 @@
 
                         <Controls:IconWithTextMenuItem
                             Margin="0,0,0,0"
-                            Command="{Binding ShowExhibitorsCommand}"
-                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Exhibitors,FallbackValue=Exhibitors}"
+                            Command="{Binding ShowTeamCommand}"
+                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Team,FallbackValue=Team}"
                             Source="/ConfResources/Images/appbar.city.png"
                         />
 

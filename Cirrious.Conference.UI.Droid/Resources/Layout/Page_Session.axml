@@ -52,7 +52,7 @@
           android:paddingLeft="10dp"
           android:textSize="14dip"
           android:textColor="@color/icongrey"
-          local:MvxBind="{'Text':{'Path':'Session.Session.SpeakerKey'}}"
+          local:MvxBind="{'Text':{'Path':'Session.Session.Speaker'}}"
         />
   </LinearLayout>
   <LinearLayout
@@ -93,7 +93,7 @@
           android:layout_height="wrap_content"
           android:textSize="14dip"
           android:textColor="@color/icongrey"
-          local:MvxBind="{'Text':{'Path':'Session.Session.Description'}}"
+          local:MvxBind="{'Text':{'Path':'Session.Session.Synopsis'}}"
         />
 
   </ScrollView>

@@ -53,7 +53,7 @@
           android:paddingLeft="10dp"
           android:textSize="14dip"
           android:textColor="@color/icongrey"
-          local:MvxBind="{'Text':{'Path':'Item.Session.SpeakerKey'}}"
+          local:MvxBind="{'Text':{'Path':'Item.Session.Speaker'}}"
         />
   </LinearLayout>
   <LinearLayout

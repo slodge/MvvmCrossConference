@@ -30,7 +30,7 @@
     <Button
       style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_city"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Exhibitors'},'Click':{'Path':'ShowExhibitorsCommand'}}"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Team'},'Click':{'Path':'ShowTeamCommand'}}"
       />
     <Button
       style="@style/IconButton"

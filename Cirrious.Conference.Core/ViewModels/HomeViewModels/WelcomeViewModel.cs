@@ -10,6 +10,10 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
         {
             get { return new MvxRelayCommand(() => RequestNavigate<SponsorsViewModel>()); }
         }
+        public IMvxCommand ShowTeamCommand
+        {
+            get { return new MvxRelayCommand(() => RequestNavigate<TeamViewModel>()); }
+        }
         public IMvxCommand ShowExhibitorsCommand
         {
             get { return new MvxRelayCommand(() => RequestNavigate<ExhibitionViewModel>()); }

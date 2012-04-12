@@ -65,6 +65,7 @@
     <Compile Include="ConferenceApp.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Converters\Converters.cs" />
+    <Compile Include="Converters\TeamImageValueConverter.cs" />
     <Compile Include="Converters\SessionSmallDetailsValueConverter.cs" />
     <Compile Include="Converters\SimpleDateValueConverter.cs" />
     <Compile Include="Converters\SponsorImageValueConverter.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Models\Raw\ConferenceDetails.cs" />
     <Compile Include="Models\Raw\Session.cs" />
     <Compile Include="Models\Raw\Slot.cs" />
+    <Compile Include="Models\Raw\Team.cs" />
     <Compile Include="Models\Raw\Track.cs" />
     <Compile Include="Models\SessionWithFavoriteFlag.cs" />
     <Compile Include="Models\Raw\Sponsor.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BaseConferenceViewModel.cs" />
     <Compile Include="ViewModels\BaseSponsorsViewModel.cs" />
+    <Compile Include="ViewModels\BaseTeamViewModel.cs" />
     <Compile Include="ViewModels\SessionLists\BaseSessionListViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
@@ -111,6 +114,7 @@
     <Compile Include="ViewModels\HomeViewModels\TwitterViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModels\WelcomeViewModel.cs" />
     <Compile Include="ViewModels\Helpers\WithCommand.cs" />
+    <Compile Include="ViewModels\TeamViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

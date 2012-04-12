@@ -8,15 +8,14 @@ namespace Cirrious.Conference.Core.ViewModels
     public class MapViewModel
         : BaseViewModel
     {
+        public string Name { get { return "University of the West of England (UWE)"; } }
+        public string Address { get { return "Frenchay Campus, Coldharbour Lane, Bristol, BS16 1QY"; } }
+        public string LocationWebPage { get { return "http://www.dddsouthwest.com/"; } }
 
-        public string Name { get { return "Novotel London West"; } }
-        public string Address { get { return "London W6 8DR"; }}
-        public string LocationWebPage { get { return "http://www.novotellondonwest.co.uk/location/index.htm"; } }
-
-        public string Phone { get { return "+44 (0)208 741 1555"; } }
-        public string Email { get { return "H0737@accor.com"; } }
-        public double Latitude { get { return 51.491351; } }
-        public double Longitude { get { return -0.222044; } }
+        public string Phone { get { return ""; } }
+        public string Email { get { return ""; } }
+        public double Latitude { get { return 51.499954; } }
+        public double Longitude { get { return -2.54694; } }
 
         public IMvxCommand PhoneCommand
         {

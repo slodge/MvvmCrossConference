@@ -33,7 +33,7 @@ namespace Cirrious.Conference.UI.Touch
                 {
                     { MainLabel, "{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBits'}}" },				
                     { Button1, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Sponsors'}}" },				
-                    { Button2, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Exhibitors'}}" },				
+                    { Button2, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Team'}}" },
                     { Button3, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Map'}}" },				
                     { Button4, "{'Title':{'Path':'TextSource','Converter':'Language','ConverterParameter':'About'}}" },				
                 });
@@ -41,7 +41,7 @@ namespace Cirrious.Conference.UI.Touch
             this.AddBindings(new Dictionary<object, string>()
                 {
                     { Button1, "{'TouchDown':{'Path':'ShowSponsorsCommand'}}" },				
-                    { Button2, "{'TouchDown':{'Path':'ShowExhibitorsCommand'}}" },				
+                    { Button2, "{'TouchDown':{'Path':'ShowTeamCommand'}}" },				
                     { Button3, "{'TouchDown':{'Path':'ShowMapCommand'}}" },				
                     { Button4, "{'TouchDown':{'Path':'ShowAboutCommand'}}" },				
                 });

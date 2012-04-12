@@ -13,7 +13,7 @@ namespace Cirrious.Conference.Core.ViewModels
         {
             var sponsors = source
                 .ToList();
-            sponsors.Sort((a, b) => a.Name.CompareTo(b.Name));
+            sponsors.Sort((a, b) => a.DisplayOrder.CompareTo(b.DisplayOrder));
             Sponsors = sponsors.Select(x => new WithCommand<Sponsor>(x, new MvxRelayCommand(() => ShowWebPage(x.Url)))).ToList();
         }
 

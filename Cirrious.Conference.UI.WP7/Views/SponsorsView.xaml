@@ -14,7 +14,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -43,15 +43,15 @@
                         <Border
                             toolkit:TiltEffect.IsTiltEnabled="True"
                             Margin="120,12"
-                            BorderThickness="6"
+                            BorderThickness="6"                            
                             BorderBrush="White"
-                            VerticalAlignment="Center">
+                            VerticalAlignment="Center" Background="White">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Tap">
                                     <Commands:MvxEventToCommand Command="{Binding Command}" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
-                            <Image 
+                            <Image
                                 Source="{Binding Item.Image, Converter={StaticResource SponsorImage}}" Height="70" Width="160" 
                                 >
                             </Image>

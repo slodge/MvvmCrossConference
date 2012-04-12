@@ -11,7 +11,7 @@ namespace Cirrious.Conference.UI.Touch
 	public partial class SessionCell : MvxBindableTableViewCell
 	{
 		public static NSString Identifier = new NSString("SessionCell");
-        public const string BindingText = "{'SpeakerText':{'Path':'Item.Session.SpeakerKey'},'SessionTitleText':{'Path':'Item.Session.Title'},'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails'}}";
+        public const string BindingText = "{'SpeakerText':{'Path':'Item.Session.Speaker'},'SessionTitleText':{'Path':'Item.Session.Title'},'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails'}}";
 		
 		public static SessionCell LoadFromNib()
 		{

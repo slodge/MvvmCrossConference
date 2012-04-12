@@ -17,6 +17,8 @@ using Newtonsoft.Json;
 
 namespace Cirrious.Conference.Core.Models
 {
+    using System.Diagnostics;
+
     public class ConferenceService 
         : IConferenceService
         , IMvxServiceConsumer<IMvxResourceLoader>
@@ -49,6 +51,7 @@ namespace Cirrious.Conference.Core.Models
         public IDictionary<string, SessionWithFavoriteFlag> Sessions { get; private set; }
         public IDictionary<string, Sponsor> Exhibitors { get; private set; }
         public IDictionary<string, Sponsor> Sponsors { get; private set; }
+        public IDictionary<string, Team> Team { get; private set; }
 
         // a hashtable of favorites
         private IDictionary<string, SessionWithFavoriteFlag> _favoriteSessions;
@@ -90,16 +93,61 @@ namespace Cirrious.Conference.Core.Models
             LoadSessions();
             LoadFavorites();
             LoadSponsors();
+            LoadTeam();
 
             IsLoading = false;
-        }		
+        }
+        
+        public void RefreshData()
+        {
+            //TODO - GPB: Not sure if this is safe to re-use this property for remote data load but looked ok???
+            IsLoading = true;
+            //TODO - GPB: Just loading the remote data for LoadSessions(). Leaving other static data at the moment ???
+            GetConferenceData();
+        }
 		
+        private void GetConferenceData()
+        {
+            var webClient = new WebClient();
+            Trace.Info("Get remote data for conference");
+
+            webClient.UploadStringCompleted += (sender, e) =>
+            {
+                try
+                {
+                    var r = e.Result;
+                    var conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(r);
+                    Trace.Info("Start deserialising conference data");
+                    DeSerialiseConferenceData(conferenceModel);
+                    Trace.Info("Completed deserialising conference data");
+                }
+                catch (Exception ex)
+                {
+                    Trace.Error("ERROR deserializing downloaded conference data: {0}", ex.ToLongString());
+                }
+                finally
+                {
+                    IsLoading = false;
+                }
+            };
+
+            webClient.Encoding = System.Text.Encoding.UTF8;
+            webClient.UploadStringAsync(new Uri(Constants.SessionDataEndPoint), "POST", string.Empty);            
+        }
+
         private void LoadSponsors()
         {
             var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Sponsors.txt");
             var items = JsonConvert.DeserializeObject<List<Sponsor>>(file);
             Sponsors = items.Where(x => x.Level != "Exhibitor").ToDictionary(x => x.Name);
             Exhibitors = items.Where(x => x.Level == "Exhibitor").ToDictionary(x => x.Name);
+        }
+
+        private void LoadTeam()
+        {
+            var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Team.txt");
+            var items = JsonConvert.DeserializeObject<List<Team>>(file);
+            Team = items.ToDictionary(x => string.Format("{0} {1}", x.Firstname, x.Lastname));
         }
 
         private void LoadFavorites()
@@ -130,7 +178,12 @@ namespace Cirrious.Conference.Core.Models
         private void LoadSessions()
         {
             var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Sessions.txt");
-            var conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(file);           
+            var conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(file);
+            DeSerialiseConferenceData(conferenceModel);
+        }
+
+        private void DeSerialiseConferenceData(PocketConferenceModel conferenceModel)
+        {
             // patch up the sessions with slots
             foreach (var session in conferenceModel.Sessions.Values)
             {
@@ -142,15 +195,15 @@ namespace Cirrious.Conference.Core.Models
             }
 
             Sessions = conferenceModel.Sessions.Select(x => new SessionWithFavoriteFlag()
-                                                  {
-                                                      Session = x.Value,
-                                                      IsFavorite = false
-                                                  })
+            {
+                Session = x.Value,
+                IsFavorite = false
+            })
                 .ToDictionary(x => x.Session.Id, x => x);
 
             foreach (var sessionWithFavoriteFlag in Sessions.Values)
             {
-                sessionWithFavoriteFlag.PropertyChanged += SessionWithFavoriteFlagOnPropertyChanged;            
+                sessionWithFavoriteFlag.PropertyChanged += SessionWithFavoriteFlagOnPropertyChanged;
             }
         }
 

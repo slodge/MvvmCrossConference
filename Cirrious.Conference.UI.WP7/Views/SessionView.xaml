@@ -41,8 +41,8 @@
                 <TextBlock Text="{Binding Session.Session,Converter={StaticResource SessionSmallDetails},ConverterParameter=TypeAndLevelFormat, FallbackValue=Level}" TextWrapping="Wrap"  />
                 <TextBlock Margin="0,0,0,24" Text="{Binding Session.Session,Converter={StaticResource SessionSmallDetails},ConverterParameter=WhenAndWhereFormat, FallbackValue=WhenAndWhere}" TextWrapping="Wrap" />
                 <TextBlock Text="{Binding Session.Session.Title,FallbackValue=Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Margin="0" />
-                <TextBlock Text="{Binding Session.Session.SpeakerKey,FallbackValue=Speaker}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Margin="0" Foreground="{StaticResource PhoneSubtleBrush}"/>
-                <TextBlock Margin="0,24,0,0" Text="{Binding Session.Session.Description,FallbackValue=Long_description_here}" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding Session.Session.Speaker,FallbackValue=Speaker}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Margin="0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                <TextBlock Margin="0,24,0,0" Text="{Binding Session.Session.Synopsis,FallbackValue=Long_description_here}" TextWrapping="Wrap" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

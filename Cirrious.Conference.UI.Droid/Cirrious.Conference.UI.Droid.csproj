@@ -100,6 +100,8 @@
     <Compile Include="Views\Sponsors\ExhibitionView.cs" />
     <Compile Include="Views\Sponsors\SponsorsView.cs" />
     <Compile Include="ViewHelpers.cs" />
+    <Compile Include="Views\Team\BaseTeamView.cs" />
+    <Compile Include="Views\Team\TeamView.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\AboutViewModel.json">
@@ -138,6 +140,9 @@
     <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\SessionListViewModel.json">
       <Link>Assets\ConfResources\Text\SessionListViewModel.json</Link>
     </AndroidAsset>
+    <None Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\TeamViewModel.json">
+      <Link>Assets\ConfResources\Text\TeamViewModel.json</Link>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\Page_SplashScreen.axml" />
@@ -158,6 +163,7 @@
     <AndroidResource Include="Resources\Layout\Page_Sponsors.axml" />
     <AndroidResource Include="Resources\Layout\Page_Map.axml" />
     <AndroidResource Include="Resources\Layout\Page_About.axml" />
+    <AndroidResource Include="Resources\Layout\Page_Team.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
@@ -240,54 +246,63 @@
     <AndroidResource Include="..\Cirrious.Conference.UI.WP7\ConfResources\background.png">
       <Link>Resources\Drawable\background.png</Link>
     </AndroidResource>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\attunity160.png">
-      <Link>Assets\ConfResources\SponsorImages\attunity160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\bing160.png">
-      <Link>Assets\ConfResources\SponsorImages\bing160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\coeo160.png">
-      <Link>Assets\ConfResources\SponsorImages\coeo160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\embarcadero160.jpg">
-      <Link>Assets\ConfResources\SponsorImages\embarcadero160.jpg</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\Fusion160.png">
-      <Link>Assets\ConfResources\SponsorImages\Fusion160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\HPFLP.jpg">
-      <Link>Assets\ConfResources\SponsorImages\HPFLP.jpg</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\idera160.jpg">
-      <Link>Assets\ConfResources\SponsorImages\idera160.jpg</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\LSI160.png">
-      <Link>Assets\ConfResources\SponsorImages\LSI160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\Microsoft160.png">
-      <Link>Assets\ConfResources\SponsorImages\Microsoft160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\pyramid160.png">
-      <Link>Assets\ConfResources\SponsorImages\pyramid160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\quest160.png">
-      <Link>Assets\ConfResources\SponsorImages\quest160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\redgate160.jpg">
-      <Link>Assets\ConfResources\SponsorImages\redgate160.jpg</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\SQLSentry160.jpg">
-      <Link>Assets\ConfResources\SponsorImages\SQLSentry160.jpg</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\varigence160.png">
-      <Link>Assets\ConfResources\SponsorImages\varigence160.png</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\XIOsm.png">
-      <Link>Assets\ConfResources\SponsorImages\XIOsm.png</Link>
-    </AndroidAsset>
     <AndroidResource Include="..\Cirrious.Conference.UI.WP7\ConfResources\SQLBitsLogo.png">
       <Link>Resources\Drawable\SQLBitsLogo.png</Link>
     </AndroidResource>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\Team.txt">
+      <Link>Assets\ConfResources\Team.txt</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\ChrisMyhill.jpg">
+      <Link>Assets\ConfResources\TeamImages\ChrisMyhill.jpg</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\GuySmithFerrier.jpg">
+      <Link>Assets\ConfResources\TeamImages\GuySmithFerrier.jpg</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\MartynFewtrell.png">
+      <Link>Assets\ConfResources\TeamImages\MartynFewtrell.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\RachelClements.jpg">
+      <Link>Assets\ConfResources\TeamImages\RachelClements.jpg</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\RobBracken.jpg">
+      <Link>Assets\ConfResources\TeamImages\RobBracken.jpg</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\TeamImages\RossScott.png">
+      <Link>Assets\ConfResources\TeamImages\RossScott.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\CODEMagazine160.png">
+      <Link>Assets\ConfResources\SponsorImages\CODEMagazine160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\ComponentOne160.png">
+      <Link>Assets\ConfResources\SponsorImages\ComponentOne160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\eDevelopment160.png">
+      <Link>Assets\ConfResources\SponsorImages\eDevelopment160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\jetbrains160.png">
+      <Link>Assets\ConfResources\SponsorImages\jetbrains160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\Landmark1160.png">
+      <Link>Assets\ConfResources\SponsorImages\Landmark1160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\LogicNP160.png">
+      <Link>Assets\ConfResources\SponsorImages\LogicNP160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\ms-logo-YPOP-BR160.png">
+      <Link>Assets\ConfResources\SponsorImages\ms-logo-YPOP-BR160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\TechSmith-Logo-Primary160.png">
+      <Link>Assets\ConfResources\SponsorImages\TechSmith-Logo-Primary160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\telerik_logo_RGB_photoshop160.png">
+      <Link>Assets\ConfResources\SponsorImages\telerik_logo_RGB_photoshop160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\TypeMock160.png">
+      <Link>Assets\ConfResources\SponsorImages\TypeMock160.png</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\UWELogoLarge160.png">
+      <Link>Assets\ConfResources\SponsorImages\UWELogoLarge160.png</Link>
+    </AndroidAsset>
     <Content Include="Controls\PullToRefresh\License.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Drawable\pull_to_refresh_header_background.xml" />
@@ -306,6 +321,7 @@
     <AndroidResource Include="Resources\Drawable\tweetShare.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\background.png" />
     <AndroidResource Include="Resources\Drawable\list_selector.xml" />
+    <AndroidResource Include="Resources\Layout\ListItem_Team.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

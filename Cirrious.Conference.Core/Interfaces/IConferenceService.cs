@@ -10,6 +10,8 @@ namespace Cirrious.Conference.Core.Interfaces
     {
 		void BeginAsyncLoad();
 		void DoSyncLoad();
+
+        void RefreshData();
 		
         bool IsLoading { get; }
         event EventHandler LoadingChanged;
@@ -17,6 +19,7 @@ namespace Cirrious.Conference.Core.Interfaces
         IDictionary<string, SessionWithFavoriteFlag> Sessions { get; }
         IDictionary<string, Sponsor> Exhibitors { get; }
         IDictionary<string, Sponsor> Sponsors { get; }
+        IDictionary<string, Team> Team { get; }
 
         event EventHandler FavoritesSessionsChanged;
         IDictionary<string, SessionWithFavoriteFlag> GetCopyOfFavoriteSessions();

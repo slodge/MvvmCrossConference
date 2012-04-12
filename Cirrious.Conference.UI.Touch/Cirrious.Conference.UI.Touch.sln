@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.Conference.UI.Touch", "Cirrious.Conference.UI.Touch.csproj", "{7907C17C-6555-49D8-95B4-85DA8380C804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.Conference.Core.Touch", "..\Cirrious.Conference.Core\Cirrious.Conference.Core.Touch.csproj", "{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Distribution|iPhoneSimulator = Distribution|iPhoneSimulator
+		AdHoc|iPhoneSimulator = AdHoc|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Distribution|iPhone = Distribution|iPhone
+		AdHoc|iPhone = AdHoc|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.AdHoc|iPhone.ActiveCfg = AdHoc|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.AdHoc|iPhone.Build.0 = AdHoc|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.AdHoc|iPhoneSimulator.ActiveCfg = AdHoc|iPhoneSimulator
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.AdHoc|iPhoneSimulator.Build.0 = AdHoc|iPhoneSimulator
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Debug|iPhone.Build.0 = Debug|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Distribution|iPhone.ActiveCfg = Debug|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Distribution|iPhone.Build.0 = Debug|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Distribution|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Distribution|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Release|iPhone.ActiveCfg = Release|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Release|iPhone.Build.0 = Release|iPhone
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{30EA44C7-EE97-45EC-B94D-5212CD89CEE9}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.AdHoc|iPhone.ActiveCfg = AdHoc|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.AdHoc|iPhone.Build.0 = AdHoc|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.AdHoc|iPhoneSimulator.ActiveCfg = AdHoc|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.AdHoc|iPhoneSimulator.Build.0 = AdHoc|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Debug|iPhone.Build.0 = Debug|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Distribution|iPhone.ActiveCfg = Distribution|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Distribution|iPhone.Build.0 = Distribution|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Distribution|iPhoneSimulator.ActiveCfg = Distribution|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Distribution|iPhoneSimulator.Build.0 = Distribution|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Release|iPhone.ActiveCfg = Release|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Release|iPhone.Build.0 = Release|iPhone
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{7907C17C-6555-49D8-95B4-85DA8380C804}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Cirrious.Conference.UI.Touch.csproj
+	EndGlobalSection
+EndGlobal

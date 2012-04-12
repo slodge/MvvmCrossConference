@@ -9,7 +9,8 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:Commands="clr-namespace:Cirrious.MvvmCross.WindowsPhone.Commands;assembly=Cirrious.MvvmCross.WindowsPhone"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-    xmlns:Visibility="clr-namespace:Cirrious.MvvmCross.Converters.Visibility;assembly=Cirrious.MvvmCross.WindowsPhone">
+    xmlns:Visibility="clr-namespace:Cirrious.MvvmCross.Converters.Visibility;assembly=Cirrious.MvvmCross.WindowsPhone"
+    xmlns:CustomControls="clr-namespace:Cirrious.Conference.UI.WP7.Controls">
 
     <!--Application Resources-->
     <Application.Resources>
@@ -18,6 +19,7 @@
         <Converters:SimpleDateValueConverter x:Key="SimpleDateConverter"/>
         <Converters:SessionSmallDetailsValueConverter x:Key="SessionSmallDetails"/>
         <Converters:SponsorImageValueConverter x:Key="SponsorImage" />
+        <Converters:TeamImageValueConverter x:Key="TeamImage" />
         <Converters:TimeAgoConverter x:Key="TimeAgo" />
         
         <DataTemplate x:Key="WhenGroupHeader">
@@ -83,7 +85,7 @@
                         Text="{Binding Path=Item.Session.Title}" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="{StaticResource PhoneFontFamilySemiBold}" TextWrapping="Wrap"
                         />
                     <TextBlock 
-                        Text="{Binding Path=Item.Session.SpeakerKey}" Style="{StaticResource PhoneTextNormalStyle}" FontStyle="Italic" TextWrapping="Wrap"
+                        Text="{Binding Path=Item.Session.Speaker}" Style="{StaticResource PhoneTextNormalStyle}" FontStyle="Italic" TextWrapping="Wrap"
                         />
                     <TextBlock 
                         TextAlignment="Right"
@@ -172,12 +174,13 @@
                                         Foreground="White"
                                         Style="{StaticResource PhoneTextLargeStyle}"
                                         Text="{Binding Item.Author}" />
-                <TextBlock
+                <CustomControls:HtmlTextBox 
                                         Grid.Row="2"
                                         Grid.Column="1"
                                         Foreground="LightGray"
-                                        TextWrapping="Wrap"
-                                        Text="{Binding Item.Title}" />
+                                        UrlForeColor="Red"
+                                        x:Name="MyTextBox" 
+                                        HtmlContent="{Binding Item.Title}" />
             </Grid>
         </DataTemplate>
         

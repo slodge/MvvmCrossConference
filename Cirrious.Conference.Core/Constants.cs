@@ -9,5 +9,6 @@ namespace Cirrious.Conference.Core
         public const string RootFolderForResources = "ConfResources/Text";
         public const string GeneralNamespace = "Conference";
         public const string Shared = "Shared";
+        public const string SessionDataEndPoint = "http://www.pocketddd.com/Pocket/GetViewModel/5";
     }
 }

@@ -29,8 +29,8 @@ namespace Cirrious.Conference.UI.Touch
             this.AddBindings(new Dictionary<object, string>()
                                  {
                                      {Label1, "{'Text':{'Path':'Session.Session.Title'}}"},
-                                     {TextView1, "{'Text':{'Path':'Session.Session.Description'}}"},
-                                     {SubLabel1, "{'Text':{'Path':'Session.Session.SpeakerKey'}}"},
+                                     {TextView1, "{'Text':{'Path':'Session.Session.Synopsis'}}"},
+                                     {SubLabel1, "{'Text':{'Path':'Session.Session.Speaker'}}"},
                                      {SubLabel2, "{'Text':{'Path':'Session.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'}}"},
                                      {favoriteButton,"{'IsFavorite':{'Path':'Session.IsFavorite'}}"}
                                  });

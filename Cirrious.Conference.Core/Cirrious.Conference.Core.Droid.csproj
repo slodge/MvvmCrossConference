@@ -61,6 +61,7 @@
     <Compile Include="Converters\SessionSmallDetailsValueConverter.cs" />
     <Compile Include="Converters\SimpleDateValueConverter.cs" />
     <Compile Include="Converters\SponsorImageValueConverter.cs" />
+    <Compile Include="Converters\TeamImageValueConverter.cs" />
     <Compile Include="Converters\TimeAgoConverter.cs" />
     <Compile Include="Interfaces\ErrorEventArgs.cs" />
     <Compile Include="Interfaces\IConferenceService.cs" />
@@ -82,6 +83,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Raw\Track.cs" />
+    <Compile Include="Models\Raw\Team.cs" />
     <Compile Include="Models\SessionWithFavoriteFlag.cs" />
     <Compile Include="Models\Twitter\AtomConst.cs" />
     <Compile Include="Models\Twitter\Tweet.cs" />
@@ -108,6 +110,8 @@
     <Compile Include="ViewModels\SessionViewModel.cs" />
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
     <Compile Include="ViewModels\SponsorsViewModel.cs" />
+    <Compile Include="ViewModels\TeamViewModel.cs" />
+    <Compile Include="ViewModels\BaseTeamViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

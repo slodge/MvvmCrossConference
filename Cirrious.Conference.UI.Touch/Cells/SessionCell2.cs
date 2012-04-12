@@ -12,7 +12,7 @@ namespace Cirrious.Conference.UI.Touch
 	{
 		public static NSString Identifier = new NSString("SessionCell2");
         public const string BindingText = @"
-{'SpeakerText':{'Path':'Item.Session.SpeakerKey'},
+{'SpeakerText':{'Path':'Item.Session.Speaker'},
 'MainText':{'Path':'Item.Session.Title'},
 'RoomText':{'Path':'Item.Session','Converter':'SessionSmallDetails','ConverterParameter':'SmallDetailsFormat'},
 'SelectedCommand':{'Path':'Command'},

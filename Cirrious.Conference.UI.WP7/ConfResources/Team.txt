@@ -1,0 +1,44 @@
+﻿[
+{
+  "Firstname": "Martyn",
+  "Lastname": "Fewtrell",
+  "Description": "Registration and Website",
+  "Image": "MartynFewtrell.png",
+  "DisplayOrder": 1
+},
+{
+  "Firstname": "Chris",
+  "Lastname": "Myhill",
+  "Description": "Location Manager",
+  "Image": "ChrisMyhill.jpg",
+  "DisplayOrder": 2
+},
+{
+  "Firstname": "Ross",
+  "Lastname": "Scott",
+  "Description": "Catering, Speaker Dinner and Geek Dinner",
+  "Image": "RossScott.png",
+  "DisplayOrder": 3
+},
+{
+  "Firstname": "Rachel",
+  "Lastname": "Clements",
+  "Description": "Speaker Manager",
+  "Image": "RachelClements.jpg",
+  "DisplayOrder": 4
+},
+{
+  "Firstname": "Rob",
+  "Lastname": "Bracken",
+  "Description": "Balloon Debate",
+  "Image": "RobBracken.jpg",
+  "DisplayOrder": 5
+},
+{
+  "Firstname": "Guy",
+  "Lastname": "Smith-Ferrier",
+  "Description": "Sending Too Many Emails",
+  "Image": "GuySmithFerrier.jpg",
+  "DisplayOrder": 6
+}
+]

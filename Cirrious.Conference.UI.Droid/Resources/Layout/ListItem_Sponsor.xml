@@ -11,18 +11,20 @@
       xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.sqlbits"
       android:id="@+id/SponsorImageView"
-      android:layout_width="160dp"
-      android:layout_height="70dp"
-      android:padding="10dp"
+      android:layout_width="150dp"
+      android:layout_height="110dp"
+      android:padding="5dp"
+      android:gravity="center_vertical"
       android:icon="@drawable/icon"
       local:MvxBind="{'AssetImagePath':{'Path':'Item.Image','Converter':'SponsorImage'}}"
     />
   <TextView
       android:id="@+id/SponsorImageView"
       android:layout_width="fill_parent"
-      android:layout_height="70dp"
-      android:padding="10dp"
-      android:textSize="24dp"
+      android:layout_height="110dp"
+      android:padding="5dp"
+      android:gravity="center_vertical"
+      android:textSize="18dp"
       local:MvxBind="{'Text':{'Path':'Item.Name'}}"
     />
 </LinearLayout>
