@@ -17,9 +17,9 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
     public class TwitterViewModel
         : BaseViewModel
         , IMvxServiceConsumer<ITwitterSearchProvider>
-		, IMvxServiceConsumer<IMvxReachability>
+        , IMvxServiceConsumer<IMvxReachability>
     {
-        private const string SearchTerm = "DDDSW";
+        private const string SearchTerm = "dddsw";
 
         private ITwitterSearchProvider TwitterSearchProvider
         {
@@ -39,7 +39,7 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
             get { return _tweetsPlus; }
             set { _tweetsPlus = value; FirePropertyChanged("TweetsPlus"); }
         }
-		
+        
         private bool _isSearching;
         public bool IsSearching
         {
@@ -54,44 +54,44 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
                 return new MvxRelayCommand(StartSearch);
             }
         }
-		
-		public IMvxCommand RefreshCommand
-		{
-			get
-			{
+        
+        public IMvxCommand RefreshCommand
+        {
+            get
+            {
                 return new MvxRelayCommand(StartSearch);
-			}
-		}
-		
-		private DateTime _whenLastUpdatedUtc = DateTime.MinValue;
-		public DateTime WhenLastUpdatedUtc
-		{
-			get
-			{
-				return _whenLastUpdatedUtc;
-			}
-			set
-			{
-				_whenLastUpdatedUtc = value;
-				FirePropertyChanged("WhenLastUpdatedUtc");
-			}
-		}
-		
+            }
+        }
+        
+        private DateTime _whenLastUpdatedUtc = DateTime.MinValue;
+        public DateTime WhenLastUpdatedUtc
+        {
+            get
+            {
+                return _whenLastUpdatedUtc;
+            }
+            set
+            {
+                _whenLastUpdatedUtc = value;
+                FirePropertyChanged("WhenLastUpdatedUtc");
+            }
+        }
+        
         private void StartSearch()
         {
             if (IsSearching)
                 return;
-			
-			IMvxReachability reach;
-			if (this.TryGetService<IMvxReachability>(out reach))
-			{
-				if (!reach.IsHostReachable("www.twitter.com"))
-				{
-				    ReportError(SharedTextSource.GetText("Error.NoNetwork"));
-					return;
-				}
-			}
-			
+            
+            IMvxReachability reach;
+            if (this.TryGetService<IMvxReachability>(out reach))
+            {
+                if (!reach.IsHostReachable("www.twitter.com"))
+                {
+                    ReportError(SharedTextSource.GetText("Error.NoNetwork"));
+                    return;
+                }
+            }
+            
             IsSearching = true;
             TwitterSearchProvider.StartAsyncSearch(SearchTerm, Success, Error);
         }
@@ -116,12 +116,12 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
         {
             IsSearching = false;
             Tweets = enumerable.ToList();
-			TweetsPlus = Tweets.Select(x => new WithCommand<Tweet>(x, new MvxRelayCommand(() => ShowTweet(x)))).ToList();
-			WhenLastUpdatedUtc = DateTime.UtcNow;
+            TweetsPlus = Tweets.Select(x => new WithCommand<Tweet>(x, new MvxRelayCommand(() => ShowTweet(x)))).ToList();
+            WhenLastUpdatedUtc = DateTime.UtcNow;
         }
-			                           
-		private void ShowTweet(Tweet tweet)
-		{
+                                       
+        private void ShowTweet(Tweet tweet)
+        {
             var guessTwitterNameEnds = tweet.Author.IndexOf(' ');
             if (guessTwitterNameEnds > 0)
             {
@@ -132,6 +132,6 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
             {
                 ExceptionSafeShare("@" + tweet.Author + " #dddsw");
             }
-		}
+        }
     }
 }
