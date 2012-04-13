@@ -14,10 +14,6 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
         {
             get { return new MvxRelayCommand(() => RequestNavigate<TeamViewModel>()); }
         }
-        public IMvxCommand ShowExhibitorsCommand
-        {
-            get { return new MvxRelayCommand(() => RequestNavigate<ExhibitionViewModel>()); }
-        }
         public IMvxCommand ShowMapCommand
         {
             get { return new MvxRelayCommand(() => RequestNavigate<MapViewModel>()); }

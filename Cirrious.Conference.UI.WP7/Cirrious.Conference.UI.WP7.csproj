@@ -98,9 +98,6 @@
     <Compile Include="Views\SponsorsView.xaml.cs">
       <DependentUpon>SponsorsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ExhibitionView.xaml.cs">
-      <DependentUpon>ExhibitionView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SessionView.xaml.cs">
       <DependentUpon>SessionView.xaml</DependentUpon>
     </Compile>
@@ -156,10 +153,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SponsorsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ExhibitionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

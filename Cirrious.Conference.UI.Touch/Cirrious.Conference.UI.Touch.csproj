@@ -199,7 +199,6 @@
     <Compile Include="Views\AboutView.cs" />
     <Compile Include="Views\BaseSponsorsView.cs" />
     <Compile Include="Views\EmptyViewController.cs" />
-    <Compile Include="Views\ExhibitorsView.cs" />
     <Compile Include="Interfaces\ITabBarPresenter.cs" />
     <Compile Include="Interfaces\ITabBarPresenterHost.cs" />
     <Compile Include="Views\SessionLists\BaseSessionListView.cs" />

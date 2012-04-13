@@ -149,7 +149,6 @@
     <Compile Include="ViewModels\BaseConferenceViewModel.cs" />
     <Compile Include="ViewModels\BaseSponsorsViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\ExhibitionViewModel.cs" />
     <Compile Include="ViewModels\Helpers\WithCommand.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModels\SessionsViewModel.cs" />

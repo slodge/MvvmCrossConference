@@ -107,7 +107,6 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
-    <Compile Include="ViewModels\ExhibitionViewModel.cs" />
     <Compile Include="ViewModels\SessionLists\FavoritesViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />

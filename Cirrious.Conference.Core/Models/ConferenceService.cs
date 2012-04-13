@@ -46,7 +46,6 @@ namespace Cirrious.Conference.Core.Models
 
         // the basic lists
         public IDictionary<string, SessionWithFavoriteFlag> Sessions { get; private set; }
-        public IDictionary<string, Sponsor> Exhibitors { get; private set; }
         public IDictionary<string, Sponsor> Sponsors { get; private set; }
         public IDictionary<string, Team> Team { get; private set; }
 
@@ -100,8 +99,7 @@ namespace Cirrious.Conference.Core.Models
         {
             var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Sponsors.txt");
             var items = JsonConvert.DeserializeObject<List<Sponsor>>(file);
-            Sponsors = items.Where(x => x.Level != "Exhibitor").ToDictionary(x => x.Name);
-            Exhibitors = items.Where(x => x.Level == "Exhibitor").ToDictionary(x => x.Name);
+            Sponsors = items.ToDictionary(x => x.Name);
         }
 
         private void LoadTeam()

@@ -6,11 +6,7 @@ namespace Cirrious.Conference.Core.ViewModels.HomeViewModels
 {
     public class SessionsViewModel
         : BaseConferenceViewModel
-    {        public IMvxCommand ShowExhibitorsCommand
-        {
-            get { return new MvxRelayCommand(() => RequestNavigate<ExhibitionViewModel>()); }
-        }
-
+    {    
         public IMvxCommand ShowTopicsCommand
         {
             get { return new MvxRelayCommand(() => RequestNavigate<TopicsViewModel>()); }

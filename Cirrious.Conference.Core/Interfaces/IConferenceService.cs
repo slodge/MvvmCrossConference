@@ -15,7 +15,6 @@ namespace Cirrious.Conference.Core.Interfaces
         event EventHandler LoadingChanged;
 
         IDictionary<string, SessionWithFavoriteFlag> Sessions { get; }
-        IDictionary<string, Sponsor> Exhibitors { get; }
         IDictionary<string, Sponsor> Sponsors { get; }
         IDictionary<string, Team> Team { get; }
 

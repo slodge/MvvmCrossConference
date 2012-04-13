@@ -97,7 +97,6 @@
     <Compile Include="Views\SessionsLists\TopicsView.cs" />
     <Compile Include="Views\SplashScreenView.cs" />
     <Compile Include="Views\Sponsors\BaseSponsorsView.cs" />
-    <Compile Include="Views\Sponsors\ExhibitionView.cs" />
     <Compile Include="Views\Sponsors\SponsorsView.cs" />
     <Compile Include="ViewHelpers.cs" />
     <Compile Include="Views\Team\BaseTeamView.cs" />
