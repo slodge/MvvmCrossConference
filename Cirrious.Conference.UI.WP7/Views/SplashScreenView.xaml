@@ -59,7 +59,7 @@
         </Viewbox>
         <TextBlock 
                    x:Name="X"
-                   Text="X"
+                   Text="4"
                    FontSize="192"
                    FontFamily="Segoe WP Black"
                    VerticalAlignment="Top"

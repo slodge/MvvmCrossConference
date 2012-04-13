@@ -112,7 +112,7 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 <System:Double x:Key="PhoneLightThemeOpacity">0</System:Double>
 
 <!-- Blue -->
-<Color x:Key="PhoneAccentColor">#FF1BA1E2</Color>
+<Color x:Key="PhoneAccentColor">#FFFFB27F</Color>
 
 <SolidColorBrush x:Key="PhoneForegroundBrush" Color="{StaticResource PhoneForegroundColor}"/>
 
