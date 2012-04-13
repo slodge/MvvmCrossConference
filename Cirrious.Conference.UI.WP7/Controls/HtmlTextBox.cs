@@ -40,7 +40,7 @@
             this.HtmlText = new RichTextBox();
             if (this.UrlForeColor == default(SolidColorBrush))
             {
-                this.UrlForeColor = new SolidColorBrush(Colors.Magenta);
+                this.UrlForeColor = (SolidColorBrush)App.Current.Resources["PhoneAccentBrush"];
             }
         }
 
