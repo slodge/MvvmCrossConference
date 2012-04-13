@@ -103,6 +103,8 @@
   <ItemGroup>
     <Compile Include="Interfaces\ErrorEventArgs.cs" />
     <Compile Include="ApplicationObjects\ErrorApplicationObject.cs" />
+    <Compile Include="Interfaces\IApplicationSettings.cs" />
+    <Compile Include="Interfaces\IConferenceStart.cs" />
     <Compile Include="Interfaces\IErrorReporter.cs" />
     <Compile Include="Interfaces\IErrorSource.cs" />
     <Compile Include="ApplicationObjects\StartApplicationObject.cs" />
@@ -117,6 +119,8 @@
     <Compile Include="Interfaces\IConferenceService.cs" />
     <Compile Include="Interfaces\IObservableCollection.cs" />
     <Compile Include="Interfaces\ITwitterSearchProvider.cs" />
+    <Compile Include="Models\ApplicationSettings.cs" />
+    <Compile Include="Models\ApplicationSettingsState.cs" />
     <Compile Include="Models\ConferenceService.cs" />
     <Compile Include="Models\FavoritesSaver.cs" />
     <Compile Include="Models\HackyConstants.cs" />
@@ -165,6 +169,7 @@
     <Compile Include="Models\Raw\Team.cs" />
     <Compile Include="ViewModels\TeamViewModel.cs" />
     <Compile Include="ViewModels\BaseTeamViewModel.cs" />
+    <Compile Include="ViewModels\UpdateViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -176,7 +181,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" />
+      <UserProperties ProjectLinkReference="6c3da376-dc4a-4b8c-924d-070c19f72bb7" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

@@ -13,19 +13,28 @@ namespace Cirrious.Conference.Core
     public abstract class BaseConferenceApp 
         : MvxApplication
         , IMvxServiceProducer<IMvxStartNavigation>
+        , IMvxServiceProducer<IConferenceStart>
         , IMvxServiceProducer<IMvxTextProvider>
         , IMvxServiceProducer<IConferenceService>
         , IMvxServiceProducer<ITwitterSearchProvider>
         , IMvxServiceProducer<IErrorReporter>
         , IMvxServiceProducer<IErrorSource>
+        , IMvxServiceProducer<IApplicationSettings>
     {
-        protected BaseConferenceApp()
+        protected BaseConferenceApp(StartApplicationObject startApplicationObject)
         {
+            InitialiseApplicationSettings();
             InitialiseText();
             InitaliseServices();
             InitaliseErrorSystem();
-            InitialiseStartNavigation();
+            InitialiseStartNavigation(startApplicationObject);
         }
+
+        private void InitialiseApplicationSettings()
+        {
+            this.RegisterServiceInstance<IApplicationSettings>(new ApplicationSettings());
+        }
+
 
         private void InitaliseErrorSystem()
         {
@@ -49,26 +58,28 @@ namespace Cirrious.Conference.Core
             this.RegisterServiceInstance<IMvxTextProvider>(builder.TextProvider);
         }
 
-        protected abstract void InitialiseStartNavigation();
+        protected void InitialiseStartNavigation(StartApplicationObject startApplicationObject)
+        {
+            this.RegisterServiceInstance<IConferenceStart>(startApplicationObject);
+            this.RegisterServiceInstance<IMvxStartNavigation>(startApplicationObject);
+        }
     }
 
     public class ConferenceApp
         : BaseConferenceApp
     {
-        protected override void InitialiseStartNavigation()
+        public ConferenceApp()
+            : base(new StartApplicationObject(true))
         {
-            var startApplicationObject = new StartApplicationObject(true);
-            this.RegisterServiceInstance<IMvxStartNavigation>(startApplicationObject);
         }
     }
 
     public class NoSplashScreenConferenceApp
         : BaseConferenceApp
     {
-        protected override void InitialiseStartNavigation()
+        public NoSplashScreenConferenceApp()
+            : base(new StartApplicationObject(false))
         {
-            var startApplicationObject = new StartApplicationObject(false);
-            this.RegisterServiceInstance<IMvxStartNavigation>(startApplicationObject);
         }
     }
 }

@@ -10,8 +10,6 @@ namespace Cirrious.Conference.Core.Interfaces
     {
 		void BeginAsyncLoad();
 		void DoSyncLoad();
-
-        void RefreshData();
 		
         bool IsLoading { get; }
         event EventHandler LoadingChanged;

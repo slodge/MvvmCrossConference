@@ -2,37 +2,34 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Net;
 using Cirrious.Conference.Core.Interfaces;
-using Cirrious.Conference.Core.Models.Helpers;
 using Cirrious.Conference.Core.Models.Raw;
 using Cirrious.MvvmCross.Core;
 using Cirrious.MvvmCross.ExtensionMethods;
 using Cirrious.MvvmCross.Interfaces.Localization;
 using Cirrious.MvvmCross.Interfaces.Platform;
 using Cirrious.MvvmCross.Interfaces.ServiceProvider;
-using Cirrious.MvvmCross.Platform;
+using Cirrious.MvvmCross.ViewModels;
 using Newtonsoft.Json;
 
 namespace Cirrious.Conference.Core.Models
 {
-    using System.Diagnostics;
-
-    public class ConferenceService 
+    public class ConferenceService
         : IConferenceService
-        , IMvxServiceConsumer<IMvxResourceLoader>
-        , IMvxServiceConsumer<IMvxSimpleFileStoreService>
+          , IMvxServiceConsumer<IMvxResourceLoader>
+          , IMvxServiceConsumer<IMvxSimpleFileStoreService>
     {
         private readonly FavoritesSaver _favoritesSaver = new FavoritesSaver();
 
         // is loading setup
         private bool _isLoading;
+
         public bool IsLoading
         {
             get { return _isLoading; }
-            private set 
-            { 
+            private set
+            {
                 _isLoading = value;
                 FireLoadingChanged();
             }
@@ -55,13 +52,14 @@ namespace Cirrious.Conference.Core.Models
 
         // a hashtable of favorites
         private IDictionary<string, SessionWithFavoriteFlag> _favoriteSessions;
-        public IDictionary<string,SessionWithFavoriteFlag> GetCopyOfFavoriteSessions()
+
+        public IDictionary<string, SessionWithFavoriteFlag> GetCopyOfFavoriteSessions()
         {
             lock (this)
             {
-				if (_favoriteSessions == null)
-					return new Dictionary<string, SessionWithFavoriteFlag>();
-				
+                if (_favoriteSessions == null)
+                    return new Dictionary<string, SessionWithFavoriteFlag>();
+
                 var toReturn = new Dictionary<string, SessionWithFavoriteFlag>(_favoriteSessions);
                 return toReturn;
             }
@@ -81,8 +79,8 @@ namespace Cirrious.Conference.Core.Models
             IsLoading = true;
             MvxAsyncDispatcher.BeginAsync(Load);
         }
-		
-		public void DoSyncLoad()
+
+        public void DoSyncLoad()
         {
             IsLoading = true;
             Load();
@@ -96,43 +94,6 @@ namespace Cirrious.Conference.Core.Models
             LoadTeam();
 
             IsLoading = false;
-        }
-        
-        public void RefreshData()
-        {
-            //TODO - GPB: Not sure if this is safe to re-use this property for remote data load but looked ok???
-            IsLoading = true;
-            //TODO - GPB: Just loading the remote data for LoadSessions(). Leaving other static data at the moment ???
-            GetConferenceData();
-        }
-		
-        private void GetConferenceData()
-        {
-            var webClient = new WebClient();
-            Trace.Info("Get remote data for conference");
-
-            webClient.UploadStringCompleted += (sender, e) =>
-            {
-                try
-                {
-                    var r = e.Result;
-                    var conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(r);
-                    Trace.Info("Start deserialising conference data");
-                    DeSerialiseConferenceData(conferenceModel);
-                    Trace.Info("Completed deserialising conference data");
-                }
-                catch (Exception ex)
-                {
-                    Trace.Error("ERROR deserializing downloaded conference data: {0}", ex.ToLongString());
-                }
-                finally
-                {
-                    IsLoading = false;
-                }
-            };
-
-            webClient.Encoding = System.Text.Encoding.UTF8;
-            webClient.UploadStringAsync(new Uri(Constants.SessionDataEndPoint), "POST", string.Empty);            
         }
 
         private void LoadSponsors()
@@ -175,15 +136,61 @@ namespace Cirrious.Conference.Core.Models
             }
         }
 
-        private void LoadSessions()
+        private bool TryLoadSessionsFromStorage(out PocketConferenceModel conferenceModel)
         {
-            var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Sessions.txt");
-            var conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(file);
-            DeSerialiseConferenceData(conferenceModel);
+            conferenceModel = null;
+
+            var fileStore = this.GetService<IMvxSimpleFileStoreService>();
+
+            string fileStoreContents;
+            if (!fileStore.TryReadTextFile(Constants.SessionsFileName, out fileStoreContents))
+            {
+                return false;
+            }
+
+            try
+            {
+                conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(fileStoreContents);
+            }
+            catch (Exception exception)
+            {
+                Trace.Warn("Masking error in loading sessions from disk {0}", exception.ToLongString());
+            }
+            return true;
         }
 
-        private void DeSerialiseConferenceData(PocketConferenceModel conferenceModel)
+        private PocketConferenceModel LoadSessionsFromResources()
         {
+            // because this is in resources it will never fail to deserialise!
+            var file = this.GetService<IMvxResourceLoader>().GetTextResource("ConfResources/Sessions.txt");
+            return JsonConvert.DeserializeObject<PocketConferenceModel>(file);
+        }
+
+        private void LoadSessions()
+        {
+            PocketConferenceModel conferenceModel;
+            if (!TryLoadSessionsFromStorage(out conferenceModel))
+            {
+                conferenceModel = LoadSessionsFromResources();
+            }
+            LoadSessionsFromPocketConferenceModel(conferenceModel);
+        }
+
+        private void ClearExistingSessions()
+        {
+            if (Sessions == null)
+                return;
+
+            foreach (var sessionWithFavoriteFlag in Sessions.Values)
+            {
+                sessionWithFavoriteFlag.PropertyChanged -= SessionWithFavoriteFlagOnPropertyChanged;
+            }
+        }
+
+        private void LoadSessionsFromPocketConferenceModel(PocketConferenceModel conferenceModel)
+        {
+            ClearExistingSessions();
+
             // patch up the sessions with slots
             foreach (var session in conferenceModel.Sessions.Values)
             {
@@ -195,11 +202,10 @@ namespace Cirrious.Conference.Core.Models
             }
 
             Sessions = conferenceModel.Sessions.Select(x => new SessionWithFavoriteFlag()
-            {
-                Session = x.Value,
-                IsFavorite = false
-            })
-                .ToDictionary(x => x.Session.Id, x => x);
+                                                                {
+                                                                    Session = x.Value,
+                                                                    IsFavorite = false
+                                                                }).ToDictionary(x => x.Session.Id, x => x);
 
             foreach (var sessionWithFavoriteFlag in Sessions.Values)
             {
@@ -207,7 +213,8 @@ namespace Cirrious.Conference.Core.Models
             }
         }
 
-        private void SessionWithFavoriteFlagOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        private void SessionWithFavoriteFlagOnPropertyChanged
+            (object sender, PropertyChangedEventArgs propertyChangedEventArgs)
         {
             if (propertyChangedEventArgs.PropertyName != "IsFavorite")
                 return;
