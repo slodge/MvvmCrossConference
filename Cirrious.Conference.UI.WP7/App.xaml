@@ -178,7 +178,7 @@
                                         Grid.Row="2"
                                         Grid.Column="1"
                                         Foreground="LightGray"
-                                        UrlForeColor="Red"
+                                        UrlForeColor="{StaticResource PhoneAccentBrush}"
                                         x:Name="MyTextBox" 
                                         HtmlContent="{Binding Item.Title}" />
             </Grid>
