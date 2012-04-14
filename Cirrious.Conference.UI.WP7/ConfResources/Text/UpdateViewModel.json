@@ -1,5 +1,7 @@
 ﻿
 {
 "Skip":"Skip",
-"CheckingForUpdates":"Checking for updates"
+"ErrorDuringUpdate":"Sometimes it happens - {0}",
+"CheckingForUpdates":"Checking for updates",
+"UnableToCopyFile":"Unable to copy file"
 }

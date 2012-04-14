@@ -17,7 +17,7 @@ namespace Cirrious.Conference.Core.ViewModels
         , IMvxServiceConsumer<IApplicationSettings>
         , IMvxServiceConsumer<IConferenceStart>
     {
-        private bool _isSkipped;
+        private bool _hasStartedRealApp;
 
         private bool _isFetching;
 
@@ -74,18 +74,18 @@ namespace Cirrious.Conference.Core.ViewModels
 
         public IMvxCommand SkipCommand
         {
-            get { return new MvxRelayCommand(DoSkip); }
+            get { return new MvxRelayCommand(StartRealAppNow); }
         }
 
-        private void DoSkip()
+        private void StartRealAppNow()
         {
-            _isSkipped = true;
+            _hasStartedRealApp = true;
             this.GetService<IConferenceStart>().StartApp();
         }
 
         private void DoUpdate()
         {
-            if (_isSkipped)
+            if (_hasStartedRealApp)
             {
                 Trace.Warn("Can't update after a skip");
                 return;
@@ -94,7 +94,7 @@ namespace Cirrious.Conference.Core.ViewModels
             var fileService = this.GetService<IMvxSimpleFileStoreService>();
             if (!fileService.TryMove(Constants.TempSessionsFileName, Constants.SessionsFileName, true))
             {
-                this.Error = new Exception("Unable to copy file");
+                ReportError(new Exception(TextSource.GetText("UnableToCopyFile")));
                 return;
             }
 
@@ -127,11 +127,24 @@ namespace Cirrious.Conference.Core.ViewModels
             webClient.UploadStringAsync(new Uri(Constants.SessionDataEndPoint), "POST", string.Empty);
         }
 
+        private void ReportError(Exception error)
+        {
+            Error = error;
+
+            if (_hasStartedRealApp)
+                return;
+
+            // move on, then report the error - order is a bit naughty here, but will hopefully work on most platforms...
+            // alternative is to design a flow in each of he view implementations (e.g. show toast, then automatically call skipcommand from them)
+            StartRealAppNow();
+            ReportError(this.TextSource.GetText("ErrorDuringUpdate", error.Message));
+        }
+
         private void HandleStringDownloadComplete(UploadStringCompletedEventArgs e)
         {
             try
             {
-                if (_isSkipped)
+                if (_hasStartedRealApp)
                 {
                     // nothing to do here - user has skipped the step
                     return;
@@ -139,7 +152,7 @@ namespace Cirrious.Conference.Core.ViewModels
 
                 if (e.Error != null)
                 {
-                    Error = e.Error;
+                    ReportError(e.Error);
                     return;
                 }
 
@@ -159,9 +172,9 @@ namespace Cirrious.Conference.Core.ViewModels
                 var service = this.GetService<IMvxSimpleFileStoreService>();
                 service.WriteFile(Constants.TempSessionsFileName, e.Result);
 
-                this.FileAvailable = true;
+                FileAvailable = true;
 
-                if (!_isSkipped)
+                if (!_hasStartedRealApp)
                 {
                     this.InvokeOnMainThread(DoUpdate);
                 }
@@ -169,8 +182,9 @@ namespace Cirrious.Conference.Core.ViewModels
             catch (Exception ex)
             {
                 Trace.Error(
-                    "ERROR deserializing downloaded conference data: {0}",
+                    "Problem with downloaded conference data: {0}",
                     ex.ToLongString());
+                ReportError(ex);
             }
             finally
             {
