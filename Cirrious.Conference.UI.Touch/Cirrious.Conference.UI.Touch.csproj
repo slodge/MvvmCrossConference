@@ -184,6 +184,7 @@
     <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\CODEMagazine160.png">
       <Link>ConfResources\SponsorImages\CODEMagazine160.png</Link>
     </Content>
+    <Content Include="ConfResources\Text\UpdateViewModel.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings\FavoritesSessionCellBinding.cs" />
@@ -255,6 +256,10 @@
     <Compile Include="Cells\TeamCell.cs" />
     <Compile Include="Cells\TeamCell.designer.cs">
       <DependentUpon>TeamCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateView.cs" />
+    <Compile Include="Views\UpdateView.designer.cs">
+      <DependentUpon>UpdateView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -344,6 +349,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Cells\SponsorCell.xib" />
     <Page Include="Views\SessionsView.xib" />
@@ -358,6 +364,6 @@
     <Page Include="Cells\SessionCell2.xib" />
     <Page Include="Cells\SeparatorCell.xib" />
     <Page Include="Cells\TeamCell.xib" />
+    <Page Include="Views\UpdateView.xib" />
   </ItemGroup>
-  <ItemGroup />
 </Project>
