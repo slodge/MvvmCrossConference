@@ -83,76 +83,79 @@ namespace Cirrious.Conference.UI.Droid
 			public const int appbar_city = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int appbar_database = 2130837509;
+			public const int appbar_cow = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int appbar_email = 2130837510;
+			public const int appbar_database = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int appbar_favs = 2130837511;
+			public const int appbar_email = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int appbar_home = 2130837512;
+			public const int appbar_favs = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int appbar_link = 2130837513;
+			public const int appbar_home = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int appbar_people = 2130837514;
+			public const int appbar_link = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int appbar_phone = 2130837515;
+			public const int appbar_people = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int appbar_questionmark = 2130837516;
+			public const int appbar_phone = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int appbar_twitter = 2130837517;
+			public const int appbar_questionmark = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int background = 2130837518;
+			public const int appbar_twitter = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int ic_pulltorefresh_arrow = 2130837519;
+			public const int background = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int Icon = 2130837520;
+			public const int ic_pulltorefresh_arrow = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int list_selector = 2130837521;
+			public const int Icon = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int pull_to_refresh_header_background = 2130837522;
+			public const int list_selector = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int SQLBitsLogo = 2130837523;
+			public const int pull_to_refresh_header_background = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int star_gold45 = 2130837524;
+			public const int SQLBitsLogo = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int star_gold_selector = 2130837525;
+			public const int star_gold45 = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int star_grey45 = 2130837526;
+			public const int star_gold_selector = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int star_grey_selector = 2130837527;
+			public const int star_grey45 = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int Tab_Favorites = 2130837528;
+			public const int star_grey_selector = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int Tab_Sessions = 2130837529;
+			public const int Tab_Favorites = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int Tab_Tweets = 2130837530;
+			public const int Tab_Sessions = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int Tab_Welcome = 2130837531;
+			public const int Tab_Tweets = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int tweetShare = 2130837532;
+			public const int Tab_Welcome = 2130837532;
+			
+			// aapt resource value: 0x7f02001d
+			public const int tweetShare = 2130837533;
 			
 			private Drawable()
 			{
