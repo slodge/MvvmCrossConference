@@ -184,7 +184,6 @@
     <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\CODEMagazine160.png">
       <Link>ConfResources\SponsorImages\CODEMagazine160.png</Link>
     </Content>
-    <Content Include="ConfResources\Text\UpdateViewModel.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings\FavoritesSessionCellBinding.cs" />
@@ -334,6 +333,9 @@
     </Content>
     <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\TopicsViewModel.json">
       <Link>ConfResources\Text\TopicsViewModel.json</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\UpdateViewModel.json">
+      <Link>ConfResources\Text\UpdateViewModel.json</Link>
     </Content>
     <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\WelcomeViewModel.json">
       <Link>ConfResources\Text\WelcomeViewModel.json</Link>
