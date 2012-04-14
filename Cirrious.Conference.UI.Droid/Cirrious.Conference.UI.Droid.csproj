@@ -101,6 +101,7 @@
     <Compile Include="ViewHelpers.cs" />
     <Compile Include="Views\Team\BaseTeamView.cs" />
     <Compile Include="Views\Team\TeamView.cs" />
+    <Compile Include="Views\UpdateView.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\AboutViewModel.json">
@@ -142,6 +143,9 @@
     <None Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\TeamViewModel.json">
       <Link>Assets\ConfResources\Text\TeamViewModel.json</Link>
     </None>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\Text\UpdateViewModel.json">
+      <Link>Assets\ConfResources\Text\UpdateViewModel.json</Link>
+    </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\Page_SplashScreen.axml" />
@@ -163,6 +167,7 @@
     <AndroidResource Include="Resources\Layout\Page_Map.axml" />
     <AndroidResource Include="Resources\Layout\Page_About.axml" />
     <AndroidResource Include="Resources\Layout\Page_Team.axml" />
+    <AndroidResource Include="Resources\Layout\Page_Update.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\SplashScreen.axml" />

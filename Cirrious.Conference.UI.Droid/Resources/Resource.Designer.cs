@@ -303,16 +303,19 @@ namespace Cirrious.Conference.UI.Droid
 			public const int Page_Team = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int pull_down_pull_to_refresh_list = 2130903057;
+			public const int Page_Update = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int pull_to_refresh_bindable_list = 2130903058;
+			public const int pull_down_pull_to_refresh_list = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int pull_up_pull_to_refresh_list = 2130903059;
+			public const int pull_to_refresh_bindable_list = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int SplashScreen = 2130903060;
+			public const int pull_up_pull_to_refresh_list = 2130903060;
+			
+			// aapt resource value: 0x7f030015
+			public const int SplashScreen = 2130903061;
 			
 			private Layout()
 			{

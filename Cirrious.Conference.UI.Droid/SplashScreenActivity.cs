@@ -5,7 +5,7 @@ using Cirrious.MvvmCross.Android.Views;
 
 namespace Cirrious.Conference.UI.Droid
 {
-    [Activity(Label = "SqlBits", MainLauncher = true, NoHistory = true, Icon = "@drawable/icon")]
+    [Activity(Label = "DDD SouthWest 4", MainLauncher = true, NoHistory = true, Icon = "@drawable/icon")]
     public class SplashScreenActivity
         : MvxBaseSplashScreenActivity
     {

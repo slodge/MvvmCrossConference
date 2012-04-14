@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.sqlbits"
+    xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.dddsw"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -9,7 +9,7 @@
     >
   <ImageView
       xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.sqlbits"
+      xmlns:local="http://schemas.android.com/apk/res/com.cirrious.conference.dddsw"
       android:id="@+id/SponsorImageView"
       android:layout_width="150dp"
       android:layout_height="110dp"

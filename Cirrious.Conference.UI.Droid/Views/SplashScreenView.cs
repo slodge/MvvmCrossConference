@@ -13,7 +13,7 @@ using Cirrious.Conference.Core.ViewModels;
 
 namespace Cirrious.Conference.UI.Droid.Views
 {
-    [Activity(Label = "SqlBits", NoHistory = true, Icon = "@drawable/icon")]
+    [Activity(Label = "DDD SouthWest", NoHistory = true, Icon = "@drawable/icon")]
     public class SplashScreenView : BaseView<SplashScreenViewModel>
     {
         public class SplashCountDownTimer : CountDownTimer

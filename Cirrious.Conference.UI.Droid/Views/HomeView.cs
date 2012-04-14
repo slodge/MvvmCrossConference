@@ -5,7 +5,7 @@ using Cirrious.Conference.Core.ViewModels;
 
 namespace Cirrious.Conference.UI.Droid.Views
 {
-    [Activity(Label = "SqlBits")]
+    [Activity(Label = "DDD SouthWest")]
     public class HomeView : BaseTabbedView<HomeViewModel>
     {
         protected override void OnViewModelSet()
