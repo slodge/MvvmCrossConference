@@ -21,14 +21,14 @@
       android:textSize="110dp"
       android:textStyle="bold"
       android:textColor="#ffffff"
-      android:text="X"
+      android:text="4"
     />
   </LinearLayout>
 
   <TextView 
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="app by @slodge"
+      android:text="app by @slodge and ????"
       android:textColor="#ffffff"
       android:textStyle="bold"
       android:layout_alignParentBottom="true"

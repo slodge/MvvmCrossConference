@@ -44,7 +44,7 @@
       />
     <Button
       style="@style/IconButton"
-      android:drawableLeft="@drawable/appbar_calendar"
+      android:drawableLeft="@drawable/appbar_cow"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Topics'},'Click':{'Path':'ShowTopicsCommand'}}"
       />
   </LinearLayout>
