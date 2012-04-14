@@ -101,7 +101,7 @@
                             Margin="0,24,0,0"
                             Command="{Binding ShowTopicsCommand}"
                             Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Topics,FallbackValue=Topics}"
-                            Source="/ConfResources/Images/appbar.database.png"
+                            Source="/ConfResources/Images/appbar.cow.png"
                         />
 
                     </StackPanel>

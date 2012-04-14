@@ -29,7 +29,7 @@ namespace Cirrious.Conference.UI.Touch
 
             Button3.SetImage(UIImage.FromFile("ConfResources/Images/appbar.calendar.png"), UIControlState.Normal);
             Button4.SetImage(UIImage.FromFile("ConfResources/Images/appbar.people.png"), UIControlState.Normal);
-            Button5.SetImage(UIImage.FromFile("ConfResources/Images/appbar.database.png"), UIControlState.Normal);
+            Button5.SetImage(UIImage.FromFile("ConfResources/Images/appbar.cow.png"), UIControlState.Normal);
 
             this.AddBindings(new Dictionary<object, string>()
 			    {

@@ -326,6 +326,7 @@
     <AndroidResource Include="Resources\Drawable-hdpi\background.png" />
     <AndroidResource Include="Resources\Drawable\list_selector.xml" />
     <AndroidResource Include="Resources\Layout\ListItem_Team.xml" />
+    <AndroidResource Include="Resources\Drawable\appbar_cow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

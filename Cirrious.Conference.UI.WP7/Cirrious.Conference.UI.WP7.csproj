@@ -193,6 +193,7 @@
     <Content Include="ConfResources\fav.on.png" />
     <Content Include="ConfResources\background.png" />
     <Content Include="ConfResources\fav.off.png" />
+    <Content Include="ConfResources\Images\appbar.cow.png" />
     <Content Include="ConfResources\SponsorImages\CODEMagazine160.png" />
     <Content Include="ConfResources\SponsorImages\ComponentOne160.png" />
     <Content Include="ConfResources\SponsorImages\eDevelopment160.png" />
