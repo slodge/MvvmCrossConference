@@ -19,12 +19,12 @@
     <TextView
       android:text="hello"
       style="@style/AboutPageTitle"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsXApp'}}" />
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ConferenceApp'}}" />
 
     <TextView
       android:text="hello"
       style="@style/AboutPageBodyText"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBitsXApp'}}" />
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutConferenceApp'}}" />
 
     <Button
       style="@style/IconButton"
@@ -32,6 +32,11 @@
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'StuartLinkText'},'Click':{'Path':'ContactSlodgeCommand'}}"
       />
 
+    <Button
+      style="@style/IconButton"
+      android:drawableLeft="@drawable/appbar_email"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'GavinLinkText'},'Click':{'Path':'ContactGavinBryanCommand'}}"
+      />
 
     <TextView
       android:text="hello"
@@ -42,35 +47,35 @@
     <TextView
       style="@style/AboutPageTitle"
       android:text="hello world"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsX'}}" />
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Conference'}}" />
 
     <TextView
       android:text="hello"
       style="@style/AboutPageBodyText"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBitsX'}}" />
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutConference'}}" />
 
 
     <Button
       style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_link"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsLinkText'},'Click':{'Path':'ShowSqlBitsCommand'}}"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ConferenceLinkText'},'Click':{'Path':'ShowConferenceCommand'}}"
       />
     
     <TextView
       style="@style/AboutPageTitle"
       android:text="hello world"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBits'}}" />
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ConferenceOrganisation'}}" />
 
     <TextView
       android:text="hello"
       style="@style/AboutPageBodyText"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutSQLBits'}}" />
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'AboutConferenceOrganisation'}}" />
 
 
     <Button
       style="@style/IconButton"
       android:drawableLeft="@drawable/appbar_link"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'SQLBitsLinkText'},'Click':{'Path':'ShowSqlBitsCommand'}}"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ConferenceOrganisationLinkText'},'Click':{'Path':'ShowConferenceOrganisersCommand'}}"
       />
     
     <TextView

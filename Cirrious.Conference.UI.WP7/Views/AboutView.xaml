@@ -35,18 +35,24 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <controls:Pivot>
                 <controls:PivotItem 
-                    Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=SQLBitsXApp, FallbackValue=SQLBitsXApp}"
+                    Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=ConferenceApp, FallbackValue=ConferenceApp}"
                     >
                     <ScrollViewer>
                         <StackPanel>
                             <TextBlock
-                           Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=AboutSQLBitsXApp, FallbackValue=AboutSQLBitsXApp}"
+                           Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=AboutConferenceApp, FallbackValue=AboutConferenceApp}"
                             TextWrapping="Wrap"
                             />
                             <Controls:IconWithTextMenuItem
                                     Margin="0,12,0,0"
                                     Command="{Binding ContactSlodgeCommand}"
                                     Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=StuartLinkText, FallbackValue=StuartLinkText}"
+                                    Source="/ConfResources/Images/appbar.feature.email.rest.png"
+                                />
+                            <Controls:IconWithTextMenuItem
+                                    Margin="0,12,0,0"
+                                    Command="{Binding ContactGavinBryanCommand}"
+                                    Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=GavinLinkText, FallbackValue=GavinLinkText}"
                                     Source="/ConfResources/Images/appbar.feature.email.rest.png"
                                 />
                             <TextBlock
@@ -58,18 +64,18 @@
                     </ScrollViewer>
                 </controls:PivotItem>
                 <controls:PivotItem 
-                    Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=SQLBitsX, FallbackValue=SQLBitsX}"
+                    Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Conference, FallbackValue=DDDSW4}"
                     >
                     <ScrollViewer>
                         <StackPanel>
                             <TextBlock
-                           Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=AboutSQLBitsX, FallbackValue=AboutSQLBitsX}"
+                           Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=AboutConference, FallbackValue=AboutConference}"
                             TextWrapping="Wrap"
                             />
                             <Controls:IconWithTextMenuItem
                                     Margin="0,24,0,0"
-                                    Command="{Binding ShowSqlBitsCommand}"
-                                    Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=SQLBitsLinkText, FallbackValue=SQLBitsLinkText}"
+                                    Command="{Binding ShowConferenceCommand}"
+                                    Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=ConferenceLinkText, FallbackValue=ConferenceLinkText}"
                                     Source="/ConfResources/Images/appbar.link.png"
                                 />
                         </StackPanel>
@@ -77,18 +83,18 @@
                 </controls:PivotItem>
 
                 <controls:PivotItem 
-                    Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=SQLBits, FallbackValue=SQLBits}"
+                    Header="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=ConferenceOrganisation, FallbackValue=ConferenceOrganisation}"
                     >
                     <ScrollViewer>
                         <StackPanel>
                             <TextBlock
-                           Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=AboutSQLBits, FallbackValue=AboutSQLBits}"
+                           Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=AboutConferenceOrganisation, FallbackValue=AboutConferenceOrganisation}"
                             TextWrapping="Wrap"
                             />
                             <Controls:IconWithTextMenuItem
                                     Margin="0,24,0,0"
-                                    Command="{Binding ShowSqlBitsCommand}"
-                                    Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=SQLBitsLinkText, FallbackValue=SQLBitsLinkText}"
+                                    Command="{Binding ShowConferenceOrganisersCommand}"
+                                    Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=ConferenceOrganisationLinkText, FallbackValue=ConferenceLinkText}"
                                     Source="/ConfResources/Images/appbar.link.png"
                                 />
                             

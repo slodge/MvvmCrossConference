@@ -26,6 +26,7 @@
     <MtouchProfiling>true</MtouchProfiling>
     <MtouchLink>None</MtouchLink>
     <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -183,6 +184,9 @@
     </Content>
     <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\CODEMagazine160.png">
       <Link>ConfResources\SponsorImages\CODEMagazine160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\Images\appbar.cow.png">
+      <Link>ConfResources\Images\appbar.cow.png</Link>
     </Content>
   </ItemGroup>
   <ItemGroup>

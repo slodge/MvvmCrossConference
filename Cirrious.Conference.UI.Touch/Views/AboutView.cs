@@ -28,18 +28,19 @@ namespace Cirrious.Conference.UI.Touch
             _scrollview = new UIScrollView(new RectangleF(0,0,320,365));
             View.AddSubview(_scrollview);
 			
-            AddHeading("SQLBitsXApp");
-            AddTextBlock("AboutSQLBitsXApp");
+            AddHeading("ConferenceApp");
+            AddTextBlock("AboutConferenceApp");
             AddCommand(ViewModel.ContactSlodgeCommand, "StuartLinkText", "appbar.feature.email.rest");
+            AddCommand(ViewModel.ContactGavinBryanCommand, "GavinLinkText", "appbar.feature.email.rest");
             AddTextBlock("Disclaimer");
 
-            AddHeading("SQLBitsX");
-            AddTextBlock("AboutSQLBitsX");
-            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link");
+            AddHeading("Conference");
+            AddTextBlock("AboutConference");
+            AddCommand(ViewModel.ShowConferenceCommand,"ConferenceLinkText","appbar.link");
 
-            AddHeading("SQLBits");
-            AddTextBlock("AboutSQLBits");
-            AddCommand(ViewModel.ShowSqlBitsCommand,"SQLBitsLinkText","appbar.link");
+            AddHeading("ConferenceOrganisation");
+            AddTextBlock("AboutConferenceOrganisation");
+            AddCommand(ViewModel.ShowConferenceOrganisersCommand,"ConferenceOrganisationLinkText","appbar.link");
 
             AddHeading("MvvmCross");
             AddTextBlock("AboutMvvmCross");

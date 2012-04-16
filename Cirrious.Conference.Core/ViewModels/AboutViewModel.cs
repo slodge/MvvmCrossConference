@@ -13,8 +13,19 @@ namespace Cirrious.Conference.Core.ViewModels
                 return
                     new MvxRelayCommand(
                         () =>
-                        ComposeEmail("me@slodge.com", "About MvvmCross and the SQL Bits app", "I've got a question"));
+                        ComposeEmail("me@slodge.com", "About MvvmCross and the DDD South West 4 app", "I've got a question"));
             }
+        }
+
+        public IMvxCommand ContactGavinBryanCommand
+        {
+          get
+          {
+            return
+                new MvxRelayCommand(
+                    () =>
+                    ComposeEmail("gavinbryan@hotmail.com", "About the DDD South West 4 app", "I've got a question"));
+          }
         }
 
         public IMvxCommand MvvmCrossOnGithubCommand
@@ -28,7 +39,7 @@ namespace Cirrious.Conference.Core.ViewModels
             }
         }
 
-        public IMvxCommand ShowSqlBitsCommand
+        public IMvxCommand ShowConferenceCommand
         {
             get
             {
@@ -38,7 +49,18 @@ namespace Cirrious.Conference.Core.ViewModels
                         ShowWebPage("http://dddsouthwest.com"));
             }
         }
-        
+
+        public IMvxCommand ShowConferenceOrganisersCommand
+        {
+            get
+            {
+                return
+                    new MvxRelayCommand(
+                        () =>
+                        ShowWebPage("http://www.developerdeveloperdeveloper.com"));
+            }
+        }
+
         public IMvxCommand MonoTouchCommand
         {
             get
