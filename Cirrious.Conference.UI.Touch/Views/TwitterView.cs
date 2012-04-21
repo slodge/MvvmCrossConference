@@ -30,7 +30,7 @@ namespace Cirrious.Conference.UI.Touch.Views
             //Add(_activityView);
             //View.BringSubviewToFront(_activityView);
 
-            _tableView = new FoldingTableViewController(new System.Drawing.RectangleF(0, 0, 320, 367), UITableViewStyle.Plain);
+            _tableView = IsPad ? new FoldingTableViewController(new System.Drawing.RectangleF(0, 0, 768, 1024), UITableViewStyle.Plain) : new FoldingTableViewController(new System.Drawing.RectangleF(0, 0, 320, 367), UITableViewStyle.Plain);
             var source = new MvxActionBasedBindableTableViewSource(
                                 _tableView.TableView,
                                 UITableViewCellStyle.Default,
@@ -61,6 +61,14 @@ namespace Cirrious.Conference.UI.Touch.Views
 
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);
 
+        }
+
+        private static bool IsPad
+        {
+            get
+            {
+                return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
+            }
         }
     }
 }

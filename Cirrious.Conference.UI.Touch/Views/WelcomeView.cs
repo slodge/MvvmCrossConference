@@ -14,7 +14,7 @@ namespace Cirrious.Conference.UI.Touch
     public partial class WelcomeView : MvxBindingTouchViewController<WelcomeViewModel>
     {
         public WelcomeView(MvxShowViewModelRequest request)
-            : base(request, "WelcomeView", null)
+            : base(request, IsPad ? "WelcomeView_iPad" : "WelcomeView", null)
         {
         }
 
@@ -59,6 +59,14 @@ namespace Cirrious.Conference.UI.Touch
         {
             // Return true for supported orientations
             return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
+        }
+
+        private static bool IsPad
+        {
+            get
+            {
+                return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
+            }
         }
     }
 }

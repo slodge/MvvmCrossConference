@@ -17,7 +17,7 @@ namespace Cirrious.Conference.UI.Touch
     public partial class MapView : MvxBindingTouchViewController<MapViewModel>
     {
         public MapView(MvxShowViewModelRequest request)
-            : base(request, "MapView", null)
+            : base(request, IsPad ? "MapView_iPad" : "MapView", null)
         {
         }
 
@@ -33,7 +33,7 @@ namespace Cirrious.Conference.UI.Touch
         {
             base.ViewDidLoad();
 
-            var map = new MKMapView(new RectangleF(20, 166, 280, 192));
+            var map = IsPad ? new MKMapView(new RectangleF(20, 300, 700, 600)) : new MKMapView(new RectangleF(20, 166, 280, 192));
             this.View.Add(map);
             map.ShowsUserLocation = true;
             map.MapType = MKMapType.Standard;
@@ -85,6 +85,14 @@ namespace Cirrious.Conference.UI.Touch
         {
             // Return true for supported orientations
             return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
+        }
+
+        private static bool IsPad
+        {
+            get
+            {
+                return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
+            }
         }
 
         public class MapViewDelegate : MKMapViewDelegate

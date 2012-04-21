@@ -10,8 +10,13 @@ namespace Cirrious.Conference.UI.Touch
 {
     public class AboutView : MvxBindingTouchViewController<AboutViewModel>
     {
+        private int HeadingWidth = IsPad ? 700 : 300;
+
         public AboutView(MvxShowViewModelRequest request) : base(request)
         {
+           if (IsPad) {
+              this.View.Frame = new RectangleF (0, 0, 768, 1024);
+           }
         }
 
         private UIScrollView _scrollview;
@@ -23,9 +28,10 @@ namespace Cirrious.Conference.UI.Touch
 
             View.BackgroundColor = UIColor.Black;
 			
-			NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);			
-			
-            _scrollview = new UIScrollView(new RectangleF(0,0,320,365));
+			   NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);
+
+            _scrollview = IsPad ? new UIScrollView(new RectangleF(0,0,768,1024)) : new UIScrollView(new RectangleF(0,0,320,365)) ;
+
             View.AddSubview(_scrollview);
 			
             AddHeading("ConferenceApp");
@@ -64,7 +70,7 @@ namespace Cirrious.Conference.UI.Touch
         private void AddHeading(string which)
         {
             _currentTop += 10;
-            var frame = new RectangleF(10, _currentTop, 300, 30);
+            var frame = new RectangleF(10, _currentTop, HeadingWidth, 30);
             var view = new UILabel(frame);
             view.BackgroundColor = UIColor.Black;
             view.TextColor = UIColor.White;
@@ -80,8 +86,8 @@ namespace Cirrious.Conference.UI.Touch
             var text = GetText(which);
             var nsText = new NSString(text);
             var font = UIFont.FromName("Helvetica", 13);
-            var size = nsText.StringSize(font, new SizeF(300,100000), UILineBreakMode.WordWrap);
-            var frame = new RectangleF(10, _currentTop, 300, size.Height);
+            var size = nsText.StringSize(font, new SizeF(HeadingWidth,100000), UILineBreakMode.WordWrap);
+            var frame = new RectangleF(10, _currentTop, HeadingWidth, size.Height);
             var view = new UILabel(frame);
             view.BackgroundColor = UIColor.Black;
             view.AutoresizingMask = UIViewAutoresizing.None;
@@ -112,6 +118,14 @@ namespace Cirrious.Conference.UI.Touch
         {
             _scrollview.AddSubview(view);
             _currentTop += (int)view.Frame.Height;
+        }
+
+        private static bool IsPad
+        {
+            get
+            {
+                return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
+            }
         }
     }
 }

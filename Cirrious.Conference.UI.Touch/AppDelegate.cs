@@ -57,7 +57,11 @@ namespace Cirrious.Conference.UI.Touch
             // create a new window instance based on the screen size
             _window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            var presenter = new ConferencePresenter(this, _window);
+            //var presenter = IsPad ? (IMvxTouchViewPresenter)new ConferenceTabletPresenter(this, _window) : (IMvxTouchViewPresenter)new ConferencePhonePresenter(this, _window);
+
+            IMvxTouchViewPresenter presenter = IsPad ? (IMvxTouchViewPresenter)new ConferenceTabletPresenter(this, _window) : (IMvxTouchViewPresenter)new ConferencePhonePresenter(this, _window);
+
+            // var presenter = new ConferenceTabletPresenter(this, _window);
 
             //var presenter = 
             //    IsPad 
@@ -66,7 +70,7 @@ namespace Cirrious.Conference.UI.Touch
             var setup = new Setup(this, presenter);
             setup.Initialize();
 
-            this.RegisterServiceInstance<ITabBarPresenterHost>(presenter);
+            this.RegisterServiceInstance<ITabBarPresenterHost>((ITabBarPresenterHost)presenter);
 
             // start the app
             var start = this.GetService<IMvxStartNavigation>();

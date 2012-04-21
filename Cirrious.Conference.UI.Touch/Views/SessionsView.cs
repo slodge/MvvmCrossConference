@@ -15,7 +15,7 @@ namespace Cirrious.Conference.UI.Touch
         : MvxBindingTouchViewController<SessionsViewModel>
     {
         public SessionsView(MvxShowViewModelRequest request)
-            : base(request, "SessionsView", null)
+            : base(request, IsPad ? "SessionsView_iPad" : "SessionsView", null)
         {
         }
 
@@ -65,6 +65,14 @@ namespace Cirrious.Conference.UI.Touch
         {
             // Return true for supported orientations
             return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
+        }
+
+        private static bool IsPad
+        {
+            get
+            {
+                return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
+            }
         }
     }
 }

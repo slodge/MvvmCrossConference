@@ -15,12 +15,6 @@ namespace Cirrious.Conference.UI.Touch
 		MonoTouch.UIKit.UILabel Label1 { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton Button1 { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIButton Button2 { get; set; }
-
-		[Outlet]
 		MonoTouch.UIKit.UIButton Button3 { get; set; }
 
 		[Outlet]
@@ -40,16 +34,6 @@ namespace Cirrious.Conference.UI.Touch
 			if (Label1 != null) {
 				Label1.Dispose ();
 				Label1 = null;
-			}
-
-			if (Button1 != null) {
-				Button1.Dispose ();
-				Button1 = null;
-			}
-
-			if (Button2 != null) {
-				Button2.Dispose ();
-				Button2 = null;
 			}
 
 			if (Button3 != null) {
