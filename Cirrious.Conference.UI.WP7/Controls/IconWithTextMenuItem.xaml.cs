@@ -36,7 +36,6 @@ namespace Cirrious.Conference.UI.WP7.Controls
             parent.MainText.Text = (string)e.NewValue;
         }
 
-
         public ImageSource Source
         {
             get { return (ImageSource)GetValue(SourceProperty); }
@@ -52,6 +51,20 @@ namespace Cirrious.Conference.UI.WP7.Controls
             parent.IconImage.Source = (ImageSource)e.NewValue;
         }
 
+        public Style TextStyle
+        {
+          get { return (Style)GetValue(TextStyleProperty); }
+          set { SetValue(TextStyleProperty, value); }
+        }
+
+        public static readonly DependencyProperty TextStyleProperty =
+            DependencyProperty.Register("TextStyle", typeof(Style), typeof(IconWithTextMenuItem), new PropertyMetadata(OnTextStyleChanged));
+
+        private static void OnTextStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+          var parent = (IconWithTextMenuItem)d;
+          parent.MainText.Style = (Style)e.NewValue;
+        }
 
         public object CommandParameter
         {
@@ -62,8 +75,6 @@ namespace Cirrious.Conference.UI.WP7.Controls
         public static readonly DependencyProperty CommandParameterProperty =
             DependencyProperty.Register("CommandParameter", typeof(object), typeof(IconWithTextMenuItem), new PropertyMetadata(null));
 
-
-
         public IMvxCommand Command
         {
             get { return (IMvxCommand)GetValue(CommandProperty); }
@@ -72,8 +83,6 @@ namespace Cirrious.Conference.UI.WP7.Controls
 
         public static readonly DependencyProperty CommandProperty =
             DependencyProperty.Register("Command", typeof(IMvxCommand), typeof(IconWithTextMenuItem), new PropertyMetadata(null));
-
-
 
         private void OnTap(object sender, GestureEventArgs e)
         {

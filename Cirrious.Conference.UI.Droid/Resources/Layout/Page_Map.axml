@@ -31,11 +31,6 @@
       />
       <Button
         style="@style/IconButton"
-        android:drawableLeft="@drawable/appbar_phone"
-        local:MvxBind="{'Text':{'Path':'Phone'},'Click':{'Path':'PhoneCommand'}}"
-      />
-      <Button
-        style="@style/IconButton"
         android:drawableLeft="@drawable/appbar_email"
         local:MvxBind="{'Text':{'Path':'Email'},'Click':{'Path':'EmailCommand'}}"
       />

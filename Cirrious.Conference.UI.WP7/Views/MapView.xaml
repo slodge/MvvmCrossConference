@@ -41,23 +41,19 @@
                 Grid.Row="0"
                 >
                 <TextBlock Text="{Binding Name,FallbackValue=NameHere}" Margin="0"
-                           Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                           Style="{StaticResource PhoneTextNormalStyle}"/>
                 <Controls:IconWithTextMenuItem
                             Margin="0,24,0,0"
                             Command="{Binding WebPageCommand}"
                             Text="{Binding Address,FallbackValue=AddressHere}"
+                            TextStyle="{StaticResource PhoneTextLargeStyle}"
                             Source="/ConfResources/Images/appbar.link.png"
-                        />
-                <Controls:IconWithTextMenuItem
-                            Margin="0,0,0,0"
-                            Command="{Binding PhoneCommand}"
-                            Text="{Binding Phone,FallbackValue=PhoneHere}"
-                            Source="/ConfResources/Images/appbar.phone.png"
                         />
                 <Controls:IconWithTextMenuItem
                             Margin="0,0,0,12"
                             Command="{Binding EmailCommand}"
                             Text="{Binding Email,FallbackValue=EmailHere}"
+                            TextStyle="{StaticResource PhoneTextLargeStyle}"
                             Source="/ConfResources/Images/appbar.feature.email.rest.png"
                         />
 

@@ -8,42 +8,34 @@ using MonoTouch.Foundation;
 
 namespace Cirrious.Conference.UI.Touch
 {
-	[Register ("MapView")]
-	partial class MapView
-	{
-		[Outlet]
-		MonoTouch.UIKit.UILabel Label1 { get; set; }
+ [Register ("MapView")]
+ partial class MapView
+ {
+    [Outlet]
+    MonoTouch.UIKit.UILabel Label1 { get; set; }
 
-		[Outlet]
-		MonoTouch.UIKit.UIButton Button1 { get; set; }
+    [Outlet]
+    MonoTouch.UIKit.UIButton Button1 { get; set; }
 
-		[Outlet]
-		MonoTouch.UIKit.UIButton Button2 { get; set; }
+    [Outlet]
+    MonoTouch.UIKit.UIButton Button3 { get; set; }
+    
+    void ReleaseDesignerOutlets ()
+    {
+       if (Label1 != null) {
+          Label1.Dispose ();
+          Label1 = null;
+       }
 
-		[Outlet]
-		MonoTouch.UIKit.UIButton Button3 { get; set; }
-				
-		void ReleaseDesignerOutlets ()
-		{
-			if (Label1 != null) {
-				Label1.Dispose ();
-				Label1 = null;
-			}
+       if (Button1 != null) {
+          Button1.Dispose ();
+          Button1 = null;
+       }
 
-			if (Button1 != null) {
-				Button1.Dispose ();
-				Button1 = null;
-			}
-
-			if (Button2 != null) {
-				Button2.Dispose ();
-				Button2 = null;
-			}
-
-			if (Button3 != null) {
-				Button3.Dispose ();
-				Button3 = null;
-			}
-		}
-	}
+       if (Button3 != null) {
+          Button3.Dispose ();
+          Button3 = null;
+       }
+    }
+ }
 }

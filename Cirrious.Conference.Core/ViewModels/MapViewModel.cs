@@ -9,11 +9,11 @@ namespace Cirrious.Conference.Core.ViewModels
         : BaseViewModel
     {
         public string Name { get { return "University of the West of England (UWE)"; } }
-        public string Address { get { return "Frenchay Campus, Coldharbour Lane, Bristol, BS16 1QY"; } }
+        public string Address { get { return "Bristol BS16 1QY"; } }        
         public string LocationWebPage { get { return "http://www.dddsouthwest.com/"; } }
 
         public string Phone { get { return ""; } }
-        public string Email { get { return ""; } }
+        public string Email { get { return "admin@dddsouthwest.com"; } }
         public double Latitude { get { return 51.499954; } }
         public double Longitude { get { return -2.54694; } }
 
