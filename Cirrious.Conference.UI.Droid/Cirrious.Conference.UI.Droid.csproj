@@ -307,6 +307,12 @@
     <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\UWELogoLarge160.png">
       <Link>Assets\ConfResources\SponsorImages\UWELogoLarge160.png</Link>
     </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\Mindscape160.jpg">
+      <Link>Assets\ConfResources\SponsorImages\Mindscape160.jpg</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\PlanetRecruit160.jpg">
+      <Link>Assets\ConfResources\SponsorImages\PlanetRecruit160.jpg</Link>
+    </AndroidAsset>
     <Content Include="Controls\PullToRefresh\License.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Drawable\pull_to_refresh_header_background.xml" />

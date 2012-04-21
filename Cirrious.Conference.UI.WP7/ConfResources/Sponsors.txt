@@ -28,8 +28,18 @@ eGroup insure cars, homes, vans and bikes which are underwritten by Norwich Unio
 We also sell a huge range of commercial products including eTradesman, eBusinessCar, eGoodsInTransit, eOffice, eShop and eSurgery."
 },
 {
-"Name":"Telerik"
+"Name":"PlanetRecruit"
 ,"DisplayOrder": 4
+,"Url":"http://www.planetrecruit.com/?wt.mc_id=TE_PR_DDD"
+,"Image":"PlanetRecruit160.jpg"
+,"Level":"Premium"
+,"Description":"Trinity Mirror Digital Recruitment is a portfolio of specialist market-leading jobsites attracting candidates across a range of industry verticals including totallylegal (lawyers), PlanetRecruit (IT professionals), The Career Engineer, SecsintheCity (secretaries) and GAAPweb (accountancy and finance professionals).
+
+Trinity Mirror Digital Recruitment has over 3.5 million registered candidates across its portfolio of sites and receives over 1.8 million visits, 3.3 million searches and 443,000 applications a month."
+},
+{
+"Name":"Telerik"
+,"DisplayOrder": 5
 ,"Url":"http://www.telerik.com/"
 ,"Image":"telerik_logo_RGB_photoshop160.png"
 ,"Level":"Premium"
@@ -39,7 +49,7 @@ As true craftsmen, we don't believe in compromises and our goal is to only relea
 },
 {
 "Name":"JetBrains"
-,"DisplayOrder": 5
+,"DisplayOrder": 6
 ,"Url":"http://www.jetbrains.com/"
 ,"Image":"jetbrains160.png"
 ,"Level":"Premium"
@@ -47,7 +57,7 @@ As true craftsmen, we don't believe in compromises and our goal is to only relea
 },
 {
 "Name":"TechSmith"
-,"DisplayOrder": 6
+,"DisplayOrder": 7
 ,"Url":"http://www.techsmith.com/"
 ,"Image":"TechSmith-Logo-Primary160.png"
 ,"Level":"Premium"
@@ -55,7 +65,7 @@ As true craftsmen, we don't believe in compromises and our goal is to only relea
 },
 {
 "Name":"Landmark Information Group"
-,"DisplayOrder": 7
+,"DisplayOrder": 8
 ,"Url":"http://www.landmark.co.uk/"
 ,"Image":"Landmark1160.png"
 ,"Level":"Premium"
@@ -67,15 +77,23 @@ Landmark's success has been founded on creating innovative products and informat
 },
 {
 "Name":"ComponentOne"
-,"DisplayOrder": 8
+,"DisplayOrder": 9
 ,"Url":"http://www.componentone.com/"
 ,"Image":"ComponentOne160.png"
 ,"Level":"Premium"
 ,"Description":"ComponentOne provides hundreds of developer productivity tools to build enterprise-level applications for the desktop, Web, and mobile devices. With ComponentOne's flagship product, Studio Enterprise, Microsoft Visual Studio developers spend less time coding and more time focusing on business logic. From grids, charts, reports, and schedulers to PDF viewers, editors, and more UI controls, you get added functionality, professional looking styling, and effortless deployment. This is why developers, just like you, turn to ComponentOne. Visit www.componentone.com."
 },
 {
+"Name":"Mindscape"
+,"DisplayOrder": 10
+,"Url":"http://www.mindscapehq.com/"
+,"Image":"Mindscape160.jpg"
+,"Level":"Premium"
+,"Description":"Mindscape was created with the aim of delivering great tools and components, to help developers be the best developers they can be. We build LightSpeed (.NET ORM) as well as products for WPF, Silverlight, SimpleDB & NHibernate. Professional .NET tools that are useful, simple and more convenient to use."
+},
+{
 "Name":"TypeMock"
-,"DisplayOrder": 9
+,"DisplayOrder": 11
 ,"Url":"http://www.typemock.com/"
 ,"Image":"TypeMock160.png"
 ,"Level":"Premium"
@@ -83,7 +101,7 @@ Landmark's success has been founded on creating innovative products and informat
 },
 {
 "Name":"CODE Magazine"
-,"DisplayOrder": 10
+,"DisplayOrder": 12
 ,"Url":"http://www.codemag.com/"
 ,"Image":"CODEMagazine160.png"
 ,"Level":"Premium"
@@ -92,7 +110,7 @@ CODE Magazine has one primary goal: provide the IT community with advanced techn
 },
 {
 "Name":"LogicNP Software"
-,"DisplayOrder": 11
+,"DisplayOrder": 13
 ,"Url":"http://www.ssware.com/"
 ,"Image":"LogicNP160.png"
 ,"Level":"Premium"
