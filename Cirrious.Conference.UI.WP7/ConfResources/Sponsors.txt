@@ -48,16 +48,44 @@ Trinity Mirror Digital Recruitment has over 3.5 million registered candidates ac
 As true craftsmen, we don't believe in compromises and our goal is to only release tools that we can be proud of."
 },
 {
-"Name":"JetBrains"
+"Name":"Gibraltar Software"
 ,"DisplayOrder": 6
+,"Url":"http://www.gibraltarsoftware.com/"
+,"Image":"GibraltarSoftware160.png"
+,"Level":"Premium"
+,"Description":"Gibraltar Software writes .NET developer tools to help you build rock-solid .NET software.
+
+Our flagship product, Gibraltar, provides advanced logging & analysis of errors, performance and usage patterns for all .NET applications including WinForms, WPF, ASP.NET, WCF, Silverlight, and Win32 services. With Gibraltar you can know about every unique error that happens in production, continuously monitor your apps for performance bottlenecks and make development decisions based on hard data about what features are and aren't important to your customers.
+
+We are also the guys behind VistaDB, an embedded SQL database engine for .NET applications that offers significant deployment advantages over Microsoft SQL Compact Edition, Microsoft SQL Server Express, Microsoft Access and other lightweight database alternatives. For example, VistaDB is the only .NET embedded database that allows Xcopy deployment of a single DLL for both 32 and 64 bit runtime support."
+},
+{
+"Name":"PluralSight"
+,"DisplayOrder": 7
+,"Url":"http://www.pluralsight-training.net/microsoft/"
+,"Image":"pluralsight160.png"
+,"Level":"Premium"
+,"Description":"Pluralsight is the global leader in high-quality online training for hardcore developers. The revolutionary Pluralsight training library provides developers with instant access to a rich collection of online training courses delivered by industry authorities. See what you can learn at pluralsight.com and join the @pluralsight community on Twitter."
+},
+{
+"Name":"JetBrains"
+,"DisplayOrder": 8
 ,"Url":"http://www.jetbrains.com/"
 ,"Image":"jetbrains160.png"
 ,"Level":"Premium"
 ,"Description":"World's Leading Vendor of Professional Development Tools"
 },
 {
+"Name":"Redgate"
+,"DisplayOrder": 9
+,"Url":"http://www.red-gate.com/"
+,"Image":"RedGate160.png"
+,"Level":"Premium"
+,"Description":"Red Gate Software makes ingeniously simple tools for over 500,000 Microsoft technology professionals working with SQL Server, .NET, and Exchange Server. The company’s product line includes must-have tools for .NET developers who program in C# or VB.NET. Zero in on memory leaks, rapidly – Download your free trial of ANTS Memory Profiler."
+},
+{
 "Name":"TechSmith"
-,"DisplayOrder": 7
+,"DisplayOrder": 10
 ,"Url":"http://www.techsmith.com/"
 ,"Image":"TechSmith-Logo-Primary160.png"
 ,"Level":"Premium"
@@ -65,7 +93,7 @@ As true craftsmen, we don't believe in compromises and our goal is to only relea
 },
 {
 "Name":"Landmark Information Group"
-,"DisplayOrder": 8
+,"DisplayOrder": 11
 ,"Url":"http://www.landmark.co.uk/"
 ,"Image":"Landmark1160.png"
 ,"Level":"Premium"
@@ -77,7 +105,7 @@ Landmark's success has been founded on creating innovative products and informat
 },
 {
 "Name":"ComponentOne"
-,"DisplayOrder": 9
+,"DisplayOrder": 12
 ,"Url":"http://www.componentone.com/"
 ,"Image":"ComponentOne160.png"
 ,"Level":"Premium"
@@ -85,7 +113,7 @@ Landmark's success has been founded on creating innovative products and informat
 },
 {
 "Name":"Mindscape"
-,"DisplayOrder": 10
+,"DisplayOrder": 13
 ,"Url":"http://www.mindscapehq.com/"
 ,"Image":"Mindscape160.jpg"
 ,"Level":"Premium"
@@ -93,7 +121,7 @@ Landmark's success has been founded on creating innovative products and informat
 },
 {
 "Name":"TypeMock"
-,"DisplayOrder": 11
+,"DisplayOrder": 14
 ,"Url":"http://www.typemock.com/"
 ,"Image":"TypeMock160.png"
 ,"Level":"Premium"
@@ -101,7 +129,7 @@ Landmark's success has been founded on creating innovative products and informat
 },
 {
 "Name":"CODE Magazine"
-,"DisplayOrder": 12
+,"DisplayOrder": 15
 ,"Url":"http://www.codemag.com/"
 ,"Image":"CODEMagazine160.png"
 ,"Level":"Premium"
@@ -110,7 +138,7 @@ CODE Magazine has one primary goal: provide the IT community with advanced techn
 },
 {
 "Name":"LogicNP Software"
-,"DisplayOrder": 13
+,"DisplayOrder": 16
 ,"Url":"http://www.ssware.com/"
 ,"Image":"LogicNP160.png"
 ,"Level":"Premium"

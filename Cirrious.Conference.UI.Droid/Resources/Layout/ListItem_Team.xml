@@ -26,6 +26,7 @@
       android:layout_height="wrap_content"
       android:padding="5dp"
       android:textSize="24dp"
+      android:textColor="@color/white"      
       local:MvxBind="{'Text':{'Path':'Item.Fullname'}}"
     />
   <TextView
@@ -34,6 +35,7 @@
       android:layout_height="wrap_content"
       android:padding="5dp"
       android:textSize="14dp"
+      android:textColor="@color/white"      
       local:MvxBind="{'Text':{'Path':'Item.Description'}}"
     />
   </LinearLayout>

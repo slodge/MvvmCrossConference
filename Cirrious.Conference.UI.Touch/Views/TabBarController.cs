@@ -67,8 +67,9 @@ namespace Cirrious.Conference.UI.Touch.Views
                                     CreateTabFor("Welcome", "home", ViewModel.Welcome),
                                     CreateTabFor("Sessions", "sessions", ViewModel.Sessions),
                                     CreateTabFor("Favorites", "favorites", ViewModel.Favorites),
-                                    CreateTabFor("Tweets", "twitter", ViewModel.Twitter),
+                                    CreateTabFor("Tweets", "twitter", ViewModel.Twitter)
                                   };
+
             ViewControllers = viewControllers;
             CustomizableViewControllers = new UIViewController[] { };
             SelectedViewController = ViewControllers[0];

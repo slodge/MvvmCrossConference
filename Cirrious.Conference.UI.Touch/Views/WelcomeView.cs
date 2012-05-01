@@ -14,7 +14,7 @@ namespace Cirrious.Conference.UI.Touch
     public partial class WelcomeView : MvxBindingTouchViewController<WelcomeViewModel>
     {
         public WelcomeView(MvxShowViewModelRequest request)
-            : base(request, IsPad ? "WelcomeView_iPad" : "WelcomeView", null)
+            : base(request, AppDelegate.IsPad ? "WelcomeView_iPad" : "WelcomeView", null)
         {
         }
 
@@ -24,8 +24,8 @@ namespace Cirrious.Conference.UI.Touch
 
             // Perform any additional setup after loading the view, typically from a nib.
 
-            Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.people.png"), UIControlState.Normal);
-            Button2.SetImage(UIImage.FromFile("ConfResources/Images/appbar.city.png"), UIControlState.Normal);
+            Button1.SetImage(UIImage.FromFile("ConfResources/Images/appbar.money.png"), UIControlState.Normal);
+            Button2.SetImage(UIImage.FromFile("ConfResources/Images/appbar.people.png"), UIControlState.Normal);
             Button3.SetImage(UIImage.FromFile("ConfResources/Images/appbar.bus.png"), UIControlState.Normal);
             Button4.SetImage(UIImage.FromFile("ConfResources/Images/appbar.questionmark.rest.png"), UIControlState.Normal);
 
@@ -59,14 +59,6 @@ namespace Cirrious.Conference.UI.Touch
         {
             // Return true for supported orientations
             return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
-        }
-
-        private static bool IsPad
-        {
-            get
-            {
-                return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
-            }
         }
     }
 }

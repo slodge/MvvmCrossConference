@@ -25,6 +25,7 @@
       android:padding="5dp"
       android:gravity="center_vertical"
       android:textSize="18dp"
+      android:textColor="@color/white"            
       local:MvxBind="{'Text':{'Path':'Item.Name'}}"
     />
 </LinearLayout>

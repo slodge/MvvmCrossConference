@@ -59,9 +59,9 @@ namespace Cirrious.Conference.UI.Touch
 
             //var presenter = IsPad ? (IMvxTouchViewPresenter)new ConferenceTabletPresenter(this, _window) : (IMvxTouchViewPresenter)new ConferencePhonePresenter(this, _window);
 
-            IMvxTouchViewPresenter presenter = IsPad ? (IMvxTouchViewPresenter)new ConferenceTabletPresenter(this, _window) : (IMvxTouchViewPresenter)new ConferencePhonePresenter(this, _window);
+            //IMvxTouchViewPresenter presenter = IsPad ? (IMvxTouchViewPresenter)new ConferenceTabletPresenter(this, _window) : (IMvxTouchViewPresenter)new ConferencePhonePresenter(this, _window);
 
-            // var presenter = new ConferenceTabletPresenter(this, _window);
+            var presenter = new ConferencePhonePresenter(this, _window);
 
             //var presenter = 
             //    IsPad 

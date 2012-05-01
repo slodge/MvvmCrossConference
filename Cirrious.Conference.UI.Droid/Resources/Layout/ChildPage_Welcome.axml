@@ -24,12 +24,12 @@
       />
     <Button
       style="@style/IconButton"
-      android:drawableLeft="@drawable/appbar_people"
+      android:drawableLeft="@drawable/appbar_money"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Sponsors'},'Click':{'Path':'ShowSponsorsCommand'}}"
       />
     <Button
       style="@style/IconButton"
-      android:drawableLeft="@drawable/appbar_city"
+      android:drawableLeft="@drawable/appbar_people"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Team'},'Click':{'Path':'ShowTeamCommand'}}"
       />
     <Button

@@ -13,8 +13,6 @@ namespace Cirrious.Conference.UI.Touch.Views
         : MvxBindingTouchTableViewController<TViewModel>
         where TViewModel : BaseTeamViewModel
     {
-        private UIActivityIndicatorView _activityView;
-
         public BaseTeamView(MvxShowViewModelRequest request)
             : base(request)
         {

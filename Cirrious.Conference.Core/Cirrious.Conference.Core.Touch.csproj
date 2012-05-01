@@ -152,7 +152,6 @@
     <Compile Include="ViewModels\Helpers\WithCommand.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModels\SessionsViewModel.cs" />
-    <Compile Include="ViewModels\HomeViewModels\TwitterViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModels\WelcomeViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\SessionLists\BaseSessionListViewModel.cs" />
@@ -169,6 +168,7 @@
     <Compile Include="ViewModels\TeamViewModel.cs" />
     <Compile Include="ViewModels\BaseTeamViewModel.cs" />
     <Compile Include="ViewModels\UpdateViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModels\TwitterViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

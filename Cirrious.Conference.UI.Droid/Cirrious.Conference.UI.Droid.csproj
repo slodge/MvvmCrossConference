@@ -313,6 +313,15 @@
     <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\PlanetRecruit160.jpg">
       <Link>Assets\ConfResources\SponsorImages\PlanetRecruit160.jpg</Link>
     </AndroidAsset>
+    <AndroidAsset Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\GibraltarSoftware160.png">
+      <Link>Assets\ConfResources\SponsorImages\GibraltarSoftware160.png</Link>
+    </AndroidAsset>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\pluralsight160.png">
+      <Link>Assets\ConfResources\SponsorImages\pluralsight160.png</Link>
+    </Content>
+    <Content Include="..\Cirrious.Conference.UI.WP7\ConfResources\SponsorImages\RedGate160.png">
+      <Link>Assets\ConfResources\SponsorImages\RedGate160.png</Link>
+    </Content>
     <Content Include="Controls\PullToRefresh\License.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Drawable\pull_to_refresh_header_background.xml" />
@@ -333,6 +342,7 @@
     <AndroidResource Include="Resources\Drawable\list_selector.xml" />
     <AndroidResource Include="Resources\Layout\ListItem_Team.xml" />
     <AndroidResource Include="Resources\Drawable\appbar_cow.png" />
+    <AndroidResource Include="Resources\Drawable\appbar_money.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

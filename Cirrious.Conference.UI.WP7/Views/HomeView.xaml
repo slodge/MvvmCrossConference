@@ -38,14 +38,14 @@
                             Margin="0,24,0,0"
                             Command="{Binding ShowSponsorsCommand}"
                             Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Sponsors,FallbackValue=Sponsors}"
-                            Source="/ConfResources/Images/appbar.people.png"
+                            Source="/ConfResources/Images/appbar.money.png"
                         />
 
                         <Controls:IconWithTextMenuItem
-                            Margin="0,0,0,0"
+                            Margin="0,24,0,0"
                             Command="{Binding ShowTeamCommand}"
                             Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Team,FallbackValue=Team}"
-                            Source="/ConfResources/Images/appbar.city.png"
+                            Source="/ConfResources/Images/appbar.people.png"
                         />
 
                         <Controls:IconWithTextMenuItem

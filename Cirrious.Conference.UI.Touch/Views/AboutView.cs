@@ -10,11 +10,11 @@ namespace Cirrious.Conference.UI.Touch
 {
     public class AboutView : MvxBindingTouchViewController<AboutViewModel>
     {
-        private int HeadingWidth = IsPad ? 700 : 300;
+        private int HeadingWidth = AppDelegate.IsPad ? 700 : 300;
 
         public AboutView(MvxShowViewModelRequest request) : base(request)
         {
-           if (IsPad) {
+           if (AppDelegate.IsPad) {
               this.View.Frame = new RectangleF (0, 0, 768, 1024);
            }
         }
@@ -30,7 +30,7 @@ namespace Cirrious.Conference.UI.Touch
 			
 			   NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Tweet", UIBarButtonItemStyle.Bordered, (sender, e) => ViewModel.ShareGeneralCommand.Execute()), false);
 
-            _scrollview = IsPad ? new UIScrollView(new RectangleF(0,0,768,1024)) : new UIScrollView(new RectangleF(0,0,320,365)) ;
+            _scrollview = AppDelegate.IsPad ? new UIScrollView(new RectangleF(0,0,768,1024)) : new UIScrollView(new RectangleF(0,0,320,365)) ;
 
             View.AddSubview(_scrollview);
 			
@@ -118,14 +118,6 @@ namespace Cirrious.Conference.UI.Touch
         {
             _scrollview.AddSubview(view);
             _currentTop += (int)view.Frame.Height;
-        }
-
-        private static bool IsPad
-        {
-            get
-            {
-                return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
-            }
         }
     }
 }

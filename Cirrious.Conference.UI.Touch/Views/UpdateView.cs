@@ -14,7 +14,7 @@ namespace Cirrious.Conference.UI.Touch
    public partial class UpdateView : MvxBindingTouchViewController<UpdateViewModel>
    {
        public UpdateView(MvxShowViewModelRequest request)
-            : base(request, "UpdateView", null)
+            : base(request, AppDelegate.IsPad ? "UpdateView_iPad" : "UpdateView", null)
         {
         }
       
