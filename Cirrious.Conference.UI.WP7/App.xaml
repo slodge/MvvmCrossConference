@@ -16,6 +16,7 @@
     <Application.Resources>
         <MvxConverters:MvxLanguageBinderConverter x:Key="Language"/>
         <Visibility:MvxVisibilityConverter x:Key="Visibility"/>
+        <Converters:NonEmptyStringToVisibilityConverter x:Key="NonEmptyStringToVisibility" />
         <Converters:SimpleDateValueConverter x:Key="SimpleDateConverter"/>
         <Converters:SessionSmallDetailsValueConverter x:Key="SessionSmallDetails"/>
         <Converters:SponsorImageValueConverter x:Key="SponsorImage" />

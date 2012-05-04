@@ -7,7 +7,7 @@
 "AboutConference":"'DDD South West 4 is happening on Sat 26th May 2012.\n\nDDD South West is a free one day technical event for developers.\n\n It is a day of learning, discussing, contributing and being part of the community in the South West. Our goal is to provide free technical education, the opportunity to mix with peers and to make and develop relationships in the .NET industry.'",
 "ConferenceLinkText":"dddsouthwest.com/",
 "ConferenceOrganisation":"DDD",
-"AboutConferenceOrganisation":"//TODO Something about Developer Developer Developer ?????",
+"AboutConferenceOrganisation":"DeveloperDeveloperDeveloper! These FREE one day events build on the success of the previous DeveloperDeveloperDeveloper Days. As before, it is all about developers learning, sharing and interacting with each other in an informal and relaxed atmosphere.\n\nThere are NO Microsoft speakers presenting, just speakers from the .NET developer community; although we often have some of the Microsoft Developer Team on hand to help out and chat to attendees.\n\nThe days are put together by the community for the community, in other words you. Sponsors, including Microsoft, very kindly provide the venue, logistic support and a free lunch.",
 "ConferenceOrganisationLinkText":"developerdeveloperdeveloper.com",
 "MvvmCross":"MvvmCross",
 "AboutMvvmCross":"This app as a demonstration app for the MvvmCross cross-platform framework.\n\nThis framework is built on top of the MonoTouch, Mono for Android and Microsoft tools and enables you to share your C# .Net code efficiently and effectively across Apple, Google, and Microsoft mobile operating systems.\n\nIf you'd like to build an app, if you'd like us to build an app for you, or simply if you'd like to find out more:",
@@ -18,6 +18,6 @@
 "ForXamarin":"For information about Xamarin's products:",
 "MonoTouch":"MonoTouch",
 "MonoForAndroid":"Mono for Android",
-"Disclaimer":"Disclaimer: the DDD South West 4 app is produced independently by Stuart Lodge of Cirrious Ltd UK and Gavin Bryan of Mandika. This app is unofficial. DDD South West kindly provided data, but this app is not endorsed by DDD South West 4 or the DDD South West 4 sponsors.",
+"Disclaimer":"Disclaimer: the DDD South West 4 app is produced independently by Stuart Lodge and Gavin Bryan. This app is unofficial. DDD South West kindly provided data, but this app is not endorsed by DDD South West 4 or the DDD South West 4 sponsors.",
 "DisclaimerMono":"Disclaimer: this app and MvvmCross were produced independently by Stuart Lodge of Cirrious Ltd UK - they are in not produced or officially endorsed by Xamarin."
 }

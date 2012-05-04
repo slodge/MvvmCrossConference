@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationObjects\ErrorApplicationObject.cs" />
+    <Compile Include="Converters\NonEmptyStringToVisibilityConverter.cs" />
     <Compile Include="Interfaces\IConferenceStart.cs" />
     <Compile Include="ApplicationObjects\StartApplicationObject.cs" />
     <Compile Include="ApplicationObjects\TextProviderBuilder.cs" />

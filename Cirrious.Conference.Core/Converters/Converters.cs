@@ -12,5 +12,6 @@ namespace Cirrious.Conference.Core.Converters
         public readonly MvxVisibilityConverter Visibility = new MvxVisibilityConverter();
         public readonly MvxLanguageBinderConverter Language = new MvxLanguageBinderConverter();
         public readonly TeamImageValueConverter TeamImage = new TeamImageValueConverter();
+        public readonly NonEmptyStringToVisibilityConverter NonEmptyString = new NonEmptyStringToVisibilityConverter();
     }
 }

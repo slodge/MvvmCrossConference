@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,0">
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,17,0,0">
             <TextBlock x:Name="ApplicationTitle" Text="{Binding SharedTextSource,Converter={StaticResource Language},ConverterParameter=AppTitle,FallbackValue=AppTitle}" Style="{StaticResource PhoneTextNormalStyle}"/>
         </StackPanel>
 
@@ -55,11 +55,6 @@
                                     Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=GavinLinkText, FallbackValue=GavinLinkText}"
                                     Source="/ConfResources/Images/appbar.feature.email.rest.png"
                                 />
-                            <TextBlock
-                                Margin="0,36,0,0"
-                                Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Disclaimer, FallbackValue=Disclaimer}"
-                                 TextWrapping="Wrap"
-                                 />
                         </StackPanel>
                     </ScrollViewer>
                 </controls:PivotItem>
@@ -78,6 +73,11 @@
                                     Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=ConferenceLinkText, FallbackValue=ConferenceLinkText}"
                                     Source="/ConfResources/Images/appbar.link.png"
                                 />
+                            <TextBlock
+                                Margin="0,36,0,0"
+                                Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Disclaimer, FallbackValue=Disclaimer}"
+                                 TextWrapping="Wrap"
+                                 />
                         </StackPanel>
                     </ScrollViewer>
                 </controls:PivotItem>

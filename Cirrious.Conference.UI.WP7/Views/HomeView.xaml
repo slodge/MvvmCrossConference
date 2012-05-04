@@ -36,29 +36,30 @@
                         />
                         <Controls:IconWithTextMenuItem
                             Margin="0,24,0,0"
+                            Command="{Binding ShowMapCommand}"
+                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Map,FallbackValue=Map}"
+                            Source="/ConfResources/Images/appbar.bus.png"
+                        />
+                        
+                        <Controls:IconWithTextMenuItem
+                            Margin="0,12,0,0"
                             Command="{Binding ShowSponsorsCommand}"
                             Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Sponsors,FallbackValue=Sponsors}"
                             Source="/ConfResources/Images/appbar.money.png"
                         />
 
+                       
                         <Controls:IconWithTextMenuItem
-                            Margin="0,24,0,0"
-                            Command="{Binding ShowTeamCommand}"
-                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Team,FallbackValue=Team}"
-                            Source="/ConfResources/Images/appbar.people.png"
-                        />
-
-                        <Controls:IconWithTextMenuItem
-                            Margin="0,24,0,0"
-                            Command="{Binding ShowMapCommand}"
-                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Map,FallbackValue=Map}"
-                            Source="/ConfResources/Images/appbar.bus.png"
-                        />
-                        <Controls:IconWithTextMenuItem
-                            Margin="0,24,0,0"
+                            Margin="0,12,0,0"
                             Command="{Binding ShowAboutCommand}"
                             Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=About,FallbackValue=About}"
                             Source="/ConfResources/Images/appbar.questionmark.rest.png"
+                        />
+                        <Controls:IconWithTextMenuItem
+                            Margin="0,12,0,0"
+                            Command="{Binding ShowTeamCommand}"
+                            Text="{Binding TextSource,Converter={StaticResource Language},ConverterParameter=Team,FallbackValue=Team}"
+                            Source="/ConfResources/Images/appbar.people.png"
                         />
 
                     </StackPanel>
