@@ -38,8 +38,7 @@ namespace Cirrious.Conference.UI.Touch
             AddTextBlock("AboutConferenceApp");
             AddCommand(ViewModel.ContactSlodgeCommand, "StuartLinkText", "appbar.feature.email.rest");
             AddCommand(ViewModel.ContactGavinBryanCommand, "GavinLinkText", "appbar.feature.email.rest");
-            AddTextBlock("Disclaimer");
-
+            
             AddHeading("Conference");
             AddTextBlock("AboutConference");
             AddCommand(ViewModel.ShowConferenceCommand,"ConferenceLinkText","appbar.link");
@@ -47,6 +46,7 @@ namespace Cirrious.Conference.UI.Touch
             AddHeading("ConferenceOrganisation");
             AddTextBlock("AboutConferenceOrganisation");
             AddCommand(ViewModel.ShowConferenceOrganisersCommand,"ConferenceOrganisationLinkText","appbar.link");
+			AddTextBlock("Disclaimer");
 
             AddHeading("MvvmCross");
             AddTextBlock("AboutMvvmCross");

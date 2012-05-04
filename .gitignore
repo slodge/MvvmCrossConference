@@ -29,3 +29,9 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 *.NotInSource.cs
 *.userprefs
+Cirrious.Conference.Core/Cirrious.Conference.Core.Droid.pidb
+Cirrious.Conference.Core/Cirrious.Conference.Core.Touch.pidb
+Cirrious.Conference.UI.Droid/Cirrious.Conference.UI.Droid.pidb
+Cirrious.Conference.UI.Touch/.DS_Store
+Cirrious.Conference.UI.Touch/Cirrious.Conference.UI.Touch.pidb
+CirriousConferenceUITouch-1.0.0.zip
