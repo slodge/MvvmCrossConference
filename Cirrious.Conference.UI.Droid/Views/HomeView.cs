@@ -1,5 +1,7 @@
+using System;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Widget;
 using Cirrious.Conference.Core.ViewModels;
 
@@ -35,6 +37,21 @@ namespace Cirrious.Conference.UI.Droid.Views
             spec.SetIndicator(this.GetText("Tweets"), Resources.GetDrawable(Resource.Drawable.Tab_Tweets));
             spec.SetContent(CreateIntentFor(ViewModel.Twitter));
             TabHost.AddTab(spec);
+
+            //TabHost.TabChanged += (s, e) => UpdateTabColors();
+            //UpdateTabColors();
+        }
+
+        private readonly int _selectedColor = Color.ParseColor("#FF6A00");
+        private readonly int _nonSelectedColor = Color.Gray;
+
+        private void UpdateTabColors()
+        {
+            var selected = TabHost.CurrentTab;
+            for (var i = 0; i < TabHost.ChildCount; i++)
+            {
+                TabHost.TabWidget.GetChildAt(i).SetBackgroundColor(i == selected ? _selectedColor : _nonSelectedColor);
+            }
         }
     }
 }

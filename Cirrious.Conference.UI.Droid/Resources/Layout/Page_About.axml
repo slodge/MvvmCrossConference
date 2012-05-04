@@ -39,12 +39,6 @@
       />
 
     <TextView
-      android:text="hello"
-      style="@style/AboutPageBodyText"
-      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Disclaimer'}}" />
-
-    
-    <TextView
       style="@style/AboutPageTitle"
       android:text="hello world"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Conference'}}" />
@@ -77,7 +71,12 @@
       android:drawableLeft="@drawable/appbar_link"
       local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'ConferenceOrganisationLinkText'},'Click':{'Path':'ShowConferenceOrganisersCommand'}}"
       />
-    
+
+    <TextView
+      android:text="hello"
+      style="@style/AboutPageBodyText"
+      local:MvxBind="{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'Disclaimer'}}" />
+
     <TextView
       style="@style/AboutPageTitle"
       android:text="hello world"

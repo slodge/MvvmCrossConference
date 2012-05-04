@@ -58,6 +58,7 @@
     <Compile Include="ConferenceApp.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Converters\Converters.cs" />
+    <Compile Include="Converters\NonEmptyStringToVisibilityConverter.cs" />
     <Compile Include="Converters\SessionSmallDetailsValueConverter.cs" />
     <Compile Include="Converters\SimpleDateValueConverter.cs" />
     <Compile Include="Converters\SponsorImageValueConverter.cs" />
