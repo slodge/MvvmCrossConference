@@ -51,9 +51,9 @@ namespace Cirrious.Conference.Core.Models.Raw
 
         private void SplitNameIntoTimes(out string startTime, out string endTime)
         {
-            var startEndSplit = Name.Split('–');
+			var startEndSplit = Name.Split(' '); //, new [] {/*'-'*/ (char)0x2d, ' '}, StringSplitOptions.RemoveEmptyEntries);
             startTime = startEndSplit[0].Trim();
-            endTime = startEndSplit[1].Trim();
+            endTime = startEndSplit[2].Trim();
         }
 
         private static void SplitTimeString(string endTime, out int minutes, out int hours)
