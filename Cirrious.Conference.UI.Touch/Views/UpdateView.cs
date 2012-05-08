@@ -24,6 +24,8 @@ namespace Cirrious.Conference.UI.Touch
 
          this.loadingActivityInidicatorView.StartAnimating();
 
+         this.ImageView.Image = UIImage.FromFile("Images/Icons/144_icon.png");
+			
          this.AddBindings(new Dictionary<object, string>()
                               {
                                   {loadingLabel, "{'Text':{'Path':'TextSource','Converter':'Language','ConverterParameter':'CheckingForUpdates'}}"},

@@ -8,34 +8,42 @@ using MonoTouch.Foundation;
 
 namespace Cirrious.Conference.UI.Touch
 {
- [Register ("UpdateView")]
- partial class UpdateView
- {
-    [Outlet]
-    MonoTouch.UIKit.UIActivityIndicatorView loadingActivityInidicatorView { get; set; }
+	[Register ("UpdateView")]
+	partial class UpdateView
+	{
+		[Outlet]
+		MonoTouch.UIKit.UIActivityIndicatorView loadingActivityInidicatorView { get; set; }
 
-    [Outlet]
-    MonoTouch.UIKit.UILabel loadingLabel { get; set; }
+		[Outlet]
+		MonoTouch.UIKit.UILabel loadingLabel { get; set; }
 
-    [Outlet]
-    MonoTouch.UIKit.UIButton loadingSkipButton { get; set; }
-    
-    void ReleaseDesignerOutlets ()
-    {
-       if (loadingActivityInidicatorView != null) {
-          loadingActivityInidicatorView.Dispose ();
-          loadingActivityInidicatorView = null;
-       }
+		[Outlet]
+		MonoTouch.UIKit.UIButton loadingSkipButton { get; set; }
 
-       if (loadingLabel != null) {
-          loadingLabel.Dispose ();
-          loadingLabel = null;
-       }
+		[Outlet]
+		MonoTouch.UIKit.UIImageView ImageView { get; set; }
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (loadingActivityInidicatorView != null) {
+				loadingActivityInidicatorView.Dispose ();
+				loadingActivityInidicatorView = null;
+			}
 
-       if (loadingSkipButton != null) {
-          loadingSkipButton.Dispose ();
-          loadingSkipButton = null;
-       }
-    }
- }
+			if (loadingLabel != null) {
+				loadingLabel.Dispose ();
+				loadingLabel = null;
+			}
+
+			if (loadingSkipButton != null) {
+				loadingSkipButton.Dispose ();
+				loadingSkipButton = null;
+			}
+
+			if (ImageView != null) {
+				ImageView.Dispose ();
+				ImageView = null;
+			}
+		}
+	}
 }
