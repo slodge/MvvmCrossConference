@@ -6,17 +6,17 @@
 	<string>DDDSW4</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Images/Icons/iphone_app_non_retina.png</string>
-		<string>Images/Icons/iphone_app_retina.png</string>
-		<string>Images/Icons/ipad_app_non_retina.png</string>
+		<string>Images/Icons/57_icon.png</string>
+		<string>Images/Icons/114_icon.png</string>
+		<string>Images/Icons/72_icon.png</string>
 		<string>Images/Icons/29_icon.png</string>
 		<string>Images/Icons/58_icon.png</string>
 		<string>Images/Icons/50_icon.png</string>
 		<string>Images/Icons/512_icon.png</string>
-		<string>Images/Icons/ipad_app_retina.png</string>
+		<string>Images/Icons/144_icon.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.cirrious.sqlbitsX</string>
+	<string>com.cirrious.dddsw</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
 	<key>MinimumOSVersion</key>
@@ -24,7 +24,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleOpaqueBlack</string>
