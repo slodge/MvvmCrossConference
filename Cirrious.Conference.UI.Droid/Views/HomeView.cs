@@ -42,8 +42,8 @@ namespace Cirrious.Conference.UI.Droid.Views
             //UpdateTabColors();
         }
 
-        private readonly int _selectedColor = Color.ParseColor("#FF6A00");
-        private readonly int _nonSelectedColor = Color.Gray;
+        private readonly Color _selectedColor = Color.ParseColor("#FF6A00");
+        private readonly Color _nonSelectedColor = Color.Gray;
 
         private void UpdateTabColors()
         {

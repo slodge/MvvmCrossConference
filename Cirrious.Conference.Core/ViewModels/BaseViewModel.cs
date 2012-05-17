@@ -58,8 +58,19 @@ namespace Cirrious.Conference.Core.ViewModels
 
         protected void ShowWebPage(string webPage)
         {
-            var task = this.GetService<IMvxWebBrowserTask>();
-            task.ShowWebPage(webPage);
+            if (!webPage.StartsWith("http"))
+            {
+                webPage = "http://" + webPage;
+            }
+            try
+            {
+                var task = this.GetService<IMvxWebBrowserTask>();
+                task.ShowWebPage(webPage);
+            }
+            catch (Exception exception)
+            {
+                // masked
+            }
         }
 
         protected void ComposeEmail(string to, string subject, string body)

@@ -39,9 +39,19 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Stuart\AppData\Local\Xamarin\Mono for Android\CirriousRelease.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>Hidden - bad luck</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>CirriousRelease</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>Hidden - bad luck</AndroidSigningKeyPass>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cirrious.MvvmCross.Android">
       <HintPath>..\Libs\Droid\Cirrious.MvvmCross.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Android.Maps">
+      <HintPath>..\Libs\Droid\Cirrious.MvvmCross.Android.Maps.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding.Android">
       <HintPath>..\Libs\Droid\Cirrious.MvvmCross.Binding.Android.dll</HintPath>
@@ -336,7 +346,9 @@
     <AndroidResource Include="Resources\Drawable\star_gold45.png" />
     <AndroidResource Include="Resources\Drawable\star_grey45.png" />
     <AndroidResource Include="Resources\Layout\ListItem_Sponsor.xml" />
-    <AndroidResource Include="Resources\Values\Styles.xml" />
+    <AndroidResource Include="Resources\Values\Styles.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Drawable\tweetShare.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\background.png" />
     <AndroidResource Include="Resources\Drawable\list_selector.xml" />
