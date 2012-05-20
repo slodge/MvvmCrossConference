@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+
+  <Identity Name="601e1d75-0fc7-45ba-9e45-9286b1794777"
+            Publisher="CN=Stuart"
+            Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>Cirrious.Conference.UI.WinRT</DisplayName>
+    <PublisherDisplayName>Stuart</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>Cirrious.Conference.UI.WinRT</Description>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+        Executable="$targetnametoken$.exe"
+        EntryPoint="Cirrious.Conference.UI.WinRT.App">
+        <VisualElements
+            DisplayName="Cirrious.Conference.UI.WinRT"
+            Logo="Assets\Logo.png"
+            SmallLogo="Assets\SmallLogo.png"
+            Description="Cirrious.Conference.UI.WinRT"
+            ForegroundText="light"
+            BackgroundColor="#222222">
+            <DefaultTile ShowName="allLogos" />
+            <SplashScreen Image="Assets\SplashScreen.png" />
+        </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
