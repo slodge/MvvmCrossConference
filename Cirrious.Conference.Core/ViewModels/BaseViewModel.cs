@@ -97,10 +97,12 @@ namespace Cirrious.Conference.Core.ViewModels
                 var service = this.GetService<IMvxShareTask>();
                 service.ShareShort(toShare);
             }
+#if !NETFX_CORE
             catch (ThreadAbortException)
             {
                 throw;
             }
+#endif
             catch (Exception exception)
             {
                 Trace.Error("Exception masked in tweet " + exception.ToLongString());

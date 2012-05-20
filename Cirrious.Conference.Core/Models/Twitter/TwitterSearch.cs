@@ -44,10 +44,12 @@ namespace Cirrious.Conference.Core.Models.Twitter
                 var request = WebRequest.Create(new Uri(uri));
                 request.BeginGetResponse(ReadCallback, request);
             }
+#if !NETFX_CORE
             catch (ThreadAbortException)
             {
                 throw;
             }
+#endif
             catch (Exception exception)
             {
                 _error(exception);
@@ -66,10 +68,12 @@ namespace Cirrious.Conference.Core.Models.Twitter
                     HandleResponse(resultString);
                 }
             }
+#if !NETFX_CORE
             catch (ThreadAbortException)
             {
                 throw;
             }
+#endif
             catch (Exception exception)
             {
                 _error(exception);

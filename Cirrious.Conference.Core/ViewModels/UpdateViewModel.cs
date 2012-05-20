@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Net;
 using Cirrious.Conference.Core.Interfaces;
 using Cirrious.Conference.Core.Models.Raw;
@@ -118,13 +119,11 @@ namespace Cirrious.Conference.Core.ViewModels
             }
 
             Trace.Info("Get remote data for conference");
-            var webClient = new WebClient();
-
+            var request = WebRequest.Create(new Uri(Constants.SessionDataEndPoint));
+            request.Method = "POST";
+            request.Headers[HttpRequestHeader.ContentLength] = "0";
             IsFetching = true;
-
-            webClient.UploadStringCompleted += (sender, e) => HandleStringDownloadComplete(e);
-            webClient.Encoding = System.Text.Encoding.UTF8;
-            webClient.UploadStringAsync(new Uri(Constants.SessionDataEndPoint), "POST", string.Empty);
+            request.BeginGetResponse(result => this.ReponseCallback(request, result), null);
         }
 
         private void ReportError(Exception error)
@@ -140,7 +139,33 @@ namespace Cirrious.Conference.Core.ViewModels
             ReportError(this.TextSource.GetText("ErrorDuringUpdate", error.Message));
         }
 
-        private void HandleStringDownloadComplete(UploadStringCompletedEventArgs e)
+        private void ReponseCallback(WebRequest request, IAsyncResult result)
+        {
+            string resultText = null;
+            Exception errorException = null;
+
+            try
+            {
+                using (var response = request.EndGetResponse(result))
+                {
+                    using (var stream = response.GetResponseStream())
+                    {
+                        using (var textReader = new StreamReader(stream))
+                        {
+                            resultText = textReader.ReadToEnd();
+                        }
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                errorException = exception;
+            }
+
+            ProcessErrorOrResult(errorException, resultText);
+        }
+
+        private void ProcessErrorOrResult(Exception error, string result)
         {
             try
             {
@@ -150,13 +175,13 @@ namespace Cirrious.Conference.Core.ViewModels
                     return;
                 }
 
-                if (e.Error != null)
+                if (error != null)
                 {
-                    ReportError(e.Error);
+                    ReportError(error);
                     return;
                 }
 
-                var r = e.Result;
+                var r = result;
                 Trace.Info("Start deserialising conference data");
                 var conferenceModel = JsonConvert.DeserializeObject<PocketConferenceModel>(r);
                 Trace.Info("Completed deserialising conference data");
@@ -170,7 +195,7 @@ namespace Cirrious.Conference.Core.ViewModels
                 }
 
                 var service = this.GetService<IMvxSimpleFileStoreService>();
-                service.WriteFile(Constants.TempSessionsFileName, e.Result);
+                service.WriteFile(Constants.TempSessionsFileName, result);
 
                 FileAvailable = true;
 
